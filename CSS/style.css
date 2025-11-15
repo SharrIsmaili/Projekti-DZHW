@@ -1,0 +1,27 @@
+    body {
+      background-color: lightblue;
+      background-color: rgb(227, 231, 233);
+    }
+
+    h1 {
+      color: navy;
+      color: navy;
+    }
+
+    h2 {
+      text-align: center;
+
+    }
+
+    .navbar1 {
+      background-color: rgb(205, 203, 200);
+      border: 13px;
+      text-align: center;
+      padding: 1px;
+      margin: 1px;
+      overflow: hidden;
+    }
+
+    * {
+      font-family: 'Poppins', sans-serif;
+    }

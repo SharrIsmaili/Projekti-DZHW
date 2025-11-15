@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(240, 233, 233);
+}
+
+#form{
+    text-align: center;
+}
+
+.input{
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid black;
+    background: none;
+}
+
+#submit{
+    background-color: rgb(158, 24, 24);
+    border: none;
+    color: lightgray;
+}
+
+legend{
+    text-align: center;
+}
