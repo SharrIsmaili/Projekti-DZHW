@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+        <link rel="stylesheet" href="/CSS/form.css">
+        <link rel="icon" type="image/x-icon" href="/images/Drop.png">
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="/CSS/form.css">
-    <link rel="icon" type="image/x-icon" href="/images/blood-donation-campaign-logo-vector.jpg">
+    <body>
+        <header>
+            <div>
+                <nav>
+                    <a href="homepage.html">Home</a>
+                    <a href="dashboard.html">Dashboard</a>
+                </nav>
+            </div>
+        </header><br><br><br>
 
-</head>
-
-<body>
-    <header>
-        <div>
-            <nav>
-                <a href="homepage.html">Home</a>
-                <a href="dashboard.html">Dashboard</a>
-            </nav>
+        <div id="register">
+            <form action="register" id="form">
+                <fieldset>
+                    <legend>Log In</legend>
+                    <div>
+                        <input type="text" name="name" id="name" class="input" placeholder="Name"><br><br>
+                        <input type="text" name="lastname" id="lastname" class="input" placeholder="Lastame"><br><br>
+                        <input type="text" name="email" id="name" class="input" placeholder="Email"><br><br>
+                        <input type="password" name="password" id="password" class="input" placeholder="Password"><br><br>
+                        <input type="submit" value="Register" id="submit"><br>
+                        <a href="login.html" id="hasAccount">Already have an account?</a>
+                    </div>
+                </fieldset>
+            </form>
         </div>
-    </header><br><br><br>
-
-    <div id="register">
-        <form action="register" id="form">
-            <fieldset>
-                <legend>Log In</legend>
-                <div>
-                    <input type="text" name="name" id="name" class="input" placeholder="Name"><br><br>
-                    <input type="text" name="lastname" id="lastname" class="input" placeholder="Lastame"><br><br>
-                    <input type="text" name="email" id="name" class="input" placeholder="Email"><br><br>
-                    <input type="password" name="password" id="password" class="input" placeholder="Password"><br><br>
-                    <input type="submit" value="Register" id="submit"><br>
-                    <a href="login.html" id="hasAccount">Already have an account?</a>
-                </div>
-            </fieldset>
-        </form>
-    </div>
-</body>
-
+    </body>
 </html>
