@@ -205,14 +205,14 @@ footer{
   top: -22px;
   right: 0;
   background: rgb(139, 29, 29);
-  color: lightgrey;
+  color: white;
   border: none;
   padding: 10px 20px;
   font-weight: bold;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 20px;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
 }
 
 footer .top-row{
