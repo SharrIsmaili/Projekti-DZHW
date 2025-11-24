@@ -193,13 +193,12 @@ body {
   margin: 25px;
 }
 
-.title-for-who-can-donate {
+.title-for-who-can-donate h1 {
   color: #333;
   font-family: 'Poppins', sans-serif;
   width: 100%;
-  text-align: left;
-  margin: 20px;
-  padding-top: 30px;
+  text-align: center;
+  margin: 50px auto 10px auto;
 }
 
 .who-can-donate-cards {
@@ -208,17 +207,20 @@ body {
   flex-direction: row;
   justify-content: space-between;
   padding: 30px 20px;
+  color: #333;
   display: flex;
   width: 1250px;
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto 30px auto;
   padding-top: 20px;
+  background-color: #e8e8e8;
 }
 
 .who-can-donate-cards>div[class^="card-"] {
   width: 20%;
   max-width: 20%;
+  color: #333;
   border: 1px solid #b4b4b4;
   border-radius: 8px;
   padding: 15px;
@@ -235,6 +237,10 @@ body {
   object-fit: cover;
 }
 
+.donation-process {
+  background-color: #e8e8e8;
+  margin: 0 auto 30px auto;
+}
 
 footer {
   bottom: 0;
@@ -318,4 +324,10 @@ footer h2 {
 
 #footerLogo {
   height: 100px;
+}
+
+.credit {
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px 0;
 }
