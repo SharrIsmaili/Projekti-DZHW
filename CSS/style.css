@@ -4,6 +4,8 @@
 
 html {
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -235,6 +237,12 @@ body {
   margin-bottom: 10px;
   height: 180px;
   object-fit: cover;
+  padding: 15px;
+}
+
+.card p{
+  text-align: justify;
+  padding: 15px;
 }
 
 .donation-process {
@@ -246,7 +254,10 @@ footer {
   bottom: 0;
   background: rgb(227, 231, 233);
   color: #333;
-  padding: 40px 60px;
+  padding-top: 40px;
+  padding-left: 170px;
+  padding-right: 170px;
+  padding-bottom: 5px;
   position: relative;
   border-top: 4px solid rgb(139, 29, 29);
 }
@@ -278,12 +289,13 @@ footer h2 {
   margin: 0;
 }
 
-.social-icons {
+.socials{
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
-.social-icons a {
+.socials a {
   font-size: 18px;
   color: #333;
   text-decoration: none;
@@ -332,6 +344,19 @@ footer h2 {
   padding: 10px 0;
 }
 
-.social-icons img{
+.credit a{
+  text-decoration: none;
+}
+
+.credit a:hover{
+  text-decoration: underline;
+}
+
+.social-icons{
   width: 50px;
+}
+
+.social-icons:hover{
+  width: 53px;
+  transition: 0.125s ease-in-out;
 }
