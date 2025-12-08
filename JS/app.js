@@ -80,3 +80,83 @@ updateMinusHeight();
 
 window.addEventListener('load', updateMinusHeight);
 window.addEventListener('resize', updateMinusHeight);
+
+const searchBar = document.getElementById("searchBar");
+const suggestionsBox = document.getElementById("searchSuggestions");
+
+const sectionTitles = [
+    { id: "whoCanDonate", title: "Who Can Donate Blood" },
+    { id: "donationProcess", title: "The donation Process & What to Expect" },
+    { id: "preparation", title: "Preparation"},
+    { id: "procedure", title: "The procedure"},
+    { id: "postDonation", title: "Post Donation Care"},
+    { id: "bloodTypes", title: "Blood Types"},
+    { id: "address", title: "Address" }
+];
+
+searchBar.addEventListener("input", () => {
+    const query = searchBar.value.toLowerCase().trim();
+    suggestionsBox.innerHTML = "";
+    suggestionsBox.style.display = "none";
+
+    if (query.length < 1) return;
+
+    const matches = sectionTitles.filter(item =>
+        item.title.toLowerCase().includes(query)
+    );
+
+    if (matches.length === 0) return;
+
+    suggestionsBox.style.display = "block";
+
+    matches.forEach(match => {
+        const div = document.createElement("div");
+        div.textContent = match.title;
+        div.addEventListener("click", () => scrollToSection(match.id));
+        suggestionsBox.appendChild(div);
+    });
+});
+
+function scrollToSection(id) {
+    suggestionsBox.style.display = "none";
+    const section = document.getElementById(id);
+    if (!section) return;
+    section.scrollIntoView({ behavior: "smooth" });
+}
+
+searchBar.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        const query = searchBar.value.toLowerCase().trim();
+
+        const match = sectionTitles.find(item =>
+            item.title.toLowerCase().includes(query)
+        );
+
+        if (match) {
+            scrollToSection(match.id);
+        } else {
+            alert("No results found!");
+        }
+    }
+});
+
+const typeButtons = document.querySelectorAll("#bloodTypes .type");
+const videos = document.querySelectorAll("#bloodTypes video");
+
+typeButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+        videos.forEach(video => {
+            video.classList.remove("active");
+            video.classList.add("hidden");
+        });
+
+        const selectedVideo = videos[index + 1];
+
+        selectedVideo.currentTime = 0;
+        selectedVideo.play();  
+
+        videos[index + 1].classList.remove("hidden");
+        videos[index + 1].classList.add("active");
+    });
+});
+
