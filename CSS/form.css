@@ -1,9 +1,43 @@
 body{
-    background-color: rgb(240, 233, 233);
+    background-color: whitesmoke;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
-#form{
-    text-align: center;
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 150px 0px 150px 150px;
+}
+
+.logo img{
+    width: 200px;
+}
+
+#inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 100px 100px 100px;
 }
 
 .input{
@@ -12,14 +46,45 @@ body{
     border-top: none;
     border-bottom: 1px solid black;
     background: none;
+    height: 40px;
+    width: auto;
 }
 
-#submit{
-    background-color: rgb(158, 24, 24);
-    border: none;
-    color: lightgray;
+.input:focus{
+    outline: none;
 }
 
-legend{
-    text-align: center;
+#inputs input{
+    width: 300px;
+    font-size: 17px;
+}
+
+#formBtn{
+  background-color: rgb(139, 29, 29);
+  color: white;
+  font-size: 20px;
+  margin: 15px;
+  text-decoration: none;
+  padding: 10px;
+  font-size: large;
+  border-radius: 10px;
+  border: none;
+  width: 85px;
+  height: 45px;
+}
+
+#formBtn:hover {
+  background-color: white;
+  border: 2px solid rgb(139, 29, 29);
+  color: rgb(139, 29, 29);
+  cursor: pointer;
+}
+
+#hasAccount{
+    text-decoration: none;
+    color: rgb(108, 108, 108);
+}
+
+#hasAccount:hover{
+    text-decoration: underline;
 }
