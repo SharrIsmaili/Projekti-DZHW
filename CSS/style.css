@@ -256,6 +256,11 @@ body {
   flex-shrink: 0;
   background-color: white;
 }
+.card:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+}
 
 .card img{
   border-radius: 3px;
