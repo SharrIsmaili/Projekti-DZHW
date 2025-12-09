@@ -159,4 +159,3 @@ typeButtons.forEach((button, index) => {
         videos[index + 1].classList.add("active");
     });
 });
-
