@@ -259,7 +259,7 @@ body {
 .card:hover{
   cursor: pointer;
   transform: scale(1.1);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.55s ease-in-out;
 }
 
 .card img{
@@ -398,6 +398,55 @@ video{
 .adress-text #contactBtn{
   margin-left: 0;
 }
+
+/*=====================================News Page=======================================================================*/
+
+.news-container{
+  background-color: whitesmoke;
+  border-radius: 2px solid black;
+  margin: 50px;
+  justify-content: baseline;
+  align-items: baseline;
+}
+.news{
+  width: 250px;
+  height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===================================================================================================================*/
 
 footer{
   bottom: 0;
