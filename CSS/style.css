@@ -76,25 +76,25 @@ body {
 }
 
 .suggestions {
-    position: absolute;
-    background: white;
-    width: 200px;
-    max-height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-top: 5px;
-    display: none;
-    z-index: 9999;
+  position: absolute;
+  background: white;
+  width: 200px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 5px;
+  display: none;
+  z-index: 9999;
 }
 
 .suggestions div {
-    padding: 10px;
-    cursor: pointer;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .suggestions div:hover {
-    background: #eee;
+  background: #eee;
 }
 
 #contactBtn {
@@ -256,13 +256,14 @@ body {
   flex-shrink: 0;
   background-color: white;
 }
-.card:hover{
+
+.card:hover {
   cursor: pointer;
   transform: scale(1.1);
   transition: all 0.55s ease-in-out;
 }
 
-.card img{
+.card img {
   border-radius: 3px;
   margin-bottom: 10px;
   height: 180px;
@@ -277,18 +278,18 @@ body {
   padding: 15px;
 }
 
-.donation-process{
+.donation-process {
   background-color: white;
   gap: 10px;
 }
 
-.donation-process h1{
+.donation-process h1 {
   text-align: center;
   justify-content: center;
   padding-top: 50px;
 }
 
-.info{
+.info {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -296,27 +297,27 @@ body {
   margin: 10px 0px 5px 0px;
 }
 
-.info:nth-child(3){
+.info:nth-child(3) {
   flex-direction: row-reverse;
   background-color: whitesmoke;
 }
 
-.info:last-child(){
+.info:last-child() {
   box-shadow: none;
 }
 
-.text{
+.text {
   margin: 100px;
   align-items: start;
   width: 500px;
   text-align: justify;
 }
 
-.text h1{
+.text h1 {
   text-align: start;
 }
 
-.read-more-button{
+.read-more-button {
   border-radius: 10px;
   border: none;
   background-color: rgb(139, 29, 29);
@@ -325,35 +326,35 @@ body {
   font-size: 15px;
 }
 
-.read-more-button:hover{
+.read-more-button:hover {
   cursor: pointer;
 
 }
 
-.process-img{
+.process-img {
   width: 470px;
   height: 470px;
   margin: 60px 100px 60px 10px;
 }
 
-#bloodTypes{
+#bloodTypes {
   padding-bottom: 50px;
 }
 
-.types-cards{
+.types-cards {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row-reverse;
 }
 
-.types{
+.types {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
 
-.type{
+.type {
   background-color: white;
   text-align: center;
   padding: 30px;
@@ -361,26 +362,26 @@ body {
   color: rgb(139, 29, 29);
 }
 
-.type:hover{
+.type:hover {
   cursor: pointer;
   transform: scale(1.1);
   transition: all 0.2s ease-in-out;
 }
 
-video{
+video {
   width: 600px;
   height: auto;
 }
 
-.video video.hidden{
+.video video.hidden {
   display: none;
 }
 
-.video video.active{
+.video video.active {
   display: block;
 }
 
-.address{
+.address {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -390,28 +391,74 @@ video{
   gap: 50px;
 }
 
-.adress-text{
+.adress-text {
   padding: 50px;
   padding-left: 50px;
   justify-content: center;
 }
 
-.adress-text #contactBtn{
+.adress-text #contactBtn {
   margin-left: 0;
 }
 
 /*=====================================News Page=======================================================================*/
 
-.news-container{
+.news-container {
   background-color: whitesmoke;
-  border-radius: 2px solid black;
-  margin: 50px;
-  justify-content: baseline;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: space-between;
   align-items: baseline;
+  flex: wrap;
+  flex-direction: row;
+  border-bottom: 1px solid rgb(108, 108, 108);
+  display: flex;
+  gap: 10px;
+  text-align: left;
+  align-items: flex-start;
 }
-.news{
+
+.news-img img {
+  padding: 10px;
   width: 250px;
   height: auto;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.news-container:hover {
+  opacity: 70%;
+}
+
+.news-date p{
+  padding-top: 17px;
+  font-size: 14px;
+  padding-left: 15px;
+  color: rgb(108, 108, 108);
+}
+
+.news-content h4:hover {
+  text-decoration: underline;
+}
+
+.news-content h4{
+  font-size: 20px;
+}
+
+.news-content a{
+  padding-top: 10px;
+  width: 50%;
+  font-size: 155;
+  padding-bottom: 50px;
+  text-decoration: none;
+  color: #333;
+
 }
 
 
@@ -449,7 +496,7 @@ video{
 
 /*===================================================================================================================*/
 
-footer{
+footer {
   bottom: 0;
   background: whitesmoke;
   color: #333;
