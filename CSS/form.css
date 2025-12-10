@@ -48,15 +48,12 @@ main{
     background: none;
     height: 40px;
     width: auto;
+    width: 300px;
+    font-size: 17px;
 }
 
 .input:focus{
     outline: none;
-}
-
-#inputs input{
-    width: 300px;
-    font-size: 17px;
 }
 
 #formBtn{
@@ -73,7 +70,7 @@ main{
   height: 45px;
 }
 
-#formBtn:hover {
+#formBtn:hover{
   background-color: white;
   border: 2px solid rgb(139, 29, 29);
   color: rgb(139, 29, 29);
