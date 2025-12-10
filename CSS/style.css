@@ -408,14 +408,19 @@ video {
   margin-left: 0;
 }
 
+iframe {
+  border-radius: 10px;
+}
+
 /*=====================================News Page=======================================================================*/
 
+#news-body {
+  background-color: white;
+}
+
 .news-container {
-  background-color: whitesmoke;
-  margin-left: 150px;
-  margin-right: 150px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  background-color: white;
+  margin: 50px 150px;
   padding-top: 20px;
   padding-bottom: 20px;
   justify-content: space-between;
@@ -424,14 +429,14 @@ video {
   flex-direction: row;
   border-bottom: 1px solid rgb(108, 108, 108);
   display: flex;
-  gap: 10px;
+  gap: 100px;
   text-align: left;
   align-items: flex-start;
 }
 
 .news-img img {
   padding: 10px;
-  width: 250px;
+  width: 300px;
   height: auto;
   justify-content: center;
   align-items: center;
@@ -440,7 +445,12 @@ video {
 }
 
 .news-container:hover {
-  opacity: 70%;
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.news-date {
+  flex-shrink: 0;
 }
 
 .news-date p {
@@ -450,7 +460,12 @@ video {
   color: rgb(108, 108, 108);
 }
 
-.news-content h4:hover {
+.news-content {
+  align-items: center;
+  flex-grow: 1;
+}
+
+.news-container:hover h4 {
   text-decoration: underline;
 }
 
@@ -458,50 +473,182 @@ video {
   font-size: 20px;
 }
 
-.news-content a {
+#news a {
   padding-top: 10px;
-  width: 50%;
-  font-size: 155;
+  width: 100%;
   padding-bottom: 50px;
   text-decoration: none;
   color: #333;
-
 }
 
+#news:last-child {
+  border: none;
+}
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+  gap: 10px;
+}
 
+.pagination a {
+  text-decoration: none;
+}
 
+.number {
+  background-color: whitesmoke;
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.number:hover {
+  background-color: darkgray;
+}
 
+.number:hover p {
+  color: white;
+}
 
+#active {
+  background-color: rgb(139, 29, 29);
+}
 
+#active p {
+  color: white;
+}
 
+.number p {
+  text-align: center;
+  color: rgb(139, 29, 29);
+  font-size: 20px;
+}
 
+/*=====================================Contact Us Page=================================================================*/
 
+.form {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f3f3;
+}
 
+#contactContainer {
+  background: white;
+  width: 1000px;
+  padding: 40px 0px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
 
+#contact {
+  flex: 0;
+}
 
+#contact #inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+#contact #inputs .input {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid black;
+  background: none;
+  height: 40px;
+  width: 300px;
+  font-size: 17px;
+}
 
+.input:focus {
+  outline: none;
+}
 
+#selectCity {
+  border-radius: 10px;
+  width: 304px;
+  height: 40px;
+  font-size: 17px;
+}
 
+#selectCity:focus {
+  outline: none;
+  border-radius: 10px 10px 0 0;
+}
 
+#selectCity:hover {
+  background-color: none;
+  cursor: pointer;
+}
 
+.city:hover {
+  cursor: pointer;
+}
 
+#message {
+  resize: none;
+  border-radius: 10px;
+  width: 282px;
+  height: 200px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  padding: 10px;
+}
 
+#formBtn {
+  background-color: rgb(139, 29, 29);
+  color: white;
+  font-size: 20px;
+  margin: 15px;
+  text-decoration: none;
+  padding: 10px;
+  font-size: large;
+  border-radius: 10px;
+  border: none;
+  width: 150px;
+  height: 45px;
+}
 
+#formBtn:hover {
+  background-color: white;
+  border: 2px solid rgb(139, 29, 29);
+  color: rgb(139, 29, 29);
+  cursor: pointer;
+}
 
+#contactAddress .adress-text {
+  max-width: 500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+  padding: 0;
+  text-align: center;
+}
 
+#contactAddress .adress-text h1 {
+  margin-bottom: 20px;
+  grid-column: 1 / -1;
+}
 
+#contactAddress iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+}
 
-
-
-
-
-
-
-
-/*===================================================================================================================*/
+/*==============================================Footer=====================================================================*/
 
 footer {
   bottom: 0;

@@ -29,57 +29,47 @@
     </header>
 
     <main>
-        <div class="form">
-            <fieldset>
-                <legend>Regjistrimi</legend>
-                <label for="emri">Emri</label>
-                <input type="text" name="" id="">
-                <br><br>
-                <label for="mbiemri">Mbiemri</label>
-                <input type="text" name="" id="">
-                <br><br>
-                <label for="email">Email</label>
-                <input type="email" name="" id="" value="email">
-                <br><br>
-                <label for="Mosha">Mosha</label>
-                <input type="number" name="" id="">
-                <br><br>
-                <label for="Ditelindja">Ditelindja</label>
-                <input type="date" name="data" id="" value="date">
-                <br><br>
-                <label for="sex">Male</label>
-                <input type="radio" name="gjinia" id="" value="male">
-                <label for="sex">Female</label>
-                <input type="radio" name="gjinia" id="" value="female">
-                <br>
-                <p>Zgjedh qytetin:</p>
-                <select name="qyteti" id="">
-                    <option value="prishtine">Prishtine</option>
-                    <option value="ferizaj">Ferizaj</option>
-                    <option value="prizren">Prizren</option>
-                </select>
-                <br><br>
-                <input type="submit" name="Regjistrohu" id="" value="Regjistrohu">
-            </fieldset>
-        </div>
-        
-        <section class="address-section" id="address">
-            <div class="address">
-                <div class="adress-text">
-                    <h1>Address: </h1>
-                    <p><strong>Dukagjini Center - UBT College</strong></p>
-                    <p>09:00 - 16:00</p>
-                    <p>Monday - Saturday</p>
-                    <br>
-                    <a href="contact.html" class="link" id="contactBtn">Contact Us</a>
+        <section class="form">
+            <div id="contactContainer">
+                <div id="contact">
+                    <form id="inputs">
+                        <input type="text" name="name" id="name" class="input" placeholder="Name"><br><br>
+                        <input type="text" name="lasname" id="lastname" class="input" placeholder="Lastname"><br><br>
+                        <input type="email" name="email" id="email" class="input" placeholder="Email"><br><br>
+
+                        <select name="city" id="selectCity">
+                            <option disabled selected hidden>Select a city...</option>
+                            <option class="city" value="prishtina">Prishtinë</option>
+                            <option class="city" value="mitrovica">Mitrovicë</option>
+                            <option class="city" value="peja">Peja</option>
+                            <option class="city" value="prizren">Prizren</option>
+                            <option class="city" value="ferizaj">Ferizaj</option>
+                            <option class="city" value="gjilan">Gjilan</option>
+                            <option class="city" value="gjakova">Gjakovë</option>
+                        </select><br><br>
+
+                        <textarea name="message" id="message" placeholder="Write your message..."></textarea><br><br>
+
+                        <input type="submit" name="sendMessage" id="formBtn" value="Send Message">
+                    </form>
                 </div>
 
-                <div class="map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2827.39399799628!2d21.14424977599555!3d42.65337687116712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549f3f9c98dcad%3A0x34f016cddf4a9928!2sDukagjini%20Center%2Cubt!5e1!3m2!1sen!2s!4v1763923900330!5m2!1sen!2s"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                <div id="contactAddress">
+                    <div class="adress-text">
+                        <h1>Address: </h1>
+                        <p><strong>Dukagjini Center - UBT College</strong></p>
+                        <p>09:00 - 16:00</p>
+                        <p>Rruga Xhevded Doda, Prishtina 10000</p>
+                        <p>Monday - Saturday</p>
+                    </div>
+
+                    <div class="map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2827.39399799628!2d21.14424977599555!3d42.65337687116712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549f3f9c98dcad%3A0x34f016cddf4a9928!2sDukagjini%20Center%2Cubt!5e1!3m2!1sen!2s!4v1763923900330!5m2!1sen!2s"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </section>
