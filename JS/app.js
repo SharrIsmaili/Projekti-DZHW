@@ -161,24 +161,4 @@ typeButtons.forEach((button, index) => {
 });
 
 
-/////
-
-const readMore = document.querySelectorAll(".readMore");
-
-
-readMore.forEach((readMore) => {
-    const text = readMore.parentElement.querySelector(".restOfText");
-    text.style.display = "none";
-
-    readMore.addEventListener("click", () => {
-        if (text.style.display === "none") {
-            text.style.display = "inline";
-            readMore.textContent = "Read less";
-        } else {
-            text.style.display = "none";
-            readMore.textContent = "Read more";
-        }
-    });
-
-})
 
