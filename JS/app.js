@@ -9,10 +9,10 @@ let count = 1;
 let size = container.clientWidth;
 let autoSlide;
 
-slide.style.transform = 'translateX(' + (-size * count ) +'px)';
+slide.style.transform = 'translateX(' + (-size * count) + 'px)';
 
 function startAutoSlide() {
-    autoSlide = setInterval(function(){
+    autoSlide = setInterval(function () {
         moveNext();
     }, 10000);
 }
@@ -22,55 +22,55 @@ function resetTimer() {
     startAutoSlide();
 }
 
-function moveNext(){
-    if(count >= images.length - 1) return;
+function moveNext() {
+    if (count >= images.length - 1) return;
     slide.style.transition = "transform 0.4s ease-in-out";
     count++;
-    slide.style.transform = 'translateX(' + (-size * count ) +'px)';
+    slide.style.transform = 'translateX(' + (-size * count) + 'px)';
 }
 
-function movePrev(){
-    if(count <= 0) return;
+function movePrev() {
+    if (count <= 0) return;
     slide.style.transition = "transform 0.4s ease-in-out";
     count--;
-    slide.style.transform = 'translateX(' + (-size * count ) +'px)';
+    slide.style.transform = 'translateX(' + (-size * count) + 'px)';
 }
 
-nextBtn.addEventListener('click', function(){
+nextBtn.addEventListener('click', function () {
     moveNext();
     resetTimer();
 });
 
-prevBtn.addEventListener('click', function(){
+prevBtn.addEventListener('click', function () {
     movePrev();
     resetTimer();
 });
 
-slide.addEventListener('transitionend', function(){
-    if(images[count].id === "last"){
+slide.addEventListener('transitionend', function () {
+    if (images[count].id === "last") {
         slide.style.transition = "none";
         count = images.length - 2;
-        slide.style.transform = 'translateX(' + (-size * count ) +'px)';
+        slide.style.transform = 'translateX(' + (-size * count) + 'px)';
     }
 
-    if(images[count].id === "first"){
+    if (images[count].id === "first") {
         slide.style.transition = "none";
         count = 1;
-        slide.style.transform = 'translateX(' + (-size * count ) +'px)';
+        slide.style.transform = 'translateX(' + (-size * count) + 'px)';
     }
 });
 
-window.addEventListener("resize", function(){
+window.addEventListener("resize", function () {
     size = container.clientWidth;
     slide.style.transform = 'translateX(' + (-size * count) + 'px)';
 });
 
 startAutoSlide();
 
-function updateMinusHeight(){
+function updateMinusHeight() {
     const navHeight = document.querySelector('#header').offsetHeight;
     const aboutHeight = document.querySelector('#aboutUs').offsetHeight;
-    
+
     const minus = navHeight + aboutHeight;
 
     document.documentElement.style.setProperty('--minus', minus + 'px');
@@ -87,10 +87,10 @@ const suggestionsBox = document.getElementById("searchSuggestions");
 const sectionTitles = [
     { id: "whoCanDonate", title: "Who Can Donate Blood" },
     { id: "donationProcess", title: "The donation Process & What to Expect" },
-    { id: "preparation", title: "Preparation"},
-    { id: "procedure", title: "The procedure"},
-    { id: "postDonation", title: "Post Donation Care"},
-    { id: "bloodTypes", title: "Blood Types"},
+    { id: "preparation", title: "Preparation" },
+    { id: "procedure", title: "The procedure" },
+    { id: "postDonation", title: "Post Donation Care" },
+    { id: "bloodTypes", title: "Blood Types" },
     { id: "address", title: "Address" }
 ];
 
@@ -153,9 +153,32 @@ typeButtons.forEach((button, index) => {
         const selectedVideo = videos[index + 1];
 
         selectedVideo.currentTime = 0;
-        selectedVideo.play();  
+        selectedVideo.play();
 
         videos[index + 1].classList.remove("hidden");
         videos[index + 1].classList.add("active");
     });
 });
+
+
+/////
+
+const readMore = document.querySelectorAll(".readMore");
+
+
+readMore.forEach((readMore) => {
+    const text = readMore.parentElement.querySelector(".restOfText");
+    text.style.display = "none";
+
+    readMore.addEventListener("click", () => {
+        if (text.style.display === "none") {
+            text.style.display = "inline";
+            readMore.textContent = "Read less";
+        } else {
+            text.style.display = "none";
+            readMore.textContent = "Read more";
+        }
+    });
+
+})
+
