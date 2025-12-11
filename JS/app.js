@@ -1,4 +1,5 @@
-//---------slider----------
+//-----------------------------Slider-------------------------------------------------------------------------------
+
 const slide = document.querySelector('.slide');
 const images = document.querySelectorAll('.sliderImg');
 const container = document.querySelector('.container');
@@ -82,7 +83,7 @@ updateMinusHeight();
 window.addEventListener('load', updateMinusHeight);
 window.addEventListener('resize', updateMinusHeight);
 
-//---------search bar------------
+//----------------------------Search Bar-------------------------------------------------------------------------------
 
 const searchBar = document.getElementById("searchBar");
 const suggestionsBox = document.getElementById("searchSuggestions");
@@ -143,7 +144,7 @@ searchBar.addEventListener("keydown", function (e) {
     }
 });
 
-//-------blood types videos---------
+//--------------------------Blood Types Videos--------------------------------------------------------------------------------
 
 const typeButtons = document.querySelectorAll("#bloodTypes .type");
 const videos = document.querySelectorAll("#bloodTypes video");
@@ -192,7 +193,7 @@ typeButtons.forEach((button, index) => {
     });
 });
 
-//------------------read more button-------------------
+//----------------------------Read More Button--------------------------------------------------------------------------------
 
 const readMore = document.querySelectorAll(".readMore");
 readMore.forEach((readMore) => {
