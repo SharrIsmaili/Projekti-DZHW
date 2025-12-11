@@ -229,7 +229,6 @@ html {
 
 .title h1 {
   color: #333;
-  font-family: 'Poppins', sans-serif;
   width: 100%;
   text-align: center;
   margin-top: 0;
@@ -269,10 +268,9 @@ html {
 }
 
 .card img {
-  border-radius: 3px;
   margin-bottom: 10px;
   height: 180px;
-  width: 90%;
+  width: 270px;
   object-fit: cover;
   padding: 15px;
   flex-shrink: 0;
@@ -594,15 +592,16 @@ iframe {
 .aboutText p {
   text-align: justify;
   line-height: 29px;
-  /* padding: 35px; */
-}
-.title h1{
-padding: 0;
-margin: 0;
 }
 
+.aboutTitle{
+  color: #333;
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 50px;
+}
 
-/* sidebar */
 #sidebar {
   width: auto;
   background: #f3f3f3;
@@ -619,7 +618,6 @@ margin: 0;
   display: none;
   margin-right: 20px;
 }
-
 
 #mainSections li {
   justify-content: center;
@@ -648,19 +646,23 @@ margin: 0;
   gap: 50px;
 }
 
-#doctors {
+.doctors {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 50px;
+  margin: 35px;
 }
 
-#nurses {
+.nurses {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 50px;
+  margin: 35px;
 }
+
+
 
 /*==============================================Footer=====================================================================*/
 
