@@ -327,12 +327,12 @@ html {
   text-align: start;
 }
 
-.info .text p{
+.info .text p {
   position: relative;
 }
 
-.info:nth-child(3) .text{
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, whitesmoke  100%);
+.info:nth-child(3) .text {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, whitesmoke 100%);
 }
 
 
@@ -346,12 +346,12 @@ html {
   border: 2px solid rgb(139, 29, 29);
 }
 
-.info:nth-child(3) .readMore{
+.info:nth-child(3) .readMore {
   background-color: whitesmoke;
   transition: 0.3s ease-in-out;
 }
 
-.info:nth-child(3) .readMore:hover{
+.info:nth-child(3) .readMore:hover {
   background-color: whitesmoke;
   background: rgb(139, 29, 29);
   color: whitesmoke;
@@ -381,7 +381,7 @@ html {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
 }
 
-.info:nth-child(3) .restOfText:after{
+.info:nth-child(3) .restOfText:after {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, whitesmoke 100%);
 }
 
@@ -581,52 +581,72 @@ iframe {
 
 /*========================================About Us==================================================================*/
 
-#aboutMain{
+#aboutMain {
   display: flex;
   align-items: flex-start;
   gap: 50px;
   justify-content: center;
 }
 
-#sidebar{
+.aboutText p {
+  text-align: justify;
+  line-height: 29px;
+  padding: 35px;
+}
+
+#sidebar {
   width: auto;
   background: #f3f3f3;
   padding: 20px;
   position: sticky;
   top: 100px;
   height: fit-content;
-  border-right: 1px solid #ccc;
   flex-shrink: 0;
+  border-radius: 5px;
+  margin: 50px;
 }
 
-#mainSections li{
-  padding-bottom: 10px;
+#subSections {
+  display: none;
+  margin-right: 20px;
 }
 
-#mainSections a{
+
+#mainSections li {
+  justify-content: center;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+#mainSections a {
   text-decoration: none;
   color: black;
   font-size: 20px;
 }
 
-#content{
+#mainSections a:hover {
+  text-decoration: underline;
+  color: rgb(139, 29, 29);
+}
+
+#content {
   width: 75%;
 }
 
-#staff{
+#staff {
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
 
-#doctors{
+#doctors {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 50px;
 }
 
-#nurses{
+#nurses {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
