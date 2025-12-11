@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VitalDrop | Contact</title>
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/form.css">
     <link rel="icon" type="image/x-icon" href="/images/Drop.png">
 </head>
 
-<body>
+<body id="top">
     <header id="header">
         <nav class="navbar">
-            <a href="home.html"><img src="/images/logo.png" alt="VitalDrop logo" id="logo"></a>
+            <a href="home.html"><img src="/images/logo.png" alt="VitalDrop Logo" id="logo"></a>
 
             <div class="links">
                 <a href="home.html" class="link">Home</a>
@@ -29,32 +29,32 @@
     </header>
 
     <main>
-        <section class="form">
-            <div id="contactContainer">
-                <div id="contact">
+        <section>
+            <div id="container">
+                <div id="left">
                     <form id="inputs">
-                        <input type="text" name="name" id="name" class="input" placeholder="Name"><br><br>
-                        <input type="text" name="lasname" id="lastname" class="input" placeholder="Lastname"><br><br>
-                        <input type="email" name="email" id="email" class="input" placeholder="Email"><br><br>
+                        <input type="text" name="name" id="name" class="input" placeholder="Name"><br>
+                        <input type="text" name="lasname" id="lastname" class="input" placeholder="Lastname"><br>
+                        <input type="email" name="email" id="email" class="input" placeholder="Email"><br>
 
                         <select name="city" id="selectCity">
                             <option disabled selected hidden>Select a city...</option>
                             <option class="city" value="prishtina">Prishtinë</option>
                             <option class="city" value="mitrovica">Mitrovicë</option>
-                            <option class="city" value="peja">Peja</option>
+                            <option class="city" value="peja">Pejë</option>
                             <option class="city" value="prizren">Prizren</option>
                             <option class="city" value="ferizaj">Ferizaj</option>
                             <option class="city" value="gjilan">Gjilan</option>
                             <option class="city" value="gjakova">Gjakovë</option>
-                        </select><br><br>
+                        </select><br>
 
-                        <textarea name="message" id="message" placeholder="Write your message..."></textarea><br><br>
+                        <textarea name="message" id="message" placeholder="Write your message..."></textarea><br>
 
                         <input type="submit" name="sendMessage" id="formBtn" value="Send Message">
                     </form>
                 </div>
 
-                <div id="contactAddress">
+                <div id="right">
                     <div class="adress-text">
                         <h1>Address: </h1>
                         <p><strong>Dukagjini Center - UBT College</strong></p>

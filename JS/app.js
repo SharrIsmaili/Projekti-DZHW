@@ -1,3 +1,4 @@
+//---------slider----------
 const slide = document.querySelector('.slide');
 const images = document.querySelectorAll('.sliderImg');
 const container = document.querySelector('.container');
@@ -81,6 +82,8 @@ updateMinusHeight();
 window.addEventListener('load', updateMinusHeight);
 window.addEventListener('resize', updateMinusHeight);
 
+//---------search bar------------
+
 const searchBar = document.getElementById("searchBar");
 const suggestionsBox = document.getElementById("searchSuggestions");
 
@@ -140,27 +143,56 @@ searchBar.addEventListener("keydown", function (e) {
     }
 });
 
+//-------blood types videos---------
+
 const typeButtons = document.querySelectorAll("#bloodTypes .type");
 const videos = document.querySelectorAll("#bloodTypes video");
 
+let autoResetTimer;
+
+function startAutoReset() {
+    autoResetTimer = setTimeout(() => {
+        videos.forEach(video => {
+            video.pause();
+            video.classList.remove("active");
+            video.classList.add("hidden");
+        });
+
+        const firstVideo = videos[0];
+        firstVideo.classList.remove("hidden");
+        firstVideo.classList.add("active");
+        firstVideo.currentTime = 0;
+        firstVideo.play();
+    }, 15000);
+}
+
+function resetTimer() {
+    clearTimeout(autoResetTimer);
+    startAutoReset();
+}
+
+startAutoReset();
+
 typeButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
+        resetTimer();
+
         videos.forEach(video => {
+            video.pause();
             video.classList.remove("active");
             video.classList.add("hidden");
         });
 
         const selectedVideo = videos[index + 1];
-
         selectedVideo.currentTime = 0;
         selectedVideo.play();
 
-        videos[index + 1].classList.remove("hidden");
-        videos[index + 1].classList.add("active");
+        selectedVideo.classList.remove("hidden");
+        selectedVideo.classList.add("active");
     });
 });
 
-//---read more button
+//------------------read more button-------------------
 
 const readMore = document.querySelectorAll(".readMore");
 readMore.forEach((readMore) => {
