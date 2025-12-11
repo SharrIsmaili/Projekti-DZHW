@@ -587,13 +587,22 @@ iframe {
   gap: 50px;
   justify-content: center;
 }
+.aboutText{
+  margin: 35px;
+}
 
 .aboutText p {
   text-align: justify;
   line-height: 29px;
-  padding: 35px;
+  /* padding: 35px; */
+}
+.title h1{
+padding: 0;
+margin: 0;
 }
 
+
+/* sidebar */
 #sidebar {
   width: auto;
   background: #f3f3f3;
