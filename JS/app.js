@@ -196,10 +196,14 @@ typeButtons.forEach((button, index) => {
 //----------------------------Read More Button--------------------------------------------------------------------------------
 
 const readMore = document.querySelectorAll(".readMore");
+
 readMore.forEach((readMore) => {
+
     const text = readMore.previousElementSibling;
+
     text.style.maxHeight = "90px";
     text.style.overflow = "hidden";
+
     readMore.addEventListener("click", () => {
         if (text.style.maxHeight === "90px") {
             text.style.maxHeight = text.scrollHeight + "px";
