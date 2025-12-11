@@ -312,28 +312,72 @@ body {
   width: 500px;
   text-align: justify;
   display: inline;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
 }
 
 .text h1 {
   text-align: start;
 }
-
-
-.read-more-button {
-  border-radius: 10px;
-  border: none;
-  background-color: rgb(139, 29, 29);
-  color: whitesmoke;
-  padding: 15px;
-  font-size: 15px;
-  position: absolute;
+.text p{
+  position: relative;
 }
 
-.read-more-button:hover {
+.info:nth-child(3) .text{
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, whitesmoke  100%);
+}
+
+
+.readMore {
+  border-radius: 10px;
+  background-color: white;
+  color: rgb(139, 29, 29);
+  padding: 15px;
+  font-size: 20px;
+  position: absolute;
+  border: 2px solid rgb(139, 29, 29);
+}
+
+.info:nth-child(3) .readMore{
+  background-color: whitesmoke;
+}
+
+.info:nth-child(3) .readMore:hover{
+  background-color: whitesmoke;
+  background: rgb(139, 29, 29);
+  color: whitesmoke;
+  transition: 0.3s ease;
+}
+
+.readMore:focus {
+  outline: none;
+}
+
+.readMore:hover {
   cursor: pointer;
 }
 
+.restOfText {
+  max-height: 60px;
+  transition: all 0.5s ease;
 
+}
+
+.restOfText:after {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  content: "";
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
+  transition: opacity 0.3s ease;
+}
+
+.info:nth-child(3) .restOfText:after{
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, whitesmoke 100%);
+}
 
 .process-img {
   width: 470px;

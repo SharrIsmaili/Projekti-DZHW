@@ -160,5 +160,24 @@ typeButtons.forEach((button, index) => {
     });
 });
 
+//---read more button
 
-
+const readMore = document.querySelectorAll(".readMore");
+readMore.forEach((readMore) => {
+    const text = readMore.previousElementSibling;
+    text.style.maxHeight = "90px";
+    text.style.overflow = "hidden";
+    readMore.addEventListener("click", () => {
+        if (text.style.maxHeight === "90px") {
+            text.style.maxHeight = text.scrollHeight + "px";
+            text.style.overflow = "visible";
+            readMore.textContent = "Read Less";
+            text.style.position = "static";
+        } else {
+            text.style.maxHeight = "90px"
+            text.style.overflow = "hidden";
+            readMore.textContent = "Read More";
+            text.style.position = "relative";
+        }
+    });
+});
