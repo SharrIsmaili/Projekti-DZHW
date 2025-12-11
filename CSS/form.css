@@ -5,10 +5,10 @@ html {
 }
 
 body{
-    background-color: whitesmoke;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    min-height: calc(100vh - 72px);
+  background-color: whitesmoke;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  min-height: calc(100vh - 72px);
 }
 
 /*===================================Nav Bar===========================================================================*/
@@ -45,12 +45,12 @@ body{
   padding: 10px;
   font-size: large;
   border-radius: 10px;
+  transition: 0.3s ease-in-out;
 }
 
 .link:hover {
   background: rgb(139, 29, 29);
   color: white;
-  transition: 0.3s ease;
 }
 
 #logo {
@@ -110,54 +110,54 @@ body{
 /*======================================body===========================================================================*/
 
 main{
-    height: calc(100vh - 74px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: calc(100vh - 74px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #container{
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 .left{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 50px 0px 50px 100px;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 0px 50px 100px;
+  align-items: center;
 }
 
 .left img{
-    width: 200px;
+  width: 200px;
 }
 
 #inputs{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 100px 100px 100px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 100px 100px 100px;
 }
 
 .input{
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-bottom: 1px solid black;
-    background: none;
-    height: 40px;
-    width: 300px;
-    font-size: 17px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid black;
+  background: none;
+  height: 40px;
+  width: 300px;
+  font-size: 17px;
 }
 
 .input:focus{
-    outline: none;
+  outline: none;
 }
 
 #formBtn{
@@ -172,6 +172,7 @@ main{
   border: none;
   width: auto;
   height: 45px;
+  transition: all 0.3s ease-in-out;
 }
 
 #formBtn:hover{
@@ -182,16 +183,16 @@ main{
 }
 
 #hasAccount{
-    text-decoration: none;
-    color: rgb(108, 108, 108);
+  text-decoration: none;
+  color: rgb(108, 108, 108);
 }
 
 #hasAccount:hover{
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #right{
-    padding: 50px 100px 100px 0px;
+  padding: 50px 100px 100px 0px;
 }
 
 /*====================================Contact Us Specials========================================================================*/
@@ -354,9 +355,9 @@ footer h2 {
 
 .social-icons {
   width: 50px;
+  transition: 0.125s ease-in-out;
 }
 
 .social-icons:hover {
   width: 53px;
-  transition: 0.125s ease-in-out;
 }
