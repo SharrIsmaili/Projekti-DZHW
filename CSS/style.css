@@ -313,7 +313,7 @@ html {
   box-shadow: none;
 }
 
-.text {
+.info .text {
   margin: 100px;
   align-items: start;
   width: 500px;
@@ -323,10 +323,11 @@ html {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
 }
 
-.text h1 {
+.info .text h1 {
   text-align: start;
 }
-.text p{
+
+.info .text p{
   position: relative;
 }
 
@@ -576,6 +577,60 @@ iframe {
   text-align: center;
   color: rgb(139, 29, 29);
   font-size: 20px;
+}
+
+/*========================================About Us==================================================================*/
+
+#aboutMain{
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  justify-content: center;
+}
+
+#sidebar{
+  width: auto;
+  background: #f3f3f3;
+  padding: 20px;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  border-right: 1px solid #ccc;
+  flex-shrink: 0;
+}
+
+#mainSections li{
+  padding-bottom: 10px;
+}
+
+#mainSections a{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+#content{
+  width: 75%;
+}
+
+#staff{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+#doctors{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+#nurses{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 50px;
 }
 
 /*==============================================Footer=====================================================================*/
