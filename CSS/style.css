@@ -667,7 +667,17 @@ iframe {
   height: 20px;
 }
 
-/*==============================================locations hero images =====================================================================*/
+/*==============================================Locations=====================================================================*/
+#locationsMain{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hospital{
+  width: 97%;
+}
+
 .hospital-img {
   position: relative;
   width: 100%;
@@ -679,7 +689,6 @@ iframe {
 }
 
 .hospital-img img {
-  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -687,12 +696,52 @@ iframe {
 }
 
 .hospital-img h2 {
+  position: absolute;
   color: white;
   font-size: 50px;
   font-weight: 600;
   text-shadow: 0 3px 8px rgba(59, 59, 59, 0.8);
   z-index: 1;
-  margin-top: 170px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+}
+
+.cityBtn{
+  background-color: rgb(139, 29, 29);
+  border: 2px solid rgb(139, 29, 29);
+  text-decoration: none;
+  color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.cityBtn:hover{
+  background-color: whitesmoke;
+  color: rgb(139, 29, 29);
+}
+
+.hospital .card:hover{
+  transform: none;
+  cursor: default;
+}
+
+.appointment{
+  background-color: white;
+  border: 2px solid rgb(139, 29, 29);
+  text-decoration: none;
+  color: rgb(139, 29, 29);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.appointment:hover{
+  background-color: rgb(139, 29, 29);
+  color: white;
 }
 
 /*==============================================Footer=====================================================================*/
