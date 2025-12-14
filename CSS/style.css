@@ -585,7 +585,8 @@ iframe {
   gap: 50px;
   justify-content: center;
 }
-.aboutText{
+
+.aboutText {
   margin: 35px;
 }
 
@@ -594,7 +595,7 @@ iframe {
   line-height: 29px;
 }
 
-.aboutTitle{
+.aboutTitle {
   color: #333;
   width: 100%;
   text-align: center;
@@ -662,7 +663,7 @@ iframe {
   margin: 35px;
 }
 
-.star{
+.star {
   width: 20px;
   height: 20px;
 }
