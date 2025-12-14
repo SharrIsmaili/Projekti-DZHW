@@ -56,6 +56,7 @@ html {
 .link:hover {
   background: rgb(139, 29, 29);
   color: white;
+  cursor: pointer;
 }
 
 #logo {
@@ -583,7 +584,7 @@ iframe {
   display: flex;
   align-items: flex-start;
   gap: 50px;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .aboutText {
@@ -599,8 +600,7 @@ iframe {
   color: #333;
   width: 100%;
   text-align: center;
-  margin-top: 0;
-  padding-top: 50px;
+  margin-top: 70px;
 }
 
 #sidebar {
@@ -608,11 +608,10 @@ iframe {
   background: #f3f3f3;
   padding: 20px;
   position: sticky;
-  top: 100px;
-  height: fit-content;
+  top: 60px;
+  height: 100vh;
   flex-shrink: 0;
   border-radius: 5px;
-  margin: 50px;
 }
 
 #subSections {
@@ -666,6 +665,45 @@ iframe {
 .star {
   width: 20px;
   height: 20px;
+}
+
+/*==============================================Locations==================================================================*/
+
+.cityBtn{
+  background-color: rgb(139, 29, 29);
+  border: 2px solid rgb(139, 29, 29);
+  text-decoration: none;
+  color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.cityBtn:hover{
+  background-color: whitesmoke;
+  color: rgb(139, 29, 29);
+}
+
+.hospital .card:hover{
+  transform: none;
+  cursor: default;
+}
+
+.appointment{
+  background-color: white;
+  border: 2px solid rgb(139, 29, 29);
+  text-decoration: none;
+  color: rgb(139, 29, 29);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.appointment:hover{
+  background-color: rgb(139, 29, 29);
+  color: white;
 }
 
 /*==============================================Footer=====================================================================*/
