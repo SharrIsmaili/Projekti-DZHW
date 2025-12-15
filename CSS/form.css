@@ -1,3 +1,7 @@
+:root{
+  --red: rgb(139, 29, 29);
+}
+
 html {
   scroll-behavior: smooth;
   margin: 0;
@@ -21,7 +25,7 @@ body{
 }
 
 .navbar {
-  background: rgb(245, 245, 245);
+  background: whitesmoke;
   padding: 5px 25px 5px 50px;
   display: flex;
   align-items: center;
@@ -48,7 +52,7 @@ body{
 }
 
 .link:hover {
-  background: rgb(139, 29, 29);
+  background: var(--red);
   color: white;
   cursor: pointer;
 }
@@ -69,12 +73,12 @@ body{
   padding: 3px 10px;
   height: 30px;
   border-radius: 10px;
-  border: 2px solid rgb(139, 29, 29);
+  border: 2px solid var(--red);
   background-color: whitesmoke;
 }
 
 #searchBar:focus {
-  border: 3px solid rgb(139, 29, 29);
+  border: 3px solid var(--red);
   outline: none;
 }
 
@@ -101,7 +105,8 @@ body{
 }
 
 #contactBtn {
-  background-color: rgb(139, 29, 29);
+  background-color: var(--red);
+  border: 2px solid var(--red);
   color: whitesmoke;
   font-size: 20px;
   margin: 15px;
@@ -109,8 +114,7 @@ body{
 
 #contactBtn:hover {
   background-color: whitesmoke;
-  border: 2px solid rgb(139, 29, 29);
-  color: rgb(139, 29, 29);
+  color: var(--red);
 }
 
 #profile{
@@ -151,7 +155,7 @@ main{
   background: none;
   border: none;
   width: 50px;
-  color: rgb(139, 29, 29);
+  color: var(--red);
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -195,9 +199,8 @@ main{
 }
 
 #formBtn{
-  background-color: rgb(139, 29, 29);
+  background-color: var(--red);
   color: white;
-  font-size: 20px;
   margin: 15px;
   text-decoration: none;
   padding: 10px;
@@ -211,8 +214,8 @@ main{
 
 #formBtn:hover{
   background-color: white;
-  border: 2px solid rgb(139, 29, 29);
-  color: rgb(139, 29, 29);
+  border: 2px solid var(--red);
+  color: var(--red);
   cursor: pointer;
 }
 
@@ -296,14 +299,14 @@ footer {
   padding-right: 170px;
   padding-bottom: 5px;
   position: relative;
-  border-top: 1px solid rgb(139, 29, 29);
+  border-top: 1px solid var(--red);
 }
 
 #backToTop {
   position: absolute;
   top: -22px;
   right: 0;
-  background: rgb(139, 29, 29);
+  background: var(--red);
   color: white;
   border: none;
   padding: 10px 20px;
