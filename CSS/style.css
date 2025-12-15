@@ -632,10 +632,6 @@ iframe {
   border-radius: 5px;
 }
 
-/* .sidebar{
-  position: sticky;
-}  */
-
 #subSections {
   display: none;
   margin-right: 20px;
@@ -697,7 +693,6 @@ iframe {
 }
 
 /*==============================================Locations=====================================================================*/
-<<<<<<< Updated upstream
 
 #map-hero{
   margin-bottom: 50px;
@@ -739,8 +734,6 @@ iframe {
   color: var(--red);
 }
 
-=======
->>>>>>> Stashed changes
 #locationsMain {
   display: flex;
   flex-direction: column;
@@ -819,11 +812,7 @@ iframe {
 }
 
 .appointment:hover {
-<<<<<<< Updated upstream
   background-color: var(--red);
-=======
-  background-color: rgb(139, 29, 29);
->>>>>>> Stashed changes
   color: white;
 }
 

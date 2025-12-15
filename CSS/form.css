@@ -144,12 +144,11 @@ main {
   justify-content: center;
   align-items: center;
   gap: 50px;
-<<<<<<< Updated upstream
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   position: relative;
 }
 
-#backArrow {
+.register-container #backArrow {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -161,15 +160,21 @@ main {
   transition: all 0.2s ease;
 }
 
+.login-container #backArrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  width: 50px;
+  color: var(--red);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 #backArrow:hover {
   transform: scale(1.1);
 }
 
-=======
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
->>>>>>> Stashed changes
 .left {
   display: flex;
   flex-direction: column;
@@ -204,13 +209,8 @@ main {
   outline: none;
 }
 
-<<<<<<< Updated upstream
 #formBtn{
   background-color: var(--red);
-=======
-#formBtn {
-  background-color: rgb(139, 29, 29);
->>>>>>> Stashed changes
   color: white;
   margin: 15px;
   text-decoration: none;
