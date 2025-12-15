@@ -632,6 +632,10 @@ iframe {
   border-radius: 5px;
 }
 
+/* .sidebar{
+  position: sticky;
+}  */
+
 #subSections {
   display: none;
   margin-right: 20px;
@@ -672,6 +676,13 @@ iframe {
   margin: 35px;
 }
 
+.section .card {
+  width: 400px;
+}
+
+.section .card img{
+  width:360px;
+}
 .nurses {
   display: flex;
   justify-content: space-around;
@@ -727,13 +738,13 @@ iframe {
   color: var(--red);
 }
 
-#locationsMain{
+#locationsMain {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.hospital{
+.hospital {
   width: 100%;
 }
 
@@ -767,16 +778,33 @@ iframe {
   padding: 0;
 }
 
-.hospital .card:hover{
+.cityBtn {
+  background-color: rgb(139, 29, 29);
+  border: 2px solid rgb(139, 29, 29);
+  text-decoration: none;
+  color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.cityBtn:hover {
+  background-color: whitesmoke;
+  color: rgb(139, 29, 29);
+}
+
+.hospital .card:hover {
   transform: none;
   cursor: default;
 }
 
-.hospital .card{
+.hospital .card {
   padding-bottom: 35px;
+  width: 500px;
 }
 
-.appointment{
+.appointment {
   background-color: white;
   border: 2px solid var(--red);
   text-decoration: none;
@@ -787,7 +815,7 @@ iframe {
   transition: all 0.2s ease-in-out;
 }
 
-.appointment:hover{
+.appointment:hover {
   background-color: var(--red);
   color: white;
 }

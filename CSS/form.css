@@ -8,7 +8,7 @@ html {
   padding: 0;
 }
 
-body{
+body {
   background-color: whitesmoke;
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -130,14 +130,14 @@ body{
 
 /*======================================body===========================================================================*/
 
-main{
+main {
   height: calc(100vh - 74px);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#container{
+#container {
   background-color: white;
   border-radius: 10px;
   display: flex;
@@ -164,7 +164,7 @@ main{
   transform: scale(1.1);
 }
 
-.left{
+.left {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -172,18 +172,18 @@ main{
   align-items: center;
 }
 
-.left img{
+.left img {
   width: 200px;
 }
 
-#inputs{
+#inputs {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 100px 100px 100px 100px;
 }
 
-.input{
+.input {
   border-left: none;
   border-right: none;
   border-top: none;
@@ -194,7 +194,7 @@ main{
   font-size: 17px;
 }
 
-.input:focus{
+.input:focus {
   outline: none;
 }
 
@@ -212,29 +212,39 @@ main{
   transition: all 0.3s ease-in-out;
 }
 
-#formBtn:hover{
+#formBtn:hover {
   background-color: white;
   border: 2px solid var(--red);
   color: var(--red);
   cursor: pointer;
 }
 
-#hasAccount{
+#hasAccount {
   text-decoration: none;
   color: rgb(108, 108, 108);
 }
 
-#hasAccount:hover{
+#hasAccount:hover {
   text-decoration: underline;
 }
 
-#right{
+#right {
   padding: 50px 100px 100px 0px;
 }
 
 /*====================================Contact Us Specials========================================================================*/
 
+.contact-form {
+  padding: 100px;
+}
 
+.register-container {
+  margin-top: 60px;
+}
+
+.contact-container{
+  margin: 90px;
+}
 
 #selectCity {
   border-radius: 10px;
@@ -282,7 +292,7 @@ main{
   grid-column: 1 / -1;
 }
 
-iframe{
+iframe {
   width: 400px;
   height: 300px;
   border-radius: 10px;
