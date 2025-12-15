@@ -102,3 +102,22 @@ if (contactForm) {
         //  contactForm.reset()
     });
 }
+
+//-------------------------------Back Button-----------------------------------------------------------------------------------------
+
+document.addEventListener("DOMContentLoaded", function () {
+    const backBtn = document.getElementById("backArrow");
+
+    if (!backBtn) {
+        console.error("Back button not found");
+        return;
+    }
+
+    backBtn.addEventListener("click", function () {
+        if (window.history.length > 1) {
+            window.history.back();
+        } else {
+            window.location.href = "home.html";
+        }
+    });
+});
