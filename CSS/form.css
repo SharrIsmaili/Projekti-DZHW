@@ -22,14 +22,13 @@ body{
 
 .navbar {
   background: rgb(245, 245, 245);
-  padding: 5px 80px;
+  padding: 5px 25px 5px 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.links,
-.util {
+.links{
   display: flex;
   align-items: center;
   gap: 40px;
@@ -45,18 +44,25 @@ body{
   padding: 10px;
   font-size: large;
   border-radius: 10px;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .link:hover {
   background: rgb(139, 29, 29);
   color: white;
+  cursor: pointer;
 }
 
 #logo {
   width: 100px;
   height: auto;
   background: none;
+}
+
+.right-side{
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 #searchBar {
@@ -107,6 +113,17 @@ body{
   color: rgb(139, 29, 29);
 }
 
+#profile{
+  width: 40px;
+  height: 40px;
+}
+
+#profile img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 /*======================================body===========================================================================*/
 
 main{
@@ -124,6 +141,23 @@ main{
   align-items: center;
   gap: 50px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+#backArrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  width: 50px;
+  color: rgb(139, 29, 29);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#backArrow:hover {
+  transform: scale(1.1);
 }
 
 .left{
