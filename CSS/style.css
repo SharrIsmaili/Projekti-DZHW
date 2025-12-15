@@ -697,6 +697,7 @@ iframe {
 }
 
 /*==============================================Locations=====================================================================*/
+<<<<<<< Updated upstream
 
 #map-hero{
   margin-bottom: 50px;
@@ -738,6 +739,7 @@ iframe {
   color: var(--red);
 }
 
+=======
 #locationsMain {
   display: flex;
   flex-direction: column;
@@ -816,7 +818,9 @@ iframe {
 }
 
 .appointment:hover {
+<<<<<<< Updated upstream
   background-color: var(--red);
+=======
   color: white;
 }
 
