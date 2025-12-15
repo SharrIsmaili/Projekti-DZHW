@@ -740,6 +740,7 @@ iframe {
 }
 
 =======
+>>>>>>> Stashed changes
 #locationsMain {
   display: flex;
   flex-direction: column;
@@ -821,6 +822,8 @@ iframe {
 <<<<<<< Updated upstream
   background-color: var(--red);
 =======
+  background-color: rgb(139, 29, 29);
+>>>>>>> Stashed changes
   color: white;
 }
 
