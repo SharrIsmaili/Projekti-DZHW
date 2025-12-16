@@ -5,119 +5,149 @@ if (registerForm) {
     registerForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const lastname = document.getElementById("lastname").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value.trim();
+        const name = document.getElementById("register-name");
+        const lastname = document.getElementById("register-lastname");
+        const email = document.getElementById("register-email");
+        const password = document.getElementById("register-password");
+        const confirmPassword = document.getElementById("register-confirmPassword");
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const nameRegex = /^[a-zA-Z0-9._-]{3,20}$/;
+        const lastnameRegex = /^[a-zA-Z0-9._-]{3,20}$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
-        if (!name || !lastname || !email || !password) {
-            alert("Please fill in all fields.");
-            return;
+        const nameError = document.getElementById('nameError');
+        const lastNameError = document.getElementById('lastNameError');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+        const confirmError = document.getElementById('confirmError');
+        const formSuccess = document.getElementById('formSuccess');
+
+        function clearErrors() {
+            [nameError, lastNameError, emailError, passwordError, confirmError, formSuccess].forEach(el => el.textContent = "");
         }
 
-        if (!emailRegex.test(email)) {
-            alert("Please enter a valid email address.");
-            return;
+        function validateRegister() {
+            let valid = true;
+            clearErrors();
+
+            if (!nameRegex.test(name.value.trim())) {
+                nameError.textContent = "Invalid name (3-20 characters).";
+                valid = false;
+            }
+            if (!lastnameRegex.test(lastname.value.trim())) {
+                lastNameError.textContent = "Invalid lastname (3-20 characters).";
+                valid = false;
+            }
+            if (!emailRegex.test(email.value.trim())) {
+                emailError.textContent = "Invalid email address!";
+                valid = false;
+            }
+            if (!passwordRegex.test(password.value.trim())) {
+                passwordError.textContent = "Invalid password! (0-9, Az, $..)";
+                valid = false;
+            }
+            if (password.value !== confirmPassword.value) {
+                confirmError.textContent = "Passwords do not match.";
+                valid = false;
+            }
+            return valid;
+
         }
 
-        if (password.length < 6) {
-            alert("Password must be at least 6 characters long.");
-            return;
+        if (validateRegister()) {
+            formSuccess.textContent = "Registration successful!";
+            registerForm.reset();
         }
-        console.log("Register Form Data:", { name, lastname, email, password });
-        // registerForm.submit();
+        ////////////
     });
+
 }
 
 // ===================== LOGIN =====================
 const loginForm = document.getElementById("login-form");
 
 if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
+    const email = document.getElementById("login-email");
+    const password = document.getElementById("login-password");
+
+    const emailError = document.getElementById("loginEmailError");
+    const passwordError = document.getElementById("loginPasswordError");
+    const success = document.getElementById("loginSuccess");
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const passwordRegex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+    function clearErrors() {
+        [emailError, passwordError, success].forEach(el => el.textContent = "");
+    }
+
+    function validateLogin() {
+        let valid = true;
+        clearErrors();
+
+        if (!emailRegex.test(email.value.trim())) {
+            emailError.textContent = "Invalid email.";
+            valid = false;
+        }
+
+        if (!passwordRegex.test(password.value)) {
+            passwordError.textContent = "Invalid password.";
+            valid = false;
+        }
+
+        return valid;
+    }
+
+    loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value.trim();
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!email || !password) {
-            alert("Please fill in all fields.");
-            return;
+        if (validateLogin()) {
+            success.textContent = "Login successful!";
+            loginForm.reset();
         }
-
-        if (!emailRegex.test(email)) {
-            alert("Please enter a valid email address.");
-            return;
-        }
-
-        if (password.length < 6) {
-            alert("Invalid password.");
-            return;
-        }
-        console.log("Login Form Data:", { email, password });
-        // loginForm.submit();
     });
 }
 
 // ===================== CONTACT =====================
-const contactForm = document.getElementById("contact-form");
+const inputs = document.getElementById("inputs");
 
-if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
+if (inputs) {
+    const name = document.getElementById("contact-name");
+    const lastname = document.getElementById("contact-lastname");
+    const email = document.getElementById("contact-email");
+    const city = document.getElementById("selectCity");
+    const message = document.getElementById("message");
+
+    const emailError = document.getElementById("contactEmailError");
+    const cityError = document.getElementById("cityError");
+    const msgError = document.getElementById("msgError");
+    const success = document.getElementById("msgSuccess");
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    inputs.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const lastname = document.getElementById("lastname").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const city = document.getElementById("selectCity").value;
-        const message = document.getElementById("message").value.trim();
+        [emailError, cityError, msgError, success].forEach(el => el.textContent = "");
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!name || !lastname || !email || !message) {
-            alert("Please fill in all fields.");
+        if (!emailRegex.test(email.value.trim())) {
+            emailError.textContent = "Invalid email.";
             return;
         }
 
-        if (!emailRegex.test(email)) {
-            alert("Please enter a valid email address.");
+        if (!city.value) {
+            cityError.textContent = "Please select a city.";
             return;
         }
 
-        if (!city) {
-            alert("Please select a city.");
+        if (message.value.trim().length < 10) {
+            msgError.textContent = "Message must be at least 10 characters.";
             return;
         }
 
-        if (message.length < 10) {
-            alert("Message must be at least 10 characters long.");
-            return;
-        }
-
-        alert("Message sent successfully!");
-        console.log("Contact Form Data:", { name, lastname, email, city, message });
-        //  contactForm.reset()
+        success.textContent = "Message sent successfully!";
+        inputs.reset();
     });
 }
-
-//-------------------------------Back Button-----------------------------------------------------------------------------------------
-
-document.addEventListener("DOMContentLoaded", function () {
-    const backBtn = document.getElementById("backArrow");
-
-    if (!backBtn) {
-        console.error("Back button not found");
-        return;
-    }
-
-    backBtn.addEventListener("click", function () {
-        if (window.history.length > 1) {
-            window.history.back();
-        } else {
-            window.location.href = "home.html";
-        }
-    });
-});

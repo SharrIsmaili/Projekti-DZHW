@@ -16,16 +16,21 @@
             <img src="/images/icons/backBtn.png" alt="Back Button" id="backArrow">
 
             <div id="left">
+                <img src="/images/vital-drop/Drop.png" alt="Logo" draggable="false">
                 <img src="/images/vital-drop/VitalDrop.png" alt="Vital Drop Text" draggable="false">
             </div>
 
             <div id="right">
                 <form action="home.html" id="login-form">
                     <div id="inputs">
-                        <input type="text" name="email" id="email" class="input" placeholder="Email"><br>
-                        <input type="password" name="password" id="password" class="input" placeholder="Password"><br>
-
+                        <input type="text" name="email" id="login-email" class="input" placeholder="Email">
+                        <div id="loginEmailError" class="error" aria-live="polite"></div>
+                        <br>
+                        <input type="password" name="password" id="login-password" class="input" placeholder="Password">
+                        <div id="loginPasswordError" class="error" aria-live="polite"></div>
+                        <br>
                         <input type="submit" value="Log In" id="formBtn"><br>
+                        <div id="loginSuccess" class="success" role="status" aria-live="polite"></div>
 
                         <a href="register.html" id="hasAccount">Don't have an account?</a>
                     </div>
@@ -37,8 +42,7 @@
 
 
     <script src="/JS/forms.js"></script>
-
+    <script src="/JS/app.js"></script>
 </body>
-<script src="/JS/app.js"></script>
 
 </html>

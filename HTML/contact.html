@@ -10,7 +10,7 @@
 </head>
 
 <body id="top">
-   <header id="header">
+    <header id="header">
         <nav class="navbar">
             <a href="home.html"><img src="/images/vital-drop/logo.png" alt="VitalDrop logo" id="logo"></a>
 
@@ -41,9 +41,12 @@
             <div id="container" class="contact-container">
                 <div id="left">
                     <form id="inputs">
-                        <input type="text" name="name" id="name" class="input" placeholder="Name"><br>
-                        <input type="text" name="lasname" id="lastname" class="input" placeholder="Lastname"><br>
-                        <input type="email" name="email" id="email" class="input" placeholder="Email"><br>
+                        <input type="text" name="name" id="contact-name" class="input" placeholder="Name"><br>
+                        <input type="text" name="lasname" id="contact-lastname" class="input"
+                            placeholder="Lastname"><br>
+                        <input type="email" name="email" id="contact-email" class="input" placeholder="Email"><br>
+                        <div id="contactEmailError" class="error" aria-live="polite"></div>
+
 
                         <select name="city" id="selectCity">
                             <option disabled selected hidden>Select a city...</option>
@@ -55,10 +58,17 @@
                             <option class="city" value="gjilan">Gjilan</option>
                             <option class="city" value="gjakova">Gjakovë</option>
                         </select><br>
+                        <div id="cityError" class="error" aria-live="polite"></div>
 
-                        <textarea name="message" id="message" placeholder="Write your message..."></textarea><br>
+
+                        <textarea name="message" id="message"
+                            placeholder="Write your message..."></textarea><br>
+                        <div id="msgError" class="error" aria-live="polite"></div>
+
 
                         <input type="submit" name="sendMessage" id="formBtn" value="Send Message">
+                        <div id="msgSuccess" class="success" role="status" aria-live="polite"></div>
+
                     </form>
                 </div>
 
@@ -152,7 +162,9 @@
             &copy; Copyright Elsa Rizani & Sharr Ismaili | <a href="#" style="color: #333;">Privacy Policy</a>
         </div>
     </footer>
+
     <script src="/JS/forms.js"></script>
+    <script src="/JS/app.js"></script>
 </body>
 
 </html>
