@@ -91,14 +91,28 @@ const searchBar = document.getElementById("searchBar");
 const suggestionsBox = document.getElementById("searchSuggestions");
 
 if(searchBar && suggestionsBox){
-    const sectionTitles = [
-        { id: "whoCanDonate", title: "Who Can Donate Blood" },
-        { id: "donationProcess", title: "The donation Process & What to Expect" },
-        { id: "preparation", title: "Preparation" },
-        { id: "procedure", title: "The procedure" },
-        { id: "postDonation", title: "Post Donation Care" },
-        { id: "bloodTypes", title: "Blood Types" },
-        { id: "address", title: "Address" }
+    const siteSearchIndex = [
+        { id: "whoCanDonate", page:"home.html", title: "Who Can Donate Blood" },
+        { id: "donationProcess", page:"home.html", title: "The donation Process & What to Expect" },
+        { id: "preparation", page:"home.html", title: "Preparation" },
+        { id: "procedure", page:"home.html", title: "The procedure" },
+        { id: "postDonation", page:"home.html", title: "Post Donation Care" },
+        { id: "bloodTypes", page:"home.html", title: "Blood Types" },
+        { id: "address", page:"home.html", title: "Address" },
+        { id: "ourStory", page: "aboutUs.html", title: "Our Story"},
+        { id: "founders", page: "aboutUs.html", title: "The Founders"},
+        { id: "staff", page: "aboutUs.html", title: "Medical Staff"},
+        { id: "doctors", page: "aboutUs.html", title: "Doctors"},
+        { id: "nurses", page: "aboutUs.html", title: "Nurses"},
+        { id: "comments", page: "aboutUs.html", title: "Comments"},
+        { id: "usNow", page: "aboutUs.html", title: "Where We Are Now"},
+        { id: "prishtine", page: "our-locations.html", title: "Prishtine"},
+        { id: "mitrovice", page: "our-locations.html", title: "Mitrovice"},
+        { id: "peje", page: "our-locations.html", title: "Peje"},
+        { id: "prizren", page: "our-locations.html", title: "Prizren"},
+        { id: "ferizaj", page: "our-locations.html", title: "Ferizaj"},
+        { id: "gjilan", page: "our-locations.html", title: "Gjilan"},
+        { id: "gjakove", page: "our-locations.html", title: "Gjakove"}
     ];
 
     searchBar.addEventListener("input", () => {
@@ -106,46 +120,54 @@ if(searchBar && suggestionsBox){
         suggestionsBox.innerHTML = "";
         suggestionsBox.style.display = "none";
 
-        if (query.length < 1) return;
+        if (!query) return;
 
-        const matches = sectionTitles.filter(item =>
+        const matches = siteSearchIndex.filter(item =>
             item.title.toLowerCase().includes(query)
         );
 
-        if (matches.length === 0) return;
+        if (!matches.length) return;
 
         suggestionsBox.style.display = "block";
 
         matches.forEach(match => {
             const div = document.createElement("div");
             div.textContent = match.title;
-            div.addEventListener("click", () => scrollToSection(match.id));
+
+            div.addEventListener("click", () => {
+                goToResult(match);
+            });
+
             suggestionsBox.appendChild(div);
         });
     });
 
-    function scrollToSection(id) {
-        suggestionsBox.style.display = "none";
-        const section = document.getElementById(id);
-        if (!section) return;
-        section.scrollIntoView({ behavior: "smooth" });
-    }
-
     searchBar.addEventListener("keydown", function (e) {
         if (e.key === "Enter") {
             const query = searchBar.value.toLowerCase().trim();
-
-            const match = sectionTitles.find(item =>
+            const match = siteSearchIndex.find(item => 
                 item.title.toLowerCase().includes(query)
             );
 
             if (match) {
-                scrollToSection(match.id);
+                goToResult(match);
             } else {
                 alert("No results found!");
             }
         }
     });
+
+    function goToResult(result){
+        suggestionsBox.style.display = "none";
+
+        let url = result.page;
+
+        if(result.id){
+            url += "#" + result.id;
+        }
+
+        window.location.href = url;
+    }
 }
 
 //--------------------------Blood Types Videos--------------------------------------------------------------------------------
