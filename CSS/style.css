@@ -70,6 +70,7 @@ html {
   font-size: large;
   border-radius: 10px;
   transition: 0.2s ease-in-out;
+  background-color: transparent;
 }
 
 .link:hover {
@@ -312,6 +313,11 @@ html {
   object-fit: cover;
   padding: 15px;
   flex-shrink: 0;
+}
+
+.card h3{
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 .card p {
@@ -675,6 +681,9 @@ iframe {
 
 #content {
   width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 #staff {
@@ -758,7 +767,7 @@ iframe {
   justify-content: space-between;
 }
 
-#comments{
+#comments-div{
   display: flex;
   justify-content: center;
 }
@@ -820,7 +829,7 @@ iframe {
 }
 
 .cityBtn:hover{
-  background-color: whitesmoke;
+  background-color: transparent;
   color: var(--red);
 }
 
@@ -862,22 +871,6 @@ iframe {
   top: 250px;
   margin: 0;
   padding: 0;
-}
-
-.cityBtn {
-  background-color: rgb(139, 29, 29);
-  border: 2px solid rgb(139, 29, 29);
-  text-decoration: none;
-  color: whitesmoke;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
-  transition: all 0.2s ease-in-out;
-}
-
-.cityBtn:hover {
-  background-color: whitesmoke;
-  color: rgb(139, 29, 29);
 }
 
 .hospital .card:hover {

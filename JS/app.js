@@ -235,17 +235,8 @@ if(readMore){
 const carousel = document.querySelector(".carousel");
 const arrowBtns = document.querySelectorAll(".buttons");
 const firstCardWidth = document.querySelector(".comment").offsetWidth + 16;
-const carouselChildrens = [...carousel.children];
 
 let commentPerView = Math.round(carousel.offsetWidth / firstCardWidth);
-
-carouselChildrens.slice(-commentPerView).reverse().forEach(comment => {
-    carousel.insertAdjacentHTML("afterbegin", comment.outerHTML);
-});
-
-carouselChildrens.slice(0, commentPerView).forEach(comment => {
-    carousel.insertAdjacentHTML("beforeend", comment.outerHTML);
-});
 
 if(carousel && arrowBtns && firstCardWidth){
     arrowBtns.forEach(btn =>{
@@ -254,20 +245,6 @@ if(carousel && arrowBtns && firstCardWidth){
         })
     });
 }
-
-const infiniteScroll = () => {
-    if(carousel.scrollLeft === 0){
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
-        carousel.classList.remove("no-transition");
-    }else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = carousel.offsetWidth;
-        carousel.classList.remove("no-transition");
-    }
-}
-
-carousel.addEventListener("scroll", infiniteScroll);
 
 //-------------------------------Back Button-----------------------------------------------------------------------------------------
 
