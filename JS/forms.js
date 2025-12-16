@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 // ========================== REGISTER ===================================================================================
+
 const registerForm = document.getElementById("register-form");
 
 if (registerForm) {
@@ -72,14 +73,14 @@ if (registerForm) {
         }
 
         if (validateRegister()) {
-            formSuccess.textContent = "Registration successful!";
-            registerForm.reset();
+            window.location.href = "home.html"
         }
     });
 
 }
 
 // =============================================== LOGIN ==============================================================
+
 const loginForm = document.getElementById("login-form");
 
 if (loginForm) {
@@ -91,8 +92,7 @@ if (loginForm) {
     const success = document.getElementById("loginSuccess");
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-    const passwordRegex =
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
     function clearErrors() {
         [emailError, passwordError, success].forEach(el => el.textContent = "");
@@ -108,7 +108,7 @@ if (loginForm) {
         }
 
         if (!passwordRegex.test(password.value)) {
-            passwordError.textContent = "Invalid password.";
+            passwordError.textContent = "Invalid password! (0-9, Az, $..)";
             valid = false;
         }
 
@@ -119,13 +119,13 @@ if (loginForm) {
         e.preventDefault();
 
         if (validateLogin()) {
-            success.textContent = "Login successful!";
-            loginForm.reset();
+            window.location.href = "home.html"
         }
     });
 }
 
 // ==================================== CONTACT ==================================================================
+
 const inputs = document.getElementById("inputs");
 
 if (inputs) {
