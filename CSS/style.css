@@ -315,6 +315,11 @@ html {
   flex-shrink: 0;
 }
 
+.card h3{
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
 .card p {
   text-align: justify;
   padding: 15px;
@@ -676,6 +681,9 @@ iframe {
 
 #content {
   width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 #staff {
@@ -759,7 +767,7 @@ iframe {
   justify-content: space-between;
 }
 
-#comments{
+#comments-div{
   display: flex;
   justify-content: center;
 }
