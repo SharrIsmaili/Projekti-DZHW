@@ -165,10 +165,13 @@ if(typeButtons && videos){
             });
 
             const firstVideo = videos[0];
-            firstVideo.classList.remove("hidden");
-            firstVideo.classList.add("active");
-            firstVideo.currentTime = 0;
-            firstVideo.play();
+
+            if(firstVideo){
+                firstVideo.classList.remove("hidden");
+                firstVideo.classList.add("active");
+                firstVideo.currentTime = 0;
+                firstVideo.play();
+            }
         }, 15000);
     }
 
@@ -229,21 +232,55 @@ if(readMore){
 
 //-------------------------------Comments Slider-------------------------------------------------------------------------------------
 
+const carousel = document.querySelector(".carousel");
+const arrowBtns = document.querySelectorAll(".buttons");
+const firstCardWidth = document.querySelector(".comment").offsetWidth + 16;
+const carouselChildrens = [...carousel.children];
+
+let commentPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+carouselChildrens.slice(-commentPerView).reverse().forEach(comment => {
+    carousel.insertAdjacentHTML("afterbegin", comment.outerHTML);
+});
+
+carouselChildrens.slice(0, commentPerView).forEach(comment => {
+    carousel.insertAdjacentHTML("beforeend", comment.outerHTML);
+});
+
+if(carousel && arrowBtns && firstCardWidth){
+    arrowBtns.forEach(btn =>{
+        btn.addEventListener("click", () => {
+            carousel.scrollLeft += btn.id === "previousButton" ? -firstCardWidth : firstCardWidth;
+        })
+    });
+}
+
+const infiniteScroll = () => {
+    if(carousel.scrollLeft === 0){
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+        carousel.classList.remove("no-transition");
+    }else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+    }
+}
+
+carousel.addEventListener("scroll", infiniteScroll);
+
 //-------------------------------Back Button-----------------------------------------------------------------------------------------
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function(){
   const backBtn = document.getElementById("backArrow");
 
-  if (!backBtn) {
-    console.error("Back button not found");
-    return;
+  if(backBtn){
+    backBtn.addEventListener("click", function(){
+      if(window.history.length > 1){
+        window.history.back();
+      }else{
+        window.location.href = "home.html";
+      }
+    });
   }
-
-  backBtn.addEventListener("click", function () {
-    if (window.history.length > 1) {
-      window.history.back();
-    } else {
-      window.location.href = "home.html";
-    }
-  });
 });

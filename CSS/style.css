@@ -2,6 +2,7 @@
   --minus: 200px;
   --red: rgb(139, 29, 29);
   --darkred: rgb(100, 29, 29);
+  --black: #333;
 }
 
 html {
@@ -45,8 +46,25 @@ html {
   flex-wrap: nowrap;
 }
 
+.pages{
+  color: var(--black);
+  text-decoration: none;
+  padding: 10px 10px 2px 10px;
+  font-size: large;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s ease-in-out;
+}
+
+.pages:hover{
+  border-bottom: 2px solid var(--red);
+  color: black;
+}
+
 .link {
-  color: #333;
+  color: var(--black);
   text-decoration: none;
   padding: 10px;
   font-size: large;
@@ -120,15 +138,16 @@ html {
   color: var(--red);
 }
 
-#profile{
-  width: 40px;
-  height: 40px;
-}
-
 #profile img{
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+#profile img:hover{
+  border: 2px solid var(--red);
 }
 
 /*====================================Slider=============================================================*/
@@ -247,7 +266,7 @@ html {
 /*===================================Cards=================================================================*/
 
 .title h1 {
-  color: #333;
+  color: var(--black);
   width: 100%;
   text-align: center;
   margin-top: 0;
@@ -264,14 +283,14 @@ html {
   justify-content: space-around;
   align-items: center;
   padding: 40px 0px;
-  color: #333;
+  color: var(--black);
   gap: 24px;
   margin: 25px;
 }
 
 .card {
   width: 300px;
-  color: #333;
+  color: var(--black);
   border-radius: 8px;
   padding: 13px;
   box-shadow: 0px 0px 10px 15px rgba(99, 98, 98, 0.1);
@@ -545,7 +564,7 @@ iframe {
   width: 100%;
   padding-bottom: 50px;
   text-decoration: none;
-  color: #333;
+  color: var(--black);
 }
 
 #news:last-child {
@@ -615,7 +634,7 @@ iframe {
 }
 
 .aboutTitle {
-  color: #333;
+  color: var(--black);
   width: 100%;
   text-align: center;
   margin-top: 70px;
@@ -679,6 +698,7 @@ iframe {
 .section .card img{
   width:360px;
 }
+
 .nurses {
   display: flex;
   justify-content: space-around;
@@ -687,9 +707,79 @@ iframe {
   margin: 35px;
 }
 
-.star {
-  width: 20px;
+.wrapper{
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+}
+
+.wrapper .buttons{
+  padding: 10px;
   height: 20px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 2px solid black;
+}
+
+#previousButton{
+  left: -22px;
+}
+
+#nextButton{
+  right: -22px;
+}
+
+.wrapper .carousel{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  gap: 16px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  padding: 0;
+}
+
+.carousel.no-transition{
+  scroll-behavior: auto;
+}
+
+.carousel .comment{
+  height: 342px;
+  list-style: none;
+  background: whitesmoke;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+#comments{
+  display: flex;
+  justify-content: center;
+}
+
+.star{
+  width: 25px;
+}
+
+.commenter{
+  display: flex;
+  gap: 20px;
+}
+
+.userInfo p{
+  margin: 0;
+}
+
+.pfp{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 /*==============================================Locations=====================================================================*/
@@ -821,7 +911,7 @@ iframe {
 footer {
   bottom: 0;
   background: whitesmoke;
-  color: #333;
+  color: var(--black);
   padding-top: 40px;
   padding-left: 170px;
   padding-right: 170px;
@@ -857,9 +947,18 @@ footer .top-row {
   align-items: center;
 }
 
-footer h2 {
-  font-size: 32px;
+#emergency h1{
+  font-size: 50px;
   margin: 0;
+}
+
+#emergency p{
+  margin: 0;
+}
+
+#emergencyNumber{
+  text-decoration: none;
+  color: var(--red);
 }
 
 .socials {
@@ -870,7 +969,7 @@ footer h2 {
 
 .socials a {
   font-size: 18px;
-  color: #333;
+  color: var(--black);
   text-decoration: none;
   padding: 8px 12px;
 }
@@ -899,7 +998,7 @@ footer h2 {
 
 .footer-column a {
   text-decoration: none;
-  color: #333;
+  color: var(--black);
   font-size: 14px;
 }
 

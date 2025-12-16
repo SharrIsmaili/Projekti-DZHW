@@ -1,5 +1,6 @@
 :root{
   --red: rgb(139, 29, 29);
+  --black: #333;
 }
 
 html {
@@ -43,7 +44,7 @@ body {
 }
 
 .link {
-  color: #333;
+  color: var(--black);
   text-decoration: none;
   padding: 10px;
   font-size: large;
@@ -130,8 +131,15 @@ body {
 
 /*======================================body===========================================================================*/
 
-main {
-  height: calc(100vh - 74px);
+#contactMain{
+  height: calc(100vh - 72px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main{
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,7 +156,7 @@ main {
   position: relative;
 }
 
-.register-container #backArrow {
+#backArrow{
   position: absolute;
   top: 20px;
   left: 20px;
@@ -160,22 +168,11 @@ main {
   transition: all 0.2s ease;
 }
 
-.login-container #backArrow {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: none;
-  border: none;
-  width: 50px;
-  color: var(--red);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-#backArrow:hover {
+#backArrow:hover{
   transform: scale(1.1);
 }
 
-.left {
+#left {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -183,7 +180,7 @@ main {
   align-items: center;
 }
 
-.left img {
+#left img {
   width: 200px;
 }
 
@@ -191,7 +188,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 100px 100px 100px;
 }
 
 .input {
@@ -240,22 +236,11 @@ main {
 }
 
 #right {
-  padding: 50px 100px 100px 0px;
+  padding: 100px 100px 100px 0px;
 }
 
 /*====================================Contact Us Specials========================================================================*/
 
-.contact-form {
-  padding: 100px;
-}
-
-.register-container {
-  margin-top: 60px;
-}
-
-.contact-container{
-  margin: 90px;
-}
 
 #selectCity {
   border-radius: 10px;
@@ -314,7 +299,7 @@ iframe {
 footer {
   bottom: 0;
   background: whitesmoke;
-  color: #333;
+  color: var(--black);
   padding-top: 40px;
   padding-left: 170px;
   padding-right: 170px;
@@ -350,6 +335,20 @@ footer h2 {
   margin: 0;
 }
 
+#emergency h1{
+  font-size: 50px;
+  margin: 0;
+}
+
+#emergency p{
+  margin: 0;
+}
+
+#emergencyNumber{
+  text-decoration: none;
+  color: var(--red);
+}
+
 .socials {
   display: flex;
   gap: 10px;
@@ -358,7 +357,7 @@ footer h2 {
 
 .socials a {
   font-size: 18px;
-  color: #333;
+  color: var(--black);
   text-decoration: none;
   padding: 8px 12px;
 }
@@ -387,7 +386,7 @@ footer h2 {
 
 .footer-column a {
   text-decoration: none;
-  color: #333;
+  color: var(--black);
   font-size: 14px;
 }
 
