@@ -1,4 +1,20 @@
-// ===================== REGISTER =====================
+//=============================Back Button=========================================================================
+
+document.addEventListener("DOMContentLoaded", function(){
+    const backBtn = document.getElementById("backArrow");
+
+    if(backBtn){
+        backBtn.addEventListener("click", function(){
+            if(window.history.length > 1){
+                window.history.back();
+            }else{
+                window.location.href = "home.html";
+            }
+        });
+    }
+});
+
+// ========================== REGISTER ===================================================================================
 const registerForm = document.getElementById("register-form");
 
 if (registerForm) {
@@ -59,12 +75,11 @@ if (registerForm) {
             formSuccess.textContent = "Registration successful!";
             registerForm.reset();
         }
-        ////////////
     });
 
 }
 
-// ===================== LOGIN =====================
+// =============================================== LOGIN ==============================================================
 const loginForm = document.getElementById("login-form");
 
 if (loginForm) {
@@ -110,7 +125,7 @@ if (loginForm) {
     });
 }
 
-// ===================== CONTACT =====================
+// ==================================== CONTACT ==================================================================
 const inputs = document.getElementById("inputs");
 
 if (inputs) {
