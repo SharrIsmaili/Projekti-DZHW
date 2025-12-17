@@ -224,7 +224,6 @@ html {
   transform: translateY(-50%);
   width: 50px;
   height: auto;
-  filter: invert(1);
   cursor: pointer;
   z-index: 10;
 }
@@ -725,21 +724,28 @@ iframe {
 .wrapper .buttons{
   padding: 10px;
   height: 20px;
-  background-color: whitesmoke;
+  background: var(--red);
   border-radius: 50%;
   cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  border: 2px solid black;
+  border: 2px solid var(--red);
+  transition: all 0.2s ease-in-out;
+}
+
+.wrapper .buttons:hover{
+  background-color: transparent;
+  border: 2px solid rgb(116, 226, 226);
+  filter: invert(1);
 }
 
 #previousButton{
-  left: -22px;
+  left: -50px;
 }
 
 #nextButton{
-  right: -22px;
+  right: -50px;
 }
 
 .wrapper .carousel{
