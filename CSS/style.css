@@ -625,7 +625,6 @@ iframe {
 #aboutMain {
   display: flex;
   align-items: flex-start;
-  gap: 50px;
   justify-content: space-between;
 }
 
@@ -679,10 +678,11 @@ iframe {
 }
 
 #content {
-  width: 75%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 50px;
+  align-items: center;
 }
 
 #staff {
@@ -795,6 +795,10 @@ iframe {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+#comments{
+  width: 75%;
 }
 
 /*==============================================Locations=====================================================================*/
