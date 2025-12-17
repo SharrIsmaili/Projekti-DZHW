@@ -64,7 +64,7 @@ if (registerForm) {
                 passwordError.textContent = "Invalid password! (0-9, Az, $..)";
                 valid = false;
             }
-            if (password.value !== confirmPassword.value) {
+            if (confirmPassword.value === "" || password.value !== confirmPassword.value) {
                 confirmError.textContent = "Passwords do not match.";
                 valid = false;
             }
@@ -73,7 +73,7 @@ if (registerForm) {
         }
 
         if (validateRegister()) {
-            window.location.href = "home.html"
+            window.location.href = "home.html";
         }
     });
 
@@ -119,7 +119,7 @@ if (loginForm) {
         e.preventDefault();
 
         if (validateLogin()) {
-            window.location.href = "home.html"
+            window.location.href = "home.html";
         }
     });
 }

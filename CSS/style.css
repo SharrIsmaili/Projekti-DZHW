@@ -19,6 +19,10 @@ html {
   font-family: 'Poppins', sans-serif;
 }
 
+p{
+  font-size: 20px;
+}
+
 /*====================================Nav Bar====================================================================*/
 
 #header {
@@ -327,7 +331,7 @@ html {
 
 .homeCard {
   width: 360px;
-  height: 500px;
+  height: 600px;
   color: var(--black);
   border-radius: 8px;
   padding: 13px;
@@ -405,6 +409,7 @@ html {
 
 .info .text h1 {
   text-align: start;
+  padding: 0;
 }
 
 .info .text p {
@@ -414,7 +419,6 @@ html {
 .info:nth-child(3) .text {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, whitesmoke 100%);
 }
-
 
 .readMore {
   border-radius: 10px;
@@ -465,10 +469,15 @@ html {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, whitesmoke 100%);
 }
 
+.process{
+  flex-shrink: 1;
+}
+
 .process-img {
   width: 470px;
   height: 470px;
   margin: 60px 100px 60px 10px;
+  flex: 1;
 }
 
 /*===================================Blood Types======================================================================*/
@@ -724,6 +733,14 @@ iframe {
   align-items: center;
 }
 
+.section{
+  width: 100%;
+}
+
+#founders{
+  width: 75%;
+}
+
 #staff {
   display: flex;
   flex-direction: column;
@@ -740,10 +757,6 @@ iframe {
 
 .section .card {
   width: 400px;
-}
-
-.section .card img{
-  width:360px;
 }
 
 .nurses {
