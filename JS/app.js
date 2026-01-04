@@ -267,3 +267,14 @@ if(carousel && arrowBtns && firstCardWidth){
         })
     });
 }
+
+//-------------------------------Hamburger Menu-------------------------------------------------------------------------------------
+
+  const hamburger = document.getElementById("hamburger");
+  const links = document.querySelector(".links");
+  const rightSide = document.querySelector(".right-side")
+
+  hamburger.addEventListener("click", () => {
+    links.classList.toggle("active");
+    rightSide.classList.toggle("active");
+  });
