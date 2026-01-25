@@ -1,115 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VitalDrop | Home</title>
-    <link rel="stylesheet" href="/CSS/style.css">
-    <link rel="icon" type="image/x-icon" href="/images/vital-drop/Drop.png">
-</head>
-
-<body id="top">
-    <header id="header">
-        <nav class="navbar">
-            <a href="home.html"><img src="/images/vital-drop/logo.png" alt="VitalDrop logo" id="logo"></a>
-
-            <div class="links">
-                <a href="home.html" class="pages">Home</a>
-                <a href="aboutUs.html" class="pages">About Us</a>
-                <a href="our-locations.html" class="pages">Our Locations</a>
-                <a href="news.html" class="pages">News</a>
-            </div>
-
-            <div class="right-side">
-                <div class="utils">
-                    <input type="search" id="searchBar" name="search" placeholder="Search">
-                    <div id="searchSuggestions" class="suggestions"></div>
-                    <a href="contact.html" class="link" id="contactBtn">Contact Us</a>
-                </div>
-
-
-                <div id="profile">
-                    <a href="login.html"><img src="/images/icons/blank-pfp.jpg" alt="Blank Profile Picture"></a>
-                </div>
-            </div>
-            
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
-
-
-    </header>
+<?php
+    require_once 'header.php';
+?>
 
     <main>
         <section class="slider">
             <div class="container">
                 <div id="buttons">
-                    <img src="/images/icons/prevBtn.png" id="prevBtn" alt="Previous Button">
-                    <img src="/images/icons/nextBtn.png" id="nextBtn" alt="Next Button">
+                    <img src="../images/icons/prevBtn.png" id="prevBtn" alt="Previous Button">
+                    <img src="../images/icons/nextBtn.png" id="nextBtn" alt="Next Button">
                 </div>
 
                 <div class="slide">
                     <div class="slideItem">
-                        <img src="/images/slider/img4.jpg" class="sliderImg" id="last" alt="First Image">
+                        <img src="../images/slider/img4.jpg" class="sliderImg" id="last" alt="First Image">
 
                         <div class="content">
                             <h1>Do you want to donate blood?</h1>
                             <p>Contact us and schedule a meeting.</p>
-                            <a href="contact.html" class="btn">Contact Us</a>
+                            <a href="contact.php" class="btn">Contact Us</a>
                         </div>
                     </div>
 
                     <div class="slideItem">
-                        <img src="/images/slider/img1.jpg" class="sliderImg" alt="First Image">
+                        <img src="../images/slider/img1.jpg" class="sliderImg" alt="First Image">
 
                         <div class="content">
                             <h1>Do you want to donate blood?</h1>
                             <p>Contact us and schedule a meeting.</p>
-                            <a href="contact.html" class="btn">Contact Us</a>
+                            <a href="contact.php" class="btn">Contact Us</a>
                         </div>
                     </div>
 
                     <div class="slideItem">
-                        <img src="/images/slider/img2.jpg" class="sliderImg" alt="Second Image">
+                        <img src="../images/slider/img2.jpg" class="sliderImg" alt="Second Image">
 
                         <div class="content">
                             <h1>Do you want to donate blood?</h1>
                             <p>Contact us and schedule a meeting.</p>
-                            <a href="contact.html" class="btn">Contact Us</a>
+                            <a href="contact.php" class="btn">Contact Us</a>
                         </div>
                     </div>
 
                     <div class="slideItem">
-                        <img src="/images/slider/img3.jpg" class="sliderImg" alt="Third Image">
+                        <img src="../images/slider/img3.jpg" class="sliderImg" alt="Third Image">
 
                         <div class="content">
                             <h1>Do you want to donate blood?</h1>
                             <p>Contact us and schedule a meeting.</p>
-                            <a href="contact.html" class="btn">Contact Us</a>
+                            <a href="contact.php" class="btn">Contact Us</a>
                         </div>
                     </div>
 
                     <div class="slideItem">
-                        <img src="/images/slider/img4.jpg" class="sliderImg" alt="Fourth Image">
+                        <img src="../images/slider/img4.jpg" class="sliderImg" alt="Fourth Image">
 
                         <div class="content">
                             <h1>Do you want to donate blood?</h1>
                             <p>Contact us and schedule a meeting.</p>
-                            <a href="contact.html" class="btn">Contact Us</a>
+                            <a href="contact.php" class="btn">Contact Us</a>
                         </div>
                     </div>
 
                     <div class="slideItem">
-                        <img src="/images/slider/img1.jpg" class="sliderImg" id="first" alt="First Image">
+                        <img src="../images/slider/img1.jpg" class="sliderImg" id="first" alt="First Image">
 
                         <div class="content">
                             <h1>Do you want to donate blood?</h1>
                             <p>Contact us and schedule a meeting.</p>
-                            <a href="contact.html" class="btn">Contact Us</a>
+                            <a href="contact.php" class="btn">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -118,7 +76,7 @@
 
         <section id="aboutUs">
             <h1>Do You Want To Know More About Us?</h1>
-            <a href="aboutUs.html" class="btn" id="aboutUsBtn">About Us</a>
+            <a href="aboutUs.php" class="btn" id="aboutUsBtn">About Us</a>
         </section>
 
         <section class="theCards" id="whoCanDonate">
@@ -128,7 +86,7 @@
 
             <div class="cards">
                 <div class="homeCard">
-                    <img src="/images/who can donate/age-and-weight.png" alt="Save Up To 3 Lives">
+                    <img src="../images/who can donate/age-and-weight.png" alt="Save Up To 3 Lives">
 
                     <h2>Age & Weight Requirements</h2>
 
@@ -140,7 +98,7 @@
                 </div>
 
                 <div class="homeCard">
-                    <img src="/images/who can donate/health-recovery.png" alt="Health, Illness & Recovery">
+                    <img src="../images/who can donate/health-recovery.png" alt="Health, Illness & Recovery">
 
                     <h2>Health, Illness & Recovery</h2>
 
@@ -152,7 +110,7 @@
                 </div>
 
                 <div class="homeCard">
-                    <img src="/images/who can donate/medication&condition.png" alt="Medication & Medical Contidions">
+                    <img src="../images/who can donate/medication&condition.png" alt="Medication & Medical Contidions">
 
                     <h2>Medication & Medical Contidions</h2>
 
@@ -165,7 +123,7 @@
                 </div>
 
                 <div class="homeCard">
-                    <img src="/images/who can donate/frequency.png" alt="How Often Can One Donate?">
+                    <img src="../images/who can donate/frequency.png" alt="How Often Can One Donate?">
 
                     <h2>How Often Can One Donate?</h2>
 
@@ -204,7 +162,7 @@
                 </div>
 
                 <div class="process">
-                    <img src="/images/donation process/pre-donation.png" alt="Preparation" class="process-img">
+                    <img src="../images/donation process/pre-donation.png" alt="Preparation" class="process-img">
                 </div>
             </div>
 
@@ -229,7 +187,7 @@
                 </div>
 
                 <div class="process">
-                    <img src="/images/donation process/donating.png" alt="Procedure" class="process-img">
+                    <img src="../images/donation process/donating.png" alt="Procedure" class="process-img">
                 </div>
             </div>
 
@@ -254,7 +212,7 @@
                 </div>
 
                 <div class="process">
-                    <img src="/images/donation process/post-donation.png" alt="Post-Donation" class="process-img">
+                    <img src="../images/donation process/post-donation.png" alt="Post-Donation" class="process-img">
                 </div>
             </div>
         </section>
@@ -300,15 +258,15 @@
                 </div>
 
                 <div class="video">
-                    <video src="/Videos/Blood Types.mp4" muted autoplay loop class="active"></video>
-                    <video src="/Videos/A+.mp4" autoplay class="hidden"></video>
-                    <video src="/Videos/A-.mp4" autoplay class="hidden"></video>
-                    <video src="/Videos/B+.mp4" autoplay class="hidden"></video>
-                    <video src="/Videos/B-.mp4" autoplay class="hidden"></video>
-                    <video src="/Videos/O+.mp4" autoplay class="hidden"></video>
-                    <video src="/Videos/O-.mp4" autoplay class="hidden"></video>
-                    <video src="/Videos/AB+.mp4" autoplay class="hidden"></video>
-                    <video src="/Videos/AB-.mp4" autoplay class="hidden"></video>
+                    <video src="../Videos/Blood Types.mp4" muted autoplay loop class="active"></video>
+                    <video src="../Videos/A+.mp4" autoplay class="hidden"></video>
+                    <video src="../Videos/A-.mp4" autoplay class="hidden"></video>
+                    <video src="../Videos/B+.mp4" autoplay class="hidden"></video>
+                    <video src="../Videos/B-.mp4" autoplay class="hidden"></video>
+                    <video src="../Videos/O+.mp4" autoplay class="hidden"></video>
+                    <video src="../Videos/O-.mp4" autoplay class="hidden"></video>
+                    <video src="../Videos/AB+.mp4" autoplay class="hidden"></video>
+                    <video src="../Videos/AB-.mp4" autoplay class="hidden"></video>
                 </div>
             </div>
         </section>
@@ -323,7 +281,7 @@
                     <p>09:00 - 16:00</p>
                     <p>Monday - Saturday</p><br>
 
-                    <a href="contact.html" class="link" id="contactBtn">Contact Us</a>
+                    <a href="contact.php" class="link" id="contactBtn">Contact Us</a>
                 </div>
 
                 <div>
@@ -337,75 +295,6 @@
         </section>
     </main>
 
-    <footer>
-        <a href="#top" id="backToTop">Back To Top</a>
-
-        <div class="top-row">
-            <a href="home.html"><img id="footerLogo" src="/images/vital-drop/logo.png" alt="Vital Drop Logo"></a>
-
-            <div id="emergency">
-                <p>You can call us on:</p>
-                <h1><a href="tel:0800 123 45 67" id="emergencyNumber">0800 123 45 67</a></h1>
-            </div>
-
-            <div class="socials">
-                <a href="#"><img src="/images/icons/facebook.png" class="social-icons" alt="Facebook Icon"></a>
-                <a href="#"><img src="/images/icons/instagram.png" class="social-icons" alt="Instagram Icon"></a>
-                <a href="#"><img src="/images/icons/email.png" class="social-icons" alt="Gmail Icon"></a>
-                <a href="#"><img src="/images/icons/linkedin.png" class="social-icons" alt="LinkedIn Icon"></a>
-            </div>
-        </div>
-
-        <div class="footer-columns">
-            <div class="footer-column">
-                <h3>RESOURCES</h3>
-
-                <ul>
-                    <li><a href="#">Application</a></li>
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">Systems</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>PRICING</h3>
-
-                <ul>
-                    <li><a href="#">Overview</a></li>
-                    <li><a href="#">Premium Plans</a></li>
-                    <li><a href="#">Affiliate Program</a></li>
-                    <li><a href="#">Promotions</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>COMPANY</h3>
-
-                <ul>
-                    <li><a href="aboutUs.html">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Partnerships</a></li>
-                    <li><a href="#">Carees</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>SOCIAL</h3>
-
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="credit">&copy; Copyright Elsa Rizani & Sharr Ismaili | <a href="#" style="color: #333;">Privacy
-                Policy</a>
-        </div>
-    </footer>
-    <script src="/JS/app.js"></script>
-</body>
-
-</html>
+<?php
+    require_once 'footer.php';
+?>

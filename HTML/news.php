@@ -1,40 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VitalDrop | News</title>
-    <link rel="stylesheet" href="/CSS/style.css">
-    <link rel="icon" type="image/x-icon" href="/images/vital-drop/Drop.png">
-</head>
-
-<body id="top">
-     <header id="header">
-        <nav class="navbar">
-            <a href="home.html"><img src="/images/vital-drop/logo.png" alt="VitalDrop logo" id="logo"></a>
-
-            <div class="links">
-                <a href="home.html" class="pages">Home</a>
-                <a href="aboutUs.html" class="pages">About Us</a>
-                <a href="our-locations.html" class="pages">Our Locations</a>
-                <a href="news.html" class="pages">News</a>
-            </div>
-
-            <div class="right-side">
-                <div class="utils">
-                    <input type="search" id="searchBar" name="search" placeholder="Search">
-                    <div id="searchSuggestions" class="suggestions"></div>
-                    <a href="contact.html" class="link" id="contactBtn">Contact Us</a>
-                </div>
-
-
-                <div id="profile">
-                    <a href="login.html"><img src="/images/icons/blank-pfp.jpg" alt="Blank Profile Picture"></a>
-                </div>
-            </div>
-        </nav>
-    </header>
+<?php
+    require_once 'header.php';
+?>
 
     <main>
         <div id="news">
@@ -50,7 +16,7 @@
                     </div>
 
                     <div class="news-img">
-                        <img src="/images/news-page/news 5.jpg" alt="New heart">
+                        <img src="../images/news-page/news 5.jpg" alt="New heart">
                     </div>
                 </div>
             </a>
@@ -67,7 +33,7 @@
                     </div>
 
                     <div class="news-img">
-                        <img src="/images/news-page/news1.jpg" alt="miracle baby'">
+                        <img src="../images/news-page/news1.jpg" alt="miracle baby'">
                     </div>
                 </div>
             </a>
@@ -84,7 +50,7 @@
                     </div>
 
                     <div class="news-img">
-                        <img src="/images/news-page/news2.jpg" alt="Mobile blood collection">
+                        <img src="../images/news-page/news2.jpg" alt="Mobile blood collection">
                     </div>
                 </div>
             </a>
@@ -101,7 +67,7 @@
                     </div>
 
                     <div class="news-img">
-                        <img src="/images/news-page/news6.jpg" alt="Rarest blood type">
+                        <img src="../images/news-page/news6.jpg" alt="Rarest blood type">
                     </div>
                 </div>
             </a>
@@ -118,7 +84,7 @@
                     </div>
 
                     <div class="news-img">
-                        <img src="/images/news-page/news3.jpg" alt="Gurdwara blood drive">
+                        <img src="../images/news-page/news3.jpg" alt="Gurdwara blood drive">
                     </div>
                 </div>
             </a>
@@ -135,7 +101,7 @@
                     </div>
 
                     <div class="news-img">
-                        <img src="/images/news-page/news4.jpg" alt="'Dracula's bride'">
+                        <img src="../images/news-page/news4.jpg" alt="'Dracula's bride'">
                     </div>
                 </div>
             </a>
@@ -150,74 +116,6 @@
         </div>
     </main>
 
-    <footer>
-        <a href="#top" id="backToTop">Back To Top</a>
-
-        <div class="top-row">
-            <a href="home.html"><img id="footerLogo" src="/images/vital-drop/logo.png" alt="Vital Drop Logo"></a>
-
-            <div id="emergency">
-                <p>You can call us on:</p>
-                <h1><a href="tel:0800 123 45 67" id="emergencyNumber">0800 123 45 67</a></h1>
-            </div>
-
-            <div class="socials">
-                <a href="#"><img src="/images/icons/facebook.png" class="social-icons" alt="Facebook Icon"></a>
-                <a href="#"><img src="/images/icons/instagram.png" class="social-icons" alt="Instagram Icon"></a>
-                <a href="#"><img src="/images/icons/email.png" class="social-icons" alt="Gmail Icon"></a>
-                <a href="#"><img src="/images/icons/linkedin.png" class="social-icons" alt="LinkedIn Icon"></a>
-            </div>
-        </div>
-
-        <div class="footer-columns">
-            <div class="footer-column">
-                <h3>RESOURCES</h3>
-
-                <ul>
-                    <li><a href="#">Application</a></li>
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">Systems</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>PRICING</h3>
-
-                <ul>
-                    <li><a href="#">Overview</a></li>
-                    <li><a href="#">Premium Plans</a></li>
-                    <li><a href="#">Affiliate Program</a></li>
-                    <li><a href="#">Promotions</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>COMPANY</h3>
-
-                <ul>
-                    <li><a href="aboutUs.html">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Partnerships</a></li>
-                    <li><a href="#">Carees</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>SOCIAL</h3>
-
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="credit">
-            &copy; Copyright Elsa Rizani & Sharr Ismaili | <a href="#" style="color: #333;">Privacy Policy</a>
-        </div>
-    </footer>
-    <script src="/JS/app.js"></script>
-</body>
-</html>
+<?php
+    require_once 'footer.php';
+?>
