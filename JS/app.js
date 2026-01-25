@@ -256,11 +256,12 @@ if(readMore){
 
 const carousel = document.querySelector(".carousel");
 const arrowBtns = document.querySelectorAll(".buttons");
-const firstCardWidth = document.querySelector(".comment").offsetWidth + 16;
+const firstCard = document.querySelector(".comment");
 
-let commentPerView = Math.round(carousel.offsetWidth / firstCardWidth);
-
-if(carousel && arrowBtns && firstCardWidth){
+if(carousel && arrowBtns.length === 0 && firstCard){
+    const firstCardWidth = firstCard.offsetWidth + 16;
+    let commentPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+    
     arrowBtns.forEach(btn =>{
         btn.addEventListener("click", () => {
             carousel.scrollLeft += btn.id === "previousButton" ? -firstCardWidth : firstCardWidth;
