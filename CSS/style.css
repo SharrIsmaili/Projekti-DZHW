@@ -1144,3 +1144,103 @@ footer .top-row {
   }
 
 }
+
+@media (max-width: 768px) {
+  p{
+    font-size: 18px;
+  }
+  .container, .sliderImg{
+    height: 60vh !important;
+  }
+
+  .cards, .doctors, .nurses{
+    margin: 10px;
+    padding: 10px 0;
+    gap: 20px;
+  }
+
+  .homeCard, .card, .section, .card{
+    width: 95 !important;
+    max-width: 360px;
+    height: auto !important;
+    min-height: 450px;
+  }
+
+  .info{
+    flex-direction: column !important;
+    padding: 20px;
+  }
+
+  .info, .text{
+    margin: 20px 0 !important;
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .process-img{
+    width: 100% !important;
+    height: auto !important;
+    margin: 20px 0 !important;
+  }
+
+  .news-container{
+    margin: 20px !important;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .news-img img{
+    width: 100%;
+  }
+
+  .types-cards{
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  video{
+    width: 100% !important; 
+  }
+
+  .address{
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  iframe{
+    width: 100% !important;
+  }
+
+  footer{
+    padding: 40px 20px !important;
+  }
+
+  .footer-column{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .top-row{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #emergency h1{
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .content h1{
+    font-size: 1.8rem;
+  }
+  .content p{
+    font-size: 1rem;
+  }
+
+  .content{
+    width: 90%;
+  }
+}
