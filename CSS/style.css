@@ -1101,3 +1101,46 @@ footer .top-row {
 .social-icons:hover {
   width: 53px;
 }
+
+/*==============================================Responsivity=====================================================================*/
+
+@media (max-width: 1070px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: whitesmoke;
+  }
+
+  .links.active {
+    display: flex;
+  }
+
+  .right-side {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .right-side.active {
+    display: flex;
+  }
+
+  #searchBar,
+  #contactBtn {
+    width: 100%;
+  }
+
+}
