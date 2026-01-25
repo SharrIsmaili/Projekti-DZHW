@@ -271,11 +271,13 @@ if(carousel && arrowBtns.length === 0 && firstCard){
 
 //-------------------------------Hamburger Menu-------------------------------------------------------------------------------------
 
-  const hamburger = document.getElementById("hamburger");
-  const links = document.querySelector(".links");
-  const rightSide = document.querySelector(".right-side")
+const hamburger = document.getElementById("hamburger");
+const links = document.querySelector(".links");
+const rightSide = document.querySelector(".right-side");
 
-  hamburger.addEventListener("click", () => {
-    links.classList.toggle("active");
-    rightSide.classList.toggle("active");
-  });
+if(hamburger && links && rightSide){
+    hamburger.addEventListener("click", () => {
+        links.classList.toggle("active");
+        rightSide.classList.toggle("active");
+    });
+}

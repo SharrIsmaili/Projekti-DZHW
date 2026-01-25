@@ -149,13 +149,6 @@ body {
 
 /*======================================body===========================================================================*/
 
-#contactMain {
-  height: calc(100vh - 72px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 main {
   height: 100vh;
   display: flex;
@@ -163,8 +156,15 @@ main {
   align-items: center;
 }
 
+#contactMain {
+  height: calc(100vh - 72px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #container {
-  background-color: white;
+  background-color: rebeccapurple;
   border-radius: 10px;
   display: flex;
   justify-content: center;
