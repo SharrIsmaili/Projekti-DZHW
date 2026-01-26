@@ -166,3 +166,16 @@ if (inputs) {
         inputs.reset();
     });
 }
+
+//-------------------------------Hamburger Menu-------------------------------------------------------------------------------------
+
+const hamburger = document.getElementById("hamburger");
+const links = document.querySelector(".links");
+const rightSide = document.querySelector(".right-side");
+
+if(hamburger && links && rightSide){
+    hamburger.addEventListener("click", () => {
+        links.classList.toggle("active");
+        rightSide.classList.toggle("active");
+    });
+}

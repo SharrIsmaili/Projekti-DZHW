@@ -67,6 +67,7 @@
         </div>
     </footer>
     <script src="../JS/app.js"></script>
+    <script src="../JS/forms.js"></script>
 </body>
 
 </html>
