@@ -43,6 +43,8 @@ body {
 
 .utils {
   flex-wrap: nowrap;
+  display: flex;
+  align-items: center;
 }
 
 .pages {
@@ -87,9 +89,11 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
+  flex-wrap: nowrap;
 }
 
 #searchBar {
+  flex-grow: 0;
   padding: 3px 10px;
   height: 30px;
   border-radius: 10px;
@@ -125,6 +129,8 @@ body {
 }
 
 #contactBtn {
+  max-width: 100px;
+  flex-grow: 0;
   background-color: var(--red);
   border: 2px solid var(--red);
   color: whitesmoke;
@@ -150,9 +156,22 @@ body {
 }
 
 #hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
   display: none;
   flex-direction: column;
   gap: 5px;
+}
+
+#hamburger span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #8B1A1A;
+  border-radius: 3px;
+  transition: all 0.3s ease;
 }
 
 .spani {
@@ -180,7 +199,7 @@ main {
   padding: 0px 20px;
 }
 
-#container{
+#container {
   display: flex;
   align-items: center;
   gap: 40px;
@@ -218,7 +237,7 @@ main {
 }
 
 #left {
-  display: flex ;
+  display: flex;
   flex-direction: column;
   gap: 30px;
   flex-grow: 0;
@@ -493,81 +512,84 @@ footer h2 {
 /*==========================================================================================================================*/
 
 @media (max-width: 1300px) {
-  p{
+  p {
     font-size: 18px;
   }
 
-  footer{
+  footer {
     padding: 40px 20px !important;
   }
 
-  .footer-columns{
+  .footer-columns {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
   }
 
-  .top-row{
+  .top-row {
     flex-direction: column;
     gap: 20px;
   }
 
-  #emergency h1{
+  #emergency h1 {
     font-size: 30px;
   }
 }
 
 @media (max-width: 600px) {
-  .content h1{
+  .content h1 {
     font-size: 1.8rem;
   }
-  .content p{
+
+  .content p {
     font-size: 1rem;
   }
 
-  .content{
+  .content {
     width: 90%;
   }
 }
 
-
-
-
-
 @media (max-width: 900px) {
-  #container{
+  #container {
     flex-direction: column;
     gap: 20px;
   }
 
-  #right, #left{
+  #right,
+  #left {
     padding: 20px !important;
     width: 100%;
   }
 
-  iframe{
+  iframe {
     width: 100%;
   }
 }
 
-@media (max-width: 1100px){
-  #header{
+@media (max-width: 1100px) {
+  #header {
     box-shadow: none;
   }
 
-  .navbar{
+  .navbar {
     background-color: white;
   }
 
-  #contact-container{
+  #contact-container {
     display: block;
   }
 
-  #contactMain{
+  #contactMain {
     padding: 40px 40px;
   }
 
   .navbar {
+    flex-wrap: wrap;
+  }
+
+  .utils {
+    justify-content: center;
     flex-wrap: wrap;
   }
 
@@ -608,6 +630,4 @@ footer h2 {
 
 }
 
-@media (max-width: 1300px){
-
-}
+@media (max-width: 1300px) {}
