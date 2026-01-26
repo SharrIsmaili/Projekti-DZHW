@@ -16,10 +16,10 @@ body {
   min-height: calc(100vh - 72px);
 }
 
-main{
+/* main{
   height: auto;
   min-height: 100vh;
-}
+} */
 /*===================================Nav Bar===========================================================================*/
 
 #header {
@@ -432,6 +432,7 @@ footer h2 {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+  align-items: center;
   gap: 40px;
 }
 
@@ -500,9 +501,10 @@ footer h2 {
     padding: 40px 20px !important;
   }
 
-  .footer-column{
-    flex-direction: column;
+  .footer-columns{
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .top-row{
@@ -602,6 +604,8 @@ footer h2 {
   #contactBtn {
     width: 100%;
   }
+
+
 }
 
 @media (max-width: 1300px){
