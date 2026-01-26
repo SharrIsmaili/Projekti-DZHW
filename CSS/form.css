@@ -18,14 +18,12 @@ body {
 
 main{
   height: auto;
-  min-height: calc(100vh + 72px);
+  min-height: 100vh;
 }
 /*===================================Nav Bar===========================================================================*/
 
 #header {
-  position: sticky;
   top: 0;
-  z-index: 2;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
@@ -96,7 +94,7 @@ main{
   height: 30px;
   border-radius: 10px;
   border: 2px solid var(--red);
-  background-color: whitesmoke;
+  background-color: transparent;
 }
 
 #searchBar:focus {
@@ -135,7 +133,7 @@ main{
 }
 
 #contactBtn:hover {
-  background-color: whitesmoke;
+  background-color: transparent;
   color: var(--red);
 }
 
@@ -151,12 +149,24 @@ main{
   border: 2px solid var(--red);
 }
 
+#hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.spani {
+  width: 25px;
+  height: 3px;
+  background: var(--black);
+  border-radius: 5px;
+}
+
 /*======================================body===========================================================================*/
 
 main {
-  height: 100vh;
+  height: calc(100vh - 72px);
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -167,16 +177,21 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 0px 20px;
 }
 
-#container {
-  padding: 40px 20px;
+#container{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+#contact-container {
+  padding: 40px 60px;
   align-items: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
-  width: 90%;
-  max-width: 1100px ;
+  max-width: 1100px;
   background-color: white;
   border-radius: 10px;
   display: flex;
@@ -247,11 +262,11 @@ main {
   border: none;
   width: auto;
   height: 45px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 #formBtn:hover {
-  background-color: white;
+  background-color: transparent;
   border: 2px solid var(--red);
   color: var(--red);
   cursor: pointer;
@@ -268,7 +283,7 @@ main {
 
 #right {
   padding: 20px;
-  flex: 1;
+  flex-grow: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -290,7 +305,6 @@ main {
 
 
 /*====================================Contact Us Specials========================================================================*/
-
 
 #selectCity {
   border-radius: 10px;
@@ -325,12 +339,10 @@ main {
 .adress-text {
   max-width: 350px;
   margin: 0 auto;
-  display: flex;
+  display: grid;
   flex-direction: column;
   gap: 10px;
-  max-width: 100%;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
   padding: 0;
   margin-bottom: 20px;
   text-align: center;
@@ -479,7 +491,7 @@ footer h2 {
 
 /*==========================================================================================================================*/
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   p{
     font-size: 18px;
   }
@@ -534,4 +546,64 @@ footer h2 {
   iframe{
     width: 100%;
   }
+}
+
+@media (max-width: 1100px){
+  #header{
+    box-shadow: none;
+  }
+
+  .navbar{
+    background-color: white;
+  }
+
+  #contact-container{
+    display: block;
+  }
+
+  #contactMain{
+    padding: 40px 40px;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  #hamburger {
+    display: flex;
+  }
+
+  .links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: whitesmoke;
+  }
+
+  .links.active {
+    display: flex;
+  }
+
+  .right-side {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .right-side.active {
+    display: flex;
+  }
+
+  #searchBar,
+  #contactBtn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1300px){
+
 }

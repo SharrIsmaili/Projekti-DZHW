@@ -26,12 +26,18 @@
                     <a href="login.php"><img src="../images/icons/blank-pfp.jpg" alt="Blank Profile Picture"></a>
                 </div>
             </div>
+
+            <button id="hamburger">
+                <span class="spani"></span>
+                <span class="spani"></span>
+                <span class="spani"></span>
+            </button>
         </nav>
     </header>
 
     <main id="contactMain">
         <section>
-            <div id="container" class="contact-container">
+            <div id="contact-container">
                 <div id="left">
                     <form id="inputs">
                         <input type="text" name="name" id="contact-name" class="input" placeholder="Name"><br>
@@ -88,5 +94,5 @@
     </main>
     
 <?php
-    require_once 'footer.php';
+    require_once 'formFooter.php';
 ?>
