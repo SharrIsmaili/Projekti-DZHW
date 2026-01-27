@@ -1,4 +1,5 @@
 <?php
+    $pageTitle = 'Contact Us';
     require_once 'formHeader.php';
 ?>
 

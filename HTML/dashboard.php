@@ -1,4 +1,5 @@
 <?php
+    $pageTitle = 'Dashboard';
     require_once 'header.php';
 ?>
 

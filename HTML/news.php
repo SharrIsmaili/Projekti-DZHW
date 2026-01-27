@@ -1,4 +1,5 @@
 <?php
+    $pageTitle = 'News';
     require_once 'header.php';
 ?>
 
