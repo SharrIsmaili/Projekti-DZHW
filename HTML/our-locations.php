@@ -1,4 +1,5 @@
 <?php
+    $pageTitle = 'Our Locations';
     require_once 'header.php';
 ?>
 

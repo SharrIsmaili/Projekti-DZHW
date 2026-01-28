@@ -1,4 +1,5 @@
 <?php
+    $pageTitle = 'Register';
     require_once 'formHeader.php';
 ?>
 

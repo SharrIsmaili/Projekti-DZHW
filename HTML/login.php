@@ -1,4 +1,5 @@
 <?php
+    $pageTitle = 'Login';
     require_once 'formHeader.php';
 ?>
 

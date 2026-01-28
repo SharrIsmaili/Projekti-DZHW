@@ -1,4 +1,5 @@
 <?php
+    $pageTitle = 'About Us';
     require_once 'header.php';
 ?>
 
