@@ -1,6 +1,30 @@
 <?php
     $pageTitle = 'Register';
     require_once 'formHeader.php';
+
+
+    // include_once 'Database.php';
+    include_once 'users.php';
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $db = new Database();
+        $connection = $db->getConnection();
+        $users = new users($connection);
+
+        // Get form data
+        $name = $_POST['name'];
+        $lastname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        // Register the user
+        if ($users->register($name, $lastname, $email, $password)) {
+            header("Location: home.php"); // Redirect to home-login page
+            exit;
+        } else {
+         echo "Error registering user!";
+        }
+    }
 ?>
 
 <body>
