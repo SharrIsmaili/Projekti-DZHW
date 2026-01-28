@@ -16,10 +16,6 @@ body {
   min-height: calc(100vh - 72px);
 }
 
-/* main{
-  height: auto;
-  min-height: 100vh;
-} */
 /*===================================Nav Bar===========================================================================*/
 
 #header {
@@ -219,6 +215,7 @@ main {
   gap: 20px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   position: relative;
+  margin: 30px;
 }
 
 #backArrow {
@@ -424,7 +421,7 @@ footer h2 {
 }
 
 #emergency h1 {
-  font-size: 50px;
+  font-size: 3.3rem;
   margin: 0;
 }
 
@@ -513,86 +510,89 @@ footer h2 {
 
 
 /*==========================================================================================================================*/
-@media screen and (min-width: 769px) and (max-width: 1100px) {
 
-  /* Navbar Responsivity */
-  @media screen and (min-width: 769px) and (max-width: 1100px) {
-    .navbar {
-      background-color: white;
-      flex-wrap: wrap;
-    }
+/* Navbar Responsivity */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .navbar {
+    background-color: white;
+    flex-wrap: wrap;
+  }
 
-    #hamburger {
-      display: flex;
-    }
+  #hamburger {
+    display: flex;
+  }
 
-    .links,
-    .right-side {
-      display: none;
-      width: 100%;
-      flex-direction: column;
-      gap: 15px;
-      padding: 20px;
-      background: whitesmoke;
-    }
+  .links,
+  .right-side {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: whitesmoke;
+  }
 
-    .links.active,
-    .right-side.active {
-      display: flex;
-    }
+  .links.active,
+  .right-side.active {
+    display: flex;
+  }
 
-    #contact-container {
-      display: block;
-    }
+  #contact-container {
+    display: block;
+  }
 
-    #contactMain {
-      padding: 40px;
-    }
+  #contactMain {
+    padding: 40px;
+  }
 
-    /* --- Contact--- */
-    #contactMain {
-      padding: 20px;
-      height: auto;
-    }
+  /* --- Contact--- */
+  #contactMain {
+    padding: 20px;
+    height: auto;
+  }
 
-    #contact-container {
-      flex-direction: column;
-      padding: 40px 20px;
-      width: 100%;
-      align-items: center;
-    }
+  #contact-container {
+    flex-direction: column;
+    padding: 40px 20px;
+    width: 100%;
+    align-items: center;
+  }
 
-    #left,
-    #right {
-      width: 100%;
-      padding: 0;
-    }
+  #left,
+  #right {
+    width: 100%;
+    padding: 0;
+  }
 
-    .input,
-    #selectCity,
-    #message {
-      width: 100% !important;
-      max-width: 100%;
-    }
+  .input,
+  #selectCity,
+  #message {
+    width: 100% !important;
+    max-width: 100%;
+  }
 
-    .adress-text {
-      grid-template-columns: 1fr;
-      width: 100%;
-      max-width: 100%;
-    }
+  .adress-text {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+  }
 
-    iframe {
-      width: 100% !important;
-      height: 250px;
-    }
+  iframe {
+    width: 100% !important;
+    height: 250px;
+  }
 
-    /*  */
+  footer .top-row {
+    flex-direction: column;
+  }
 
-    footer .top-row {
-      flex-direction: column;
-    }
+  #emergencyNumber {
+    text-decoration: none;
+    color: var(--red);
+    font-size: 2.77rem;
   }
 }
+
 
 
 @media screen and (max-width: 768px) {
@@ -635,12 +635,12 @@ footer h2 {
     flex-direction: column;
   }
 
-  #emergency h1 {
-    font-size: 1.8rem;
-  }
-
   .footer-columns {
     flex-direction: row;
     gap: 30px;
+  }
+
+  #emergency h1 {
+    font-size: 2rem;
   }
 }
