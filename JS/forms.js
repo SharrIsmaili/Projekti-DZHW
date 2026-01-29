@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
             if(window.history.length > 1){
                 window.history.back();
             }else{
-                window.location.href = "home.html";
+                window.location.href = "home.php";
             }
         });
     }
@@ -25,23 +25,26 @@ if (registerForm) {
         const name = document.getElementById("register-name");
         const lastname = document.getElementById("register-lastname");
         const email = document.getElementById("register-email");
+        const number = document.getElementById("register-number");
         const password = document.getElementById("register-password");
         const confirmPassword = document.getElementById("register-confirmPassword");
 
         const nameRegex = /^[a-zA-Z0-9._-]{3,20}$/;
         const lastnameRegex = /^[a-zA-Z0-9._-]{3,20}$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        const numberRegex = /^(?:$|(?:\+383[- ]?44[- ]?\d{3}[- ]?\d{3}|044[- ]?\d{3}[- ]?\d{3}))$/;
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
         const nameError = document.getElementById('nameError');
         const lastNameError = document.getElementById('lastNameError');
         const emailError = document.getElementById('emailError');
+        const numberError = document.getElementById('numberError');
         const passwordError = document.getElementById('passwordError');
         const confirmError = document.getElementById('confirmError');
         const formSuccess = document.getElementById('formSuccess');
 
         function clearErrors() {
-            [nameError, lastNameError, emailError, passwordError, confirmError, formSuccess].forEach(el => el.textContent = "");
+            [nameError, lastNameError, emailError, numberError, passwordError, confirmError, formSuccess].forEach(el => el.textContent = "");
         }
 
         function validateRegister() {
@@ -60,6 +63,10 @@ if (registerForm) {
                 emailError.textContent = "Invalid email address!";
                 valid = false;
             }
+            if(!numberRegex.test(number.value.trim())){
+                numberError.textContent = "Invalid phone number!";
+                valid = false;
+            }
             if (!passwordRegex.test(password.value.trim())) {
                 passwordError.textContent = "Invalid password! (0-9, Az, $..)";
                 valid = false;
@@ -73,7 +80,7 @@ if (registerForm) {
         }
 
         if (validateRegister()) {
-            window.location.href = "home.html";
+            registerForm.submit();
         }
     });
 
@@ -119,7 +126,7 @@ if (loginForm) {
         e.preventDefault();
 
         if (validateLogin()) {
-            window.location.href = "home.html";
+            loginForm.submit();
         }
     });
 }

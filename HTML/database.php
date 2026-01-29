@@ -1,27 +1,28 @@
 <?php
 class Database {
     private $host = 'localhost';
-    private $dbname = 'blood_donation_system';
+    private $dbname = 'vitaldrop';
     private $username = 'root';
     private $password = '';
     private $conn;
 
-    public function __construct() {
-        try {
+    public function __construct(){
+        try{
             $this->conn = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->username, 
             $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
+        } catch(PDOException $e){
             die("Connection failed: " . $e->getMessage());
         }
     }
 
-    public function getConnection() {
+    public function getConnection(){
         return $this->conn;
     }
 }
-?>
 
+/*
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,3 +35,4 @@ class Database {
 <h2>hello were in the dashboard</h2>
 </body>
 </html>
+*/

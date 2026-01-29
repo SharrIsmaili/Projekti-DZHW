@@ -7,16 +7,19 @@ class Users {
         $this->conn = $db;
     }
 
-    public function register($name, $lastname, $email, $password) {
-        $query = "INSERT INTO {$this->table_name} (name, lastname, email, password) VALUES (:name, :lastname, :email, :password)";
+    public function register($name, $lastname, $number, $email, $password) {
+        $query = "INSERT INTO {$this->table_name} (Name, Lastname, Phone_Number, Email, Password) VALUES (:name, :lastname, :number, :email, :password)";
 
         $stmt = $this->conn->prepare($query);
+
+        $hashedPass = password_hash($password, PASSWORD_DEFAULT); // Hashing the password
 
         // Bind parameters
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':lastname', $lastname);
+        $stmt->bindParam(':number', $number);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', password_hash($password, PASSWORD_DEFAULT)); // Hashing the password
+        $stmt->bindParam(':password', $hashedPass);
 
         if ($stmt->execute()) {
             return true;
@@ -25,7 +28,7 @@ class Users {
     }
 
     public function login($email, $password) {
-        $query = "SELECT id, name, lastname, email, password FROM {$this->table_name} WHERE email = :email";
+        $query = "SELECT User_ID, Name, Lastname, Phone_Number, Email, Password FROM {$this->table_name} WHERE Email = :email";
 
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':email', $email);
@@ -34,11 +37,11 @@ class Users {
         // Check if a record exists
         if ($stmt->rowCount() > 0) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            if (password_verify($password, $row['password'])) {
+            if (password_verify($password, $row['Password'])) {
                 // Start the session and store user data
                 session_start();
-                $_SESSION['user_id'] = $row['id'];
-                $_SESSION['email'] = $row['email'];
+                $_SESSION['user_id'] = $row['User_ID'];
+                $_SESSION['email'] = $row['Email'];
                 return true;
             }
         }

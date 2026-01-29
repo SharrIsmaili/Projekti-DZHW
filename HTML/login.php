@@ -1,33 +1,34 @@
-
 <?php
-session_start();
+    session_start();
     $pageTitle = 'Login';
     require_once 'formHeader.php';
+    require_once 'database.php';
+    require_once 'users.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $db = new Database();
-    $connection = $db->getConnection();
-    $users = new User($connection);
+    $error = "";
 
-    // Get form data
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $db = new Database();
+        $connection = $db->getConnection();
+        $users = new Users($connection);
 
-    // Attempt to log in
-    if ($users->login($email, $password)) {
-        header("Location: home.php"); // Redirect to home page
-        exit;
-    } else {
-        echo "Invalid login credentials!";
+        // Get form data
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        // Attempt to log in
+        if($users->login($email, $password)){
+            header("Location: home.php"); // Redirect to home page
+            exit;
+        }else{
+            $error = "Invalid login credentials!";
+        }
     }
-}
 ?>
-
 
 <body>
     <main>
         <div id="container" class="login-container">
-
             <img src="../images/icons/backBtn.png" alt="Back Button" id="backArrow">
 
             <div id="left">
@@ -36,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div id="right">
-                <form action="home.php" id="login-form">
+                <form action="login.php" id="login-form" method="POST">
                     <div id="inputs">
                         <input type="text" name="email" id="login-email" class="input" placeholder="Email">
                         <div id="loginEmailError" class="error" aria-live="polite"></div>
@@ -44,7 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="password" name="password" id="login-password" class="input" placeholder="Password">
                         <div id="loginPasswordError" class="error" aria-live="polite"></div>
                         <br>
+
                         <input type="submit" value="Log In" id="formBtn"><br>
+
                         <div id="loginSuccess" class="success" role="status" aria-live="polite"></div>
 
                         <a href="register.php" id="hasAccount">Don't have an account?</a>
@@ -53,11 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </div>
     </main>
-
-
-
     <script src="../JS/forms.js"></script>
-    <script src="../JS/app.js"></script>
 </body>
-
 </html>
