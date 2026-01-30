@@ -94,15 +94,14 @@ if (loginForm) {
     const email = document.getElementById("login-email");
     const password = document.getElementById("login-password");
 
-    const emailError = document.getElementById("loginEmailError");
+    const emailError = document.getElementById("loginEmailError"); //loginEmailError
     const passwordError = document.getElementById("loginPasswordError");
-    const success = document.getElementById("loginSuccess");
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
     function clearErrors() {
-        [emailError, passwordError, success].forEach(el => el.textContent = "");
+        [emailError, passwordError].forEach(el => el.textContent = "");
     }
 
     function validateLogin() {
@@ -185,4 +184,89 @@ if(hamburger && links && rightSide){
         links.classList.toggle("active");
         rightSide.classList.toggle("active");
     });
+}
+
+//---------------------------------Suggestions box--------------------------------------------------------------------
+
+const searchBar = document.getElementById("searchBar");
+const suggestionsBox = document.getElementById("searchSuggestions");
+
+if(searchBar && suggestionsBox){
+    const siteSearchIndex = [
+        { id: "whoCanDonate", page:"home.php", title: "Who Can Donate Blood" },
+        { id: "donationProcess", page:"home.php", title: "The donation Process & What to Expect" },
+        { id: "preparation", page:"home.php", title: "Preparation" },
+        { id: "procedure", page:"home.php", title: "The procedure" },
+        { id: "postDonation", page:"home.php", title: "Post Donation Care" },
+        { id: "bloodTypes", page:"home.php", title: "Blood Types" },
+        { id: "address", page:"home.php", title: "Address" },
+        { id: "ourStory", page: "aboutUs.php", title: "Our Story"},
+        { id: "founders", page: "aboutUs.php", title: "The Founders"},
+        { id: "staff", page: "aboutUs.php", title: "Medical Staff"},
+        { id: "doctors", page: "aboutUs.php", title: "Doctors"},
+        { id: "nurses", page: "aboutUs.php", title: "Nurses"},
+        { id: "comments", page: "aboutUs.php", title: "Comments"},
+        { id: "usNow", page: "aboutUs.php", title: "Where We Are Now"},
+        { id: "prishtine", page: "our-locations.php", title: "Prishtine"},
+        { id: "mitrovice", page: "our-locations.php", title: "Mitrovice"},
+        { id: "peje", page: "our-locations.php", title: "Peje"},
+        { id: "prizren", page: "our-locations.php", title: "Prizren"},
+        { id: "ferizaj", page: "our-locations.php", title: "Ferizaj"},
+        { id: "gjilan", page: "our-locations.php", title: "Gjilan"},
+        { id: "gjakove", page: "our-locations.php", title: "Gjakove"}
+    ];
+
+    searchBar.addEventListener("input", () => {
+        const query = searchBar.value.toLowerCase().trim();
+        suggestionsBox.innerHTML = "";
+        suggestionsBox.style.display = "none";
+
+        if (!query) return;
+
+        const matches = siteSearchIndex.filter(item =>
+            item.title.toLowerCase().includes(query)
+        );
+
+        if (!matches.length) return;
+
+        suggestionsBox.style.display = "block";
+
+        matches.forEach(match => {
+            const div = document.createElement("div");
+            div.textContent = match.title;
+
+            div.addEventListener("click", () => {
+                goToResult(match);
+            });
+
+            suggestionsBox.appendChild(div);
+        });
+    });
+
+    searchBar.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            const query = searchBar.value.toLowerCase().trim();
+            const match = siteSearchIndex.find(item => 
+                item.title.toLowerCase().includes(query)
+            );
+
+            if (match) {
+                goToResult(match);
+            } else {
+                alert("No results found!");
+            }
+        }
+    });
+
+    function goToResult(result){
+        suggestionsBox.style.display = "none";
+
+        let url = result.page;
+
+        if(result.id){
+            url += "#" + result.id;
+        }
+
+        window.location.href = url;
+    }
 }

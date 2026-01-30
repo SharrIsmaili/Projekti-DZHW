@@ -1,7 +1,11 @@
 <?php
     $pageTitle = 'Dashboard';
-    require_once 'header.php';
     require_once 'database.php';
+
+    require_once 'auth.php';
+    requireAdmin();
+
+    require_once 'header.php';
 ?>
 
     <main>

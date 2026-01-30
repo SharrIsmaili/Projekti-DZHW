@@ -2,8 +2,8 @@
     $pageTitle = 'Register';
     require_once 'formHeader.php';
 
-    include_once 'database.php';
-    include_once 'users.php';
+    require_once 'database.php';
+    require_once 'users.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $db = new Database();

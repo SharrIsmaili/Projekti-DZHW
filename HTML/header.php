@@ -1,3 +1,9 @@
+<?php
+    if(session_status() === PHP_SESSION_NONE){
+        session_start();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +34,10 @@
                 <a href="aboutUs.php" class="pages">About Us</a>
                 <a href="our-locations.php" class="pages">Our Locations</a>
                 <a href="news.php" class="pages">News</a>
+
+                <?php if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']): ?>
+                    <a href="dashboard.php" class="pages">Dashboard</a>
+                <?php endif;?>
             </div>
 
             <div class="right-side">
@@ -39,7 +49,7 @@
 
 
                 <div id="profile">
-                    <a href="login.php"><img src="../images/icons/blank-pfp.jpg" alt="Blank Profile Picture"></a>
+                    <a href="profile.php"><img src="../images/icons/blank-pfp.png" alt="Blank Profile Picture"></a>
                 </div>
             </div>
             

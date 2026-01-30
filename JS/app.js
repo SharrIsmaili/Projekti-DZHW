@@ -92,27 +92,27 @@ const suggestionsBox = document.getElementById("searchSuggestions");
 
 if(searchBar && suggestionsBox){
     const siteSearchIndex = [
-        { id: "whoCanDonate", page:"home.html", title: "Who Can Donate Blood" },
-        { id: "donationProcess", page:"home.html", title: "The donation Process & What to Expect" },
-        { id: "preparation", page:"home.html", title: "Preparation" },
-        { id: "procedure", page:"home.html", title: "The procedure" },
-        { id: "postDonation", page:"home.html", title: "Post Donation Care" },
-        { id: "bloodTypes", page:"home.html", title: "Blood Types" },
-        { id: "address", page:"home.html", title: "Address" },
-        { id: "ourStory", page: "aboutUs.html", title: "Our Story"},
-        { id: "founders", page: "aboutUs.html", title: "The Founders"},
-        { id: "staff", page: "aboutUs.html", title: "Medical Staff"},
-        { id: "doctors", page: "aboutUs.html", title: "Doctors"},
-        { id: "nurses", page: "aboutUs.html", title: "Nurses"},
-        { id: "comments", page: "aboutUs.html", title: "Comments"},
-        { id: "usNow", page: "aboutUs.html", title: "Where We Are Now"},
-        { id: "prishtine", page: "our-locations.html", title: "Prishtine"},
-        { id: "mitrovice", page: "our-locations.html", title: "Mitrovice"},
-        { id: "peje", page: "our-locations.html", title: "Peje"},
-        { id: "prizren", page: "our-locations.html", title: "Prizren"},
-        { id: "ferizaj", page: "our-locations.html", title: "Ferizaj"},
-        { id: "gjilan", page: "our-locations.html", title: "Gjilan"},
-        { id: "gjakove", page: "our-locations.html", title: "Gjakove"}
+        { id: "whoCanDonate", page:"home.php", title: "Who Can Donate Blood" },
+        { id: "donationProcess", page:"home.php", title: "The donation Process & What to Expect" },
+        { id: "preparation", page:"home.php", title: "Preparation" },
+        { id: "procedure", page:"home.php", title: "The procedure" },
+        { id: "postDonation", page:"home.php", title: "Post Donation Care" },
+        { id: "bloodTypes", page:"home.php", title: "Blood Types" },
+        { id: "address", page:"home.php", title: "Address" },
+        { id: "ourStory", page: "aboutUs.php", title: "Our Story"},
+        { id: "founders", page: "aboutUs.php", title: "The Founders"},
+        { id: "staff", page: "aboutUs.php", title: "Medical Staff"},
+        { id: "doctors", page: "aboutUs.php", title: "Doctors"},
+        { id: "nurses", page: "aboutUs.php", title: "Nurses"},
+        { id: "comments", page: "aboutUs.php", title: "Comments"},
+        { id: "usNow", page: "aboutUs.php", title: "Where We Are Now"},
+        { id: "prishtine", page: "our-locations.php", title: "Prishtine"},
+        { id: "mitrovice", page: "our-locations.php", title: "Mitrovice"},
+        { id: "peje", page: "our-locations.php", title: "Peje"},
+        { id: "prizren", page: "our-locations.php", title: "Prizren"},
+        { id: "ferizaj", page: "our-locations.php", title: "Ferizaj"},
+        { id: "gjilan", page: "our-locations.php", title: "Gjilan"},
+        { id: "gjakove", page: "our-locations.php", title: "Gjakove"}
     ];
 
     searchBar.addEventListener("input", () => {

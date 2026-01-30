@@ -1,29 +1,51 @@
 <?php
     session_start();
     $pageTitle = 'Login';
-    require_once 'formHeader.php';
+
     require_once 'database.php';
     require_once 'users.php';
 
     $error = "";
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if(isset($_SESSION['user_id'])){
+        header("Location: home.php");
+        exit;
+    }
+
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $db = new Database();
         $connection = $db->getConnection();
         $users = new Users($connection);
 
         // Get form data
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        $email = trim($_POST['email'] ?? '');
+        $password = $_POST['password'] ?? '';
 
-        // Attempt to log in
-        if($users->login($email, $password)){
-            header("Location: home.php"); // Redirect to home page
+        $user = $users->login($email, $password);
+
+        if($user !== false){
+            session_regenerate_id(true);
+
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['name'] = $user['name'];
+            $_SESSION['lastname'] = $user['lastname'];
+            $_SESSION['isAdmin'] = $user['isAdmin'];
+
+            if(isset($_SESSION['redirect_after_login'])){
+                $redirect = $_SESSION['redirect_after_login'];
+                unset($_SESSION['redirect_after_login']);
+                header("Location: $redirect");
+            }else{
+                header("Location: home.php");
+            }
             exit;
         }else{
-            $error = "Invalid login credentials!";
+            $error = "Incorrect email or password!";
         }
     }
+
+    require_once 'formHeader.php';
 ?>
 
 <body>
@@ -48,7 +70,9 @@
 
                         <input type="submit" value="Log In" id="formBtn"><br>
 
-                        <div id="loginSuccess" class="success" role="status" aria-live="polite"></div>
+                        <?php if(!empty($error)):?>
+                            <div class="error" role="alert"><?= htmlspecialchars($error) ?></div>
+                        <?php endif;?>
 
                         <a href="register.php" id="hasAccount">Don't have an account?</a>
                     </div>

@@ -42,6 +42,7 @@ body {
   flex-wrap: nowrap;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .pages {
@@ -111,7 +112,7 @@ body {
   overflow-y: auto;
   border: 1px solid #ccc;
   border-radius: 8px;
-  margin-top: 5px;
+  top: 70%;
   display: none;
   z-index: 9999;
 }
@@ -132,7 +133,7 @@ body {
   border: 2px solid var(--red);
   color: whitesmoke;
   font-size: 20px;
-  margin: 15px;
+  margin: 10px;
 }
 
 #contactBtn:hover {

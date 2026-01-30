@@ -39,7 +39,7 @@
                     <h1>The Founders</h1>
                 </div>
 
-                <div class="cards">
+                <div class="cards" id="founderCards">
                     <div class="card">
                         <img src="../images/about-us/founders/founder1.jpg" alt="Fatime Shahini">
 
@@ -73,11 +73,11 @@
                         humanity, empathy, and unwavering care.</p>
                 </div>
                 <div class="doctors-card-section" id="doctors">
-                    <div class="aboutTitle">
-                        <h1>Our Doctors</h1>
-                    </div>
-
                     <div class="doctors">
+                        <div class="aboutTitle">
+                            <h1>Our Doctors</h1>
+                        </div>
+
                         <div class="card">
                             <img src="../images/doctors/doc1.jpg" alt="Doctor">
 
@@ -165,12 +165,11 @@
                 </div>
 
                 <div class="nurses-card-section" id="nurses">
-
-                    <div class="aboutTitle">
-                        <h1>Our Nurses</h1>
-                    </div>
-
                     <div class="nurses">
+                        <div class="aboutTitle">
+                            <h1>Our Nurses</h1>
+                        </div>
+
                         <div class="card">
                             <img src="../images/nurses/nurse1.png" alt="Nurse">
 
