@@ -49,7 +49,7 @@
 
 
                 <div id="profile">
-                    <a href="profile.php"><img src="../images/icons/blank-pfp.png" alt="Blank Profile Picture"></a>
+                    <a href="profile.php"><img src="../images/icons/blank-pfp.jpg" alt="Blank Profile Picture"></a>
                 </div>
             </div>
             
