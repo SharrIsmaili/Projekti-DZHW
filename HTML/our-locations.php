@@ -1,6 +1,7 @@
 <?php
     $pageTitle = 'Our Locations';
     require_once 'header.php';
+    require_once 'database.php';
 ?>
 
     <main id="locationsMain">

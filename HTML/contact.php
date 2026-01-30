@@ -1,6 +1,7 @@
 <?php
     $pageTitle = 'Contact Us';
     require_once 'formHeader.php';
+    require_once 'database.php';
 ?>
 
 <body id="top">
