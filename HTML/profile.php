@@ -1,8 +1,8 @@
 <?php
-    require_once '../auth.php';
+    require_once 'auth.php';
     requireLogin();
 
-    require_once '../header.php';
+    require_once 'header.php';
 ?>
 
     <h1>HELLO WORLD TEST TEST!!!!!</h1>
@@ -11,8 +11,8 @@
         <h2>OHHH YOURE AN ADMIN HELLOO!!!!!</h2>
     <?php endif;?>
 
-    <a href="../logout.php">LOG OUT!@@!!!</a>
+    <a href="logout.php">LOG OUT!@@!!!</a>
 
 <?php
-    require_once '../footer.php';
+    require_once 'footer.php';
 ?>

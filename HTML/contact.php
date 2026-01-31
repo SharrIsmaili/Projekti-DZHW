@@ -1,7 +1,7 @@
 <?php
     $pageTitle = 'Contact Us';
     require_once 'database.php';
-    require_once 'users.php';
+    require_once 'admin/users.php';
     require_once 'feedback.php';
 
     require_once 'auth.php';

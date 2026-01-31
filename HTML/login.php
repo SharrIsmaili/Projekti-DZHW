@@ -3,7 +3,7 @@
     $pageTitle = 'Login';
 
     require_once 'database.php';
-    require_once 'users.php';
+    require_once 'admin/users.php';
 
     $error = "";
 
