@@ -450,8 +450,8 @@
                         our shared mission to make healthcare accessible, effective, and human. Every day, we strive to
                         be a place where care meets hope, science meets empathy, and every patient feels supported and
                         valued.</p>
-                        <img src="../images/about-us/whereWeAre.jpg" alt="Where we are now" style="width: 800px; justify-content:center; display:flex; padding: left 50px;">
                 </div>
+                <img src="../images/about-us/whereWeAre.jpg" alt="Where we are now" style="width: 800px; justify-content:center; display:flex; padding: left 50px;">
             </div>
         </section>
 
