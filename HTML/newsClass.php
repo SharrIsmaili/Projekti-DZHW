@@ -32,9 +32,14 @@
             return $stmt->execute([$title, $content, $image, $userId]);
         }
 
-        public function updateNews($id, $title, $content, $image) {
-            $stmt = $this->conn->prepare("UPDATE {$this->table_name} SET Title = ?, Content = ?, Image = ? WHERE News_ID = ?");
-            return $stmt->execute([$title, $content, $image, $id]);
+        public function updateNews($id, $title, $content, $image = null) {
+            if ($image) {
+                $stmt = $this->conn->prepare("UPDATE news SET Title=?, Content=?, Image=? WHERE News_ID=?");
+                return $stmt->execute([$title, $content, $image, $id]);
+            } else {
+                $stmt = $this->conn->prepare("UPDATE news SET Title=?, Content=? WHERE News_ID=?");
+                return $stmt->execute([$title, $content, $id]);
+            }
         }
 
         public function deleteNews($id) {

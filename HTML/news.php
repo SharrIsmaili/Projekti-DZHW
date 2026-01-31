@@ -6,18 +6,15 @@ require_once 'database.php';
 $db = new Database();
 $conn = $db->getConnection();
 
-// Pagination settings
 $itemsPerPage = 5;
 $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($currentPage < 1) $currentPage = 1;
 $offset = ($currentPage - 1) * $itemsPerPage;
 
-// Get total news items
 $totalStmt = $conn->query("SELECT COUNT(*) FROM news");
 $totalItems = $totalStmt->fetchColumn();
 $totalPages = ceil($totalItems / $itemsPerPage);
 
-// Fetch current page news
 $stmt = $conn->prepare("SELECT * FROM news ORDER BY Date_Time DESC LIMIT :limit OFFSET :offset");
 $stmt->bindValue(':limit', $itemsPerPage, PDO::PARAM_INT);
 $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
@@ -51,7 +48,6 @@ $newsItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php endif; ?>
     </div>
 
-    <!-- Pagination -->
     <div class="pagination">
         <?php if ($currentPage > 1): ?>
             <a href="?page=<?= $currentPage - 1 ?>"><div class="number">Prev</div></a>

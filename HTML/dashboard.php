@@ -112,14 +112,13 @@
         break;
 
         case 'news':
-            $obj = new NewsClass($con);
+            $obj = new newsClass($con);
             if ($id) $selected = $obj->getNewsById($id);
             $imagePath = $selected['Image'] ?? null;
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $postId = $_POST['id'] ?? null;
-
-                // Image upload
+            
                 if(!empty($_FILES['image']['name'])){
                     $uploadDir = 'uploads/news/';
                     if(!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
@@ -148,7 +147,6 @@
                     $obj->deleteNews($postId);
                 }
 
-                // refresh selected after POST
                 if ($postId) $selected = $obj->getNewsById($postId);
             }
 
