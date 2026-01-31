@@ -2,6 +2,7 @@
     $pageTitle = 'Dashboard';
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:HTML/dashboard.php
     require_once 'database.php';
     require_once 'users.php';
@@ -13,11 +14,13 @@
 =======
 >>>>>>> Stashed changes
 =======
+=======
 >>>>>>> Stashed changes
 
     require_once '../auth.php';
     requireAdmin();
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream:HTML/dashboard.php
@@ -224,6 +227,7 @@
         </aside>
 =======
 =======
+=======
 >>>>>>> Stashed changes
     require_once '../header.php';
     require_once '../database.php';
@@ -245,6 +249,8 @@
             </div>
         </section>
 <<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -376,6 +382,7 @@
                 </form>
 =======
 =======
+=======
 >>>>>>> Stashed changes
                     <h1>Welcome, (admins username)</h1>
                 </div>
@@ -393,6 +400,9 @@
                     <img src="../images/icons/blank-pfp.jpg" alt="Users Profile Picture">
                 </div>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -401,6 +411,7 @@
             <div id="bottom-section">
                 <table>
                     <thead>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
                         <tr>
@@ -420,6 +431,8 @@
                         <?php endforeach; ?>
                     </tbody>
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                         <th>User</th>
@@ -465,6 +478,9 @@
 
                     
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
