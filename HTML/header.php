@@ -37,7 +37,7 @@
                 <a href="news.php" class="pages">News</a>
 
                 <?php if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']): ?>
-                    <a href="dashboard.php" class="pages">Dashboard</a>
+                    <a href="admin/dashboard.php" class="pages">Dashboard</a>
                 <?php endif;?>
             </div>
 
