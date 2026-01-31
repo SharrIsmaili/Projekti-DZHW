@@ -705,6 +705,11 @@ iframe {
   font-size: 20px;
 }
 
+.number.active {
+  background-color: #8b0000;
+  color: white;
+}
+
 /*========================================About Us==================================================================*/
 
 #aboutMain {
@@ -1152,7 +1157,82 @@ footer h2 {
 .social-icons:hover {
   width: 53px;
 }
+/*==============================================Privacy Policy=====================================================================*/
 
+.privacy-container {
+  max-width: 900px;
+  margin: 40px auto 100px auto;
+  padding: 0 20px;
+
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+  position: relative;
+}
+
+.privacy-policy h1 {
+  margin-bottom: 12px;
+  font-size: 2.2rem;
+  color: var(--red);
+  text-align: center;
+}
+
+.privacy-policy h2 {
+  margin-top: 36px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: var(--red);
+}
+
+.privacy-policy p {
+  line-height: 1.7;
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.effective-date {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.privacy-policy ul {
+  margin-left: 20px;
+  margin-bottom: 22px;
+}
+
+.privacy-policy li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-list li {
+  margin-bottom: 10px;
+}
+
+.contact-list a {
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: var(--red);
+}
+
+a:hover {
+  color: var(--red);
+}
 
 /*==============================================Responsivity=====================================================================*/
 

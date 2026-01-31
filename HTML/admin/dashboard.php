@@ -1,14 +1,18 @@
 <?php
     $pageTitle = 'Dashboard';
+<<<<<<< Updated upstream:HTML/dashboard.php
     require_once 'database.php';
     require_once 'users.php';
     require_once 'staff.php';
     require_once 'NewsClass.php';
     require_once 'feedback.php';
+=======
+>>>>>>> Stashed changes:HTML/admin/dashboard.php
 
-    require_once 'auth.php';
+    require_once '../auth.php';
     requireAdmin();
 
+<<<<<<< Updated upstream:HTML/dashboard.php
     $db = new Database();
     $con = $db->getConnection();
     
@@ -190,6 +194,10 @@
     }
 
     require_once 'header.php';
+=======
+    require_once '../header.php';
+    require_once '../database.php';
+>>>>>>> Stashed changes:HTML/admin/dashboard.php
 ?>
 
     <main id="dashboard-main">
@@ -357,5 +365,5 @@
     </main>
 
 <?php
-    require_once 'footer.php';
+    require_once '../footer.php';
 ?>

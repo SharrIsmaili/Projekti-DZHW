@@ -1,4 +1,5 @@
 <?php
+
 class Users {
     private $conn;
     private $table_name = 'users';

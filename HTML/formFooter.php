@@ -62,7 +62,7 @@
             </div>
         </div>
 
-        <div class="credit">&copy; Copyright Elsa Rizani & Sharr Ismaili | <a href="#" style="color: #333;">Privacy
+        <div class="credit">&copy; Copyright Elsa Rizani & Sharr Ismaili | <a href="privacy_policy.php" style="color: #333;">Privacy
                 Policy</a>
         </div>
     </footer>
