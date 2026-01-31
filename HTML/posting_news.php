@@ -1,16 +1,17 @@
 <?php
     require_once 'database.php';
-    
+
     if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
         header("Location: news.php");
         exit();
     }
 
-    $id = $_GET['id'];
+    $id = (int)$_GET['id'];
+
     $db = new Database();
     $conn = $db->getConnection();
 
-    $stmt = $conn->prepare("SELECT * FROM news WHERE id = :id");
+    $stmt = $conn->prepare("SELECT * FROM news WHERE News_ID = :id");
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
     $article = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -24,47 +25,35 @@
 ?>
 
 <main>
-    <article class="news-detail-container">
-        <div class="detail-header">
-            <a href="news.php">&larr; Back to News</a>
-            <h1><?= htmlspecialchars($article['Title']) ?></h1>
-            <p class="date">Published on: <?= date('d M Y', strtotime($article['Date_Time'])) ?></p>
+    <article class="news-detail-container" style="max-width: 900px; margin: 50px auto; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+
+        <div class="detail-header" style="margin-bottom: 20px;">
+            <a href="news.php" style="text-decoration: none; color: var(--red); font-weight: bold;">&larr; Back to News</a>
+            <h1 style="margin-top: 10px; color: var(--black);"><?= htmlspecialchars($article['Title']) ?></h1>
+            <p class="date" style="color: gray; font-size: 14px;">Published on: <?= date('d M Y', strtotime($article['Date_Time'])) ?></p>
         </div>
 
         <?php if (!empty($article['Image'])): ?>
-            <div class="detail-img">
-                <img src="<?= htmlspecialchars($article['Image']) ?>" alt="<?= htmlspecialchars($article['Title']) ?>" style="max-width:100%; height:auto;">
+            <div class="detail-img" style="text-align: center; margin-bottom: 20px;">
+                <img src="<?= htmlspecialchars($article['Image']) ?>" alt="<?= htmlspecialchars($article['Title']) ?>" style="max-width:100%; height:auto; border-radius: 10px;">
             </div>
         <?php endif; ?>
 
-        <div class="detail-content">
+        <div class="detail-content" style="line-height: 1.7; color: var(--black); font-size: 18px;">
             <p><?= nl2br(htmlspecialchars($article['Content'])) ?></p>
         </div>
 
-
-        <div class="pagination">
-            <?php if ($currentPage > 1): ?>
-            <a href="?page=<?= $currentPage - 1 ?>"><div><p>&laquo;</p></div></a>
-            <?php endif; ?>
-
-            <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-            <a href="?page=<?= $i ?>">
-                <div class="number <?= $i === $currentPage ? 'active' : '' ?>" 
-                style="<?= $i === $currentPage ? 'background-color: #d32f2f; color: white;' : '' ?>">
-                    <p><?php echo $i; ?></p>
-                </div>
-            </a>
-            <?php endfor; ?>
-
-            <?php if ($currentPage < $totalPages): ?>
-                <a href="?page=<?= $currentPage + 1 ?>">
-                    <div>
-                        <p>&raquo;</p>
-                    </div>
-                </a>
-            <?php endif; ?>
-        </div>
     </article>
 </main>
+
+<style>
+    .news-detail-container a {
+        transition: 0.2s ease-in-out;
+    }
+    .news-detail-container a:hover {
+        color: var(--darkred);
+        text-decoration: underline;
+    }
+</style>
 
 <?php require_once 'footer.php'; ?>

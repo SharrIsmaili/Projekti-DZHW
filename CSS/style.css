@@ -672,7 +672,6 @@ iframe {
 .pagination a {
   text-decoration: none;
 }
-
 .number {
   background-color: whitesmoke;
   width: 55px;
@@ -683,30 +682,25 @@ iframe {
   align-items: center;
 }
 
-.number:hover {
-  background-color: darkgray;
-}
-
-.number:hover p {
-  color: white;
-}
-
-#active {
-  background-color: var(--red);
-}
-
-#active p {
-  color: white;
-}
-
 .number p {
   text-align: center;
   color: var(--red);
   font-size: 20px;
 }
 
+.number:hover {
+  background-color: var(--darkred);
+}
+
+.number:hover p {
+  color: white;
+}
+
 .number.active {
-  background-color: #8b0000;
+  background-color: var(--red);
+}
+
+.number.active p {
   color: white;
 }
 
@@ -1236,6 +1230,46 @@ a:hover {
 
 /*==============================================Responsivity=====================================================================*/
 
+@media screen and (max-width: 1024px) {
+  #dashboard-main {
+    flex-direction: column;
+  }
+
+  #dashboard-sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    height: auto;
+    position: relative;
+    padding: 15px;
+  }
+
+  #dashboard-sidebar ul {
+    display: flex;
+    gap: 15px;
+  }
+
+  #dashboard-sidebar ul li {
+    margin-bottom: 0;
+  }
+
+  #information {
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  #middle-section input,
+  #middle-section textarea {
+    font-size: 14px;
+  }
+
+  #bottom-section th,
+  #bottom-section td {
+    font-size: 14px;
+  }
+}
+
 @media screen and (min-width: 769px) and (max-width: 1100px) {
 
   /* Navbar Responsivity */
@@ -1400,6 +1434,27 @@ a:hover {
     width: 100% !important;
   }
 
+  /* dashboard  */
+
+  #dashboard-main {
+    flex-direction: column;
+  }
+
+  #dashboard-sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  #dashboard-sidebar #options ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #dashboard-sidebar #options ul li {
+    margin: 0 10px;
+  }
+
   /* Footer responsivity */
   footer .top-row {
     flex-direction: column;
@@ -1425,32 +1480,147 @@ a:hover {
 }
 
 /*-----------------------------------------Dashboard------------------------------------------------------------------------*/
-
-#dashboard-main{
-  display: flex;
-  justify-content: flex-start;
-  background-color: white;
+#dashboard-main {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fdfdfd;
+    font-family: 'Poppins', sans-serif;
 }
 
-#dashboard-sidebar{
-  background-color: whitesmoke;
+#dashboard-sidebar {
+  background-color: #f3f3f3;
+  width: 250px;
+  padding: 30px 20px;
+  flex-shrink: 0;
   border-radius: 10px;
-  width: 300px;
-  padding: 20px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 20px;
+  height: calc(100vh - 40px);
 }
 
-#options li{
-  text-decoration: none;
+#dashboard-sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--red);
+}
+
+#dashboard-sidebar ul {
   list-style: none;
-  margin-top: 50px;
+  padding: 0;
 }
 
-table{
-  padding: 10px;
+#dashboard-sidebar ul li {
+  margin-bottom: 20px;
+}
+
+#dashboard-sidebar ul li a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 18px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+#dashboard-sidebar ul li a:hover {
+  background-color: var(--darkred);
+  color: white;
+}
+
+#dashboard-sidebar ul li a.active {
+  background-color: var(--red);
+  color: white;
+}
+
+#information {
+  flex-grow: 1;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+#top-section h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--black);
+}
+
+#middle-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+#middle-section label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+#middle-section input[type="text"],
+#middle-section input[type="email"],
+#middle-section input[type="file"],
+#middle-section textarea {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 16px;
+  transition: border 0.2s ease-in-out;
+}
+
+#middle-section input:focus,
+#middle-section textarea:focus {
+  outline: none;
+  border: 2px solid var(--red);
+}
+
+#middle-section button {
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--red);
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#middle-section button:hover {
+  background-color: var(--darkred);
+}
+
+#bottom-section table {
+  width: 100%;
   border-collapse: collapse;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-table, th, td{
-  padding: 10px;
-  border: 1px solid black;
+#bottom-section th,
+#bottom-section td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 16px;
 }
+
+#bottom-section th {
+  background-color: var(--red);
+  color: white;
+}
+
+#bottom-section td a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+#bottom-section td a:hover {
+  text-decoration: underline;
+  color: var(--darkred);
+}
+

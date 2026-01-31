@@ -29,7 +29,7 @@ $newsItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div id="news">
         <?php if ($newsItems): ?>
             <?php foreach ($newsItems as $row): ?>
-                <a href="posting_news.php?id=<?= (int)$row['id'] ?>">
+                <a href="posting_news.php?id=<?= (int)$row['News_ID'] ?>">
                     <div class="news-container">
                         <div class="news-date">
                             <p><?= date('d M Y', strtotime($row['Date_Time'])) ?></p>

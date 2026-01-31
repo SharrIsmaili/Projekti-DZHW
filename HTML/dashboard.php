@@ -199,10 +199,10 @@
             </div>
             <div id="options">
                 <ul>
-                    <li><a href="dashboard.php?type=users">Users</a></li>
-                    <li><a href="dashboard.php?type=staff">Staff</a></li>
-                    <li><a href="dashboard.php?type=news">News</a></li>
-                    <li><a href="dashboard.php?type=feedback">Feedback</a></li>
+                    <li><a href="dashboard.php?type=users" class="<?= $type === 'users' ? 'active' : '' ?>">Users</a></li>
+                    <li><a href="dashboard.php?type=staff" class="<?= $type === 'staff' ? 'active' : '' ?>">Staff</a></li>
+                    <li><a href="dashboard.php?type=news" class="<?= $type === 'news' ? 'active' : '' ?>">News</a></li>
+                    <li><a href="dashboard.php?type=feedback" class="<?= $type === 'feedback' ? 'active' : '' ?>">Feedback</a></li>
                 </ul>
             </div>
         </aside>
