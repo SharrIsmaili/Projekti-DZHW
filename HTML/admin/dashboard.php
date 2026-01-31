@@ -1,6 +1,7 @@
 <?php
     $pageTitle = 'Dashboard';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:HTML/dashboard.php
     require_once 'database.php';
     require_once 'users.php';
@@ -11,10 +12,13 @@
 >>>>>>> Stashed changes:HTML/admin/dashboard.php
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 
     require_once '../auth.php';
     requireAdmin();
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream:HTML/dashboard.php
     $db = new Database();
@@ -219,6 +223,8 @@
             </div>
         </aside>
 =======
+=======
+>>>>>>> Stashed changes
     require_once '../header.php';
     require_once '../database.php';
 ?>
@@ -238,11 +244,15 @@
                 </ul>
             </div>
         </section>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
         <section id="information">
             <div id="top-section">
                 <div id="left-side">
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
                     <?php if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']): ?>
                         <h1>Welcome, <?= htmlspecialchars($_SESSION['name'] . ' ' . $_SESSION['lastname']) ?>!</h1>
@@ -365,6 +375,8 @@
                     <?php endif; ?>
                 </form>
 =======
+=======
+>>>>>>> Stashed changes
                     <h1>Welcome, (admins username)</h1>
                 </div>
 
@@ -380,12 +392,16 @@
                 <div id="right-side">
                     <img src="../images/icons/blank-pfp.jpg" alt="Users Profile Picture">
                 </div>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             </div>
 
             <div id="bottom-section">
                 <table>
                     <thead>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
                         <tr>
                             <?php foreach ($columns as $label): ?>
@@ -404,6 +420,8 @@
                         <?php endforeach; ?>
                     </tbody>
 =======
+=======
+>>>>>>> Stashed changes
                         <th>User</th>
                         <th>Email</th>
                         <th>Role</th>
@@ -446,6 +464,9 @@
                     </tbody>
 
                     
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                 </table>
             </div>
