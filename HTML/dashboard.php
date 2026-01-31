@@ -22,13 +22,11 @@
         case 'users':
             $obj = new Users($con);
             if ($id) $selected = $obj->getUserById($id);
-        
+
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $postId = $_POST['id'] ?? null;
-        
-                if (isset($_POST['add'])) {
-                    // Users don't have add in your current UI, skip if not needed
-                }
+
+                if (isset($_POST['add'])) {}
                 if (isset($_POST['update']) && $postId) {
                     $obj->updateUser(
                         $postId,
@@ -43,31 +41,31 @@
                 if (isset($_POST['delete']) && $postId) {
                     $obj->deleteUser($postId);
                 }
-        
+
                 // refresh selected after POST
                 if ($postId) $selected = $obj->getUserById($postId);
             }
-        
+
             $rows = $obj->getAllUsers();
         break;
-        
+
         case 'staff':
             $obj = new Staff($con);
             if ($id) $selected = $obj->getStaffById($id);
-        
+
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $postId = $_POST['id'] ?? null;
                 $imagePath = $selected['Image'] ?? null;
-        
+
                 // Handle image upload
                 if(!empty($_FILES['image']['name'])){
                     $uploadDir = 'uploads/staff/';
                     if(!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
-        
+
                     $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
                     $fileName = uniqid('staff_') . '.' . $ext;
                     $target = $uploadDir . $fileName;
-        
+
                     if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
                         if(!empty($selected['Image']) && file_exists($selected['Image'])){
                             unlink($selected['Image']);
@@ -75,7 +73,7 @@
                         $imagePath = $target;
                     }
                 }
-        
+
                 if (isset($_POST['add'])) {
                     $obj->addStaff(
                         $_POST['name'],
@@ -105,30 +103,30 @@
                     }
                     $obj->deleteStaff($postId);
                 }
-        
+
                 // refresh selected after POST
                 if ($postId) $selected = $obj->getStaffById($postId);
             }
-        
+
             $rows = $obj->getAllStaff();
         break;
-        
+
         case 'news':
             $obj = new NewsClass($con);
             if ($id) $selected = $obj->getNewsById($id);
             $imagePath = $selected['Image'] ?? null;
-        
+
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $postId = $_POST['id'] ?? null;
-        
+
                 // Image upload
                 if(!empty($_FILES['image']['name'])){
                     $uploadDir = 'uploads/news/';
                     if(!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
-        
+
                     $fileName = uniqid('news_') . '.' . pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
                     $target = $uploadDir . $fileName;
-        
+
                     if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
                         if(!empty($imagePath) && file_exists($imagePath)){
                             unlink($imagePath);
@@ -136,7 +134,7 @@
                         $imagePath = $target;
                     }
                 }
-        
+
                 if (isset($_POST['add'])) {
                     $obj->addNews($_POST['title'], $_POST['content'], $imagePath, $_SESSION['user_id']);
                 }
@@ -149,22 +147,22 @@
                     }
                     $obj->deleteNews($postId);
                 }
-        
+
                 // refresh selected after POST
                 if ($postId) $selected = $obj->getNewsById($postId);
             }
-        
+
             $rows = $obj->getAllNews();
         break;
-        
+
         case 'feedback':
             $obj = new Feedback($con);
             if ($id) $selected = $obj->getFeedbackById($id);
-        
+
             if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete']) && $_POST['id']) {
                 $obj->deleteFeedback($_POST['id']);
             }
-        
+
             $rows = $obj->getAllFeedback();
         break;
     }
