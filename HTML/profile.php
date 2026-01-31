@@ -4,14 +4,15 @@
 
     require_once 'header.php';
 ?>
+<?php
+    $name = trim(($_SESSION['name'] ?? '') . ' ' . ($_SESSION['lastname'] ?? ''));
+?>
 
-    <h1>HELLO WORLD TEST TEST!!!!!</h1>
-
-    <?php if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']): ?>
-        <h2>OHHH YOURE AN ADMIN HELLOO!!!!!</h2>
-    <?php endif;?>
-
-    <a href="logout.php">LOG OUT!@@!!!</a>
+<?php if (!empty($_SESSION['isAdmin'])): ?>
+    <h2>Hello <?= htmlspecialchars($name) ?>, you're an admin!</h2>
+<?php else: ?>
+    <h2>Hello <?= htmlspecialchars($name) ?>!</h2>
+<?php endif; ?>
 
 <?php
     require_once 'footer.php';
