@@ -135,41 +135,26 @@ if (loginForm) {
 const inputs = document.getElementById("inputs");
 
 if (inputs) {
-    const name = document.getElementById("contact-name");
-    const lastname = document.getElementById("contact-lastname");
-    const email = document.getElementById("contact-email");
-    const city = document.getElementById("selectCity");
+    const subject = document.getElementById("contact-subject");
     const message = document.getElementById("message");
 
-    const emailError = document.getElementById("contactEmailError");
-    const cityError = document.getElementById("cityError");
+    const subjectError = document.getElementById("contactSubjectError");
     const msgError = document.getElementById("msgError");
-    const success = document.getElementById("msgSuccess");
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
     inputs.addEventListener("submit", (e) => {
-        e.preventDefault();
+        [subjectError, msgError].forEach(el => el.textContent = "");
 
-        [emailError, cityError, msgError, success].forEach(el => el.textContent = "");
-
-        if (!emailRegex.test(email.value.trim())) {
-            emailError.textContent = "Invalid email.";
-            return;
-        }
-
-        if (!city.value) {
-            cityError.textContent = "Please select a city.";
+        if (!subject.value.trim()) {
+            subjectError.textContent = "Please write a subject.";
+            e.preventDefault();
             return;
         }
 
         if (message.value.trim().length < 10) {
             msgError.textContent = "Message must be at least 10 characters.";
+            e.preventDefault();
             return;
         }
-
-        success.textContent = "Message sent successfully!";
-        inputs.reset();
     });
 }
 

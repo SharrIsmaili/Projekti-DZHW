@@ -1344,4 +1344,33 @@ footer h2 {
   }
 }
 
+/*-----------------------------------------Dashboard------------------------------------------------------------------------*/
 
+#dashboard-main{
+  display: flex;
+  justify-content: flex-start;
+  background-color: white;
+}
+
+#dashboard-sidebar{
+  background-color: whitesmoke;
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+}
+
+#options li{
+  text-decoration: none;
+  list-style: none;
+  margin-top: 50px;
+}
+
+table{
+  padding: 10px;
+  border-collapse: collapse;
+}
+
+table, th, td{
+  padding: 10px;
+  border: 1px solid black;
+}

@@ -1,10 +1,39 @@
 <?php
     $pageTitle = 'Contact Us';
-    require_once 'formHeader.php';
     require_once 'database.php';
+    require_once 'users.php';
+    require_once 'feedback.php';
 
     require_once 'auth.php';
     requireLogin();
+
+    $db = new Database();
+    $con = $db->getConnection();
+    $feedback = new Feedback($con);
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sendMessage'])) {
+        $subject = trim($_POST['subject'] ?? '');
+        $message = trim($_POST['message'] ?? '');
+
+        if (!empty($subject) && !empty($message)) {
+            try {
+                $result = $feedback->addFeedback($_SESSION['user_id'], $subject, $message);
+                if ($result) {
+                    $success = "Your feedback has been sent!";
+                    $_POST['subject'] = '';
+                    $_POST['message'] = '';
+                } else {
+                    $error = "Failed to send feedback.";
+                }
+            } catch (PDOException $e) {
+                $error = "Database error: " . $e->getMessage();
+            }
+        } else {
+            $error = "Please type a subject and message.";
+        }
+    }
+
+    require_once 'formHeader.php';
 ?>
 
 <body id="top">
@@ -48,35 +77,15 @@
         <section>
             <div id="contact-container">
                 <div id="left">
-                    <form id="inputs">
-                        <input type="text" name="name" id="contact-name" class="input" placeholder="Name"><br>
-                        <input type="text" name="lasname" id="contact-lastname" class="input"
-                            placeholder="Lastname"><br>
-                        <input type="email" name="email" id="contact-email" class="input" placeholder="Email"><br>
-                        <div id="contactEmailError" class="error" aria-live="polite"></div>
+                    <form id="inputs" method="POST">
+                        <input type="text" name="subject" id="contact-subject" class="input" value="<?= htmlspecialchars($_POST['subject'] ?? '') ?>" placeholder="Subject">
+                        <div id="contactSubjectError" class="error" aria-live="polite"></div>
 
-
-                        <select name="city" id="selectCity">
-                            <option disabled selected hidden>Select a city...</option>
-                            <option class="city" value="prishtina">Prishtinë</option>
-                            <option class="city" value="mitrovica">Mitrovicë</option>
-                            <option class="city" value="peja">Pejë</option>
-                            <option class="city" value="prizren">Prizren</option>
-                            <option class="city" value="ferizaj">Ferizaj</option>
-                            <option class="city" value="gjilan">Gjilan</option>
-                            <option class="city" value="gjakova">Gjakovë</option>
-                        </select><br>
-                        <div id="cityError" class="error" aria-live="polite"></div>
-
-
-                        <textarea name="message" id="message"
-                            placeholder="Write your message..."></textarea><br>
+                        <textarea name="message" id="message" placeholder="Write your message..."><?= htmlspecialchars($_POST['message'] ?? '') ?></textarea>
                         <div id="msgError" class="error" aria-live="polite"></div>
 
-
-                        <input type="submit" name="sendMessage" id="formBtn" value="Send Message">
-                        <div id="msgSuccess" class="success" role="status" aria-live="polite"></div>
-
+                        <button type="submit" name="sendMessage" id="formBtn" value="Send Message">Send Message</button>
+                        <div id="msgSuccess" class="success" role="status" aria-live="polite"><?= $success ?? '' ?></div>
                     </form>
                 </div>
 

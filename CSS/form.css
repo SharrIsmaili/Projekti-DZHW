@@ -205,7 +205,7 @@ main {
 
 #contact-container {
   padding: 40px 60px;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: nowrap;
   flex-direction: row;
   max-width: 1100px;

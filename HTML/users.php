@@ -49,5 +49,41 @@ class Users {
         }
         return false;
     }
+
+    public function getAllUsers() {
+        $stmt = $this->conn->prepare("SELECT User_ID, Name, Lastname, Phone_Number, Email, isAdmin FROM {$this->table_name}");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getUserById($id){
+        $query = "SELECT * FROM {$this->table_name} WHERE User_ID = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function addUser($name, $lastname, $email, $phone, $password, $isAdmin) {
+        $stmt = $this->conn->prepare("INSERT INTO {$this->table_name} (Name, Lastname, Email, Phone_Number, Password, isAdmin) VALUES (?, ?, ?, ?, ?, ?)");
+        $hashed = password_hash($password, PASSWORD_DEFAULT);
+        return $stmt->execute([$name, $lastname, $email, $phone, $hashed, $isAdmin]);
+    }
+
+    public function updateUser($id, $name, $lastname, $email, $phone, $password, $isAdmin) {
+        if ($password) {
+            $hashed = password_hash($password, PASSWORD_DEFAULT);
+            $stmt = $this->conn->prepare("UPDATE {$this->table_name} SET Name=?, Lastname=?, Email=?, Phone_Number=?, Password=?, isAdmin=? WHERE User_ID=?");
+            return $stmt->execute([$name, $lastname, $phone, $email, $hashed, $isAdmin, $id]);
+        } else {
+            $stmt = $this->conn->prepare("UPDATE {$this->table_name} SET Name=?, Lastname=?, Email=?, Phone_Number=?, isAdmin=? WHERE User_ID=?");
+            return $stmt->execute([$name, $lastname, $email, $phone, $isAdmin, $id]);
+        }
+    }
+
+    public function deleteUser($id) {
+        $stmt = $this->conn->prepare("DELETE FROM {$this->table_name} WHERE User_ID=?");
+        return $stmt->execute([$id]);
+    }
 }
 ?>
