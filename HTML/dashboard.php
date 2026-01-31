@@ -246,8 +246,8 @@
                             <input id="isAdmin" type="checkbox" name="isAdmin" <?= !empty($selected['isAdmin']) ? 'checked' : '' ?>>
                         </div>
                     
-                        <button type="submit" name="update">Update</button>
-                        <button type="submit" name="delete" onclick="return confirm('Delete this user?')">Delete</button>
+                        <button class="dashbtn" type="submit" name="update">Update</button>
+                        <button class="dashbtn" type="submit" name="delete" onclick="return confirm('Delete this user?')">Delete</button>
                     
                     <?php elseif ($type === 'staff'): ?>
                         <div>
@@ -280,9 +280,9 @@
                             <input id="profession" type="text" name="profession" value="<?= htmlspecialchars($selected['Profession'] ?? '') ?>">
                         </div>
                     
-                        <button type="submit" name="add">Add</button>
-                        <button type="submit" name="update">Update</button>
-                        <button type="submit" name="delete" onclick="return confirm('Delete this staff?')">Delete</button>
+                        <button class="dashbtn" type="submit" name="add">Add</button>
+                        <button class="dashbtn" type="submit" name="update">Update</button>
+                        <button class="dashbtn" type="submit" name="delete" onclick="return confirm('Delete this staff?')">Delete</button>
                     
                     <?php elseif ($type === 'news'): ?>
                         <div>
@@ -307,9 +307,9 @@
                             </div>
                         <?php endif; ?>
                         
-                        <button type="submit" name="add">Add</button>
-                        <button type="submit" name="update">Update</button>
-                        <button type="submit" name="delete" onclick="return confirm('Delete this news?')">Delete</button>
+                        <button class="dashbtn" type="submit" name="add">Add</button>
+                        <button class="dashbtn" type="submit" name="update">Update</button>
+                        <button class="dashbtn" type="submit" name="delete" onclick="return confirm('Delete this news?')">Delete</button>
                         
                     <?php elseif ($type === 'feedback'): ?>
                         <div>
@@ -327,7 +327,7 @@
                             <textarea readonly><?= htmlspecialchars($selected['Message'] ?? '') ?></textarea>
                         </div>
 
-                        <button type="submit" name="delete" onclick="return confirm('Delete this feedback?')">Delete</button>
+                        <button class="dashbtn" type="submit" name="delete" onclick="return confirm('Delete this feedback?')">Delete</button>
                     <?php endif; ?>
                 </form>
             </div>
