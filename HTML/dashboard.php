@@ -42,7 +42,6 @@
                     $obj->deleteUser($postId);
                 }
 
-                // refresh selected after POST
                 if ($postId) $selected = $obj->getUserById($postId);
             }
 
@@ -57,7 +56,6 @@
                 $postId = $_POST['id'] ?? null;
                 $imagePath = $selected['Image'] ?? null;
 
-                // Handle image upload
                 if(!empty($_FILES['image']['name'])){
                     $uploadDir = 'uploads/staff/';
                     if(!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
@@ -104,7 +102,6 @@
                     $obj->deleteStaff($postId);
                 }
 
-                // refresh selected after POST
                 if ($postId) $selected = $obj->getStaffById($postId);
             }
 
@@ -112,22 +109,24 @@
         break;
 
         case 'news':
-            $obj = new newsClass($con);
-            if ($id) $selected = $obj->getNewsById($id);
+            $obj = new NewsClass($con);
+                
+            $postId = $_POST['id'] ?? $id ?? null;
+
+            $selected = $postId ? $obj->getNewsById($postId) : null;
+
             $imagePath = $selected['Image'] ?? null;
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $postId = $_POST['id'] ?? null;
-            
-                if(!empty($_FILES['image']['name'])){
+                if (!empty($_FILES['image']['name'])) {
                     $uploadDir = 'uploads/news/';
-                    if(!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
+                    if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
 
                     $fileName = uniqid('news_') . '.' . pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
                     $target = $uploadDir . $fileName;
 
-                    if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
-                        if(!empty($imagePath) && file_exists($imagePath)){
+                    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+                        if (!empty($imagePath) && file_exists($imagePath)) {
                             unlink($imagePath);
                         }
                         $imagePath = $target;
@@ -137,17 +136,20 @@
                 if (isset($_POST['add'])) {
                     $obj->addNews($_POST['title'], $_POST['content'], $imagePath, $_SESSION['user_id']);
                 }
+
                 if (isset($_POST['update']) && $postId) {
                     $obj->updateNews($postId, $_POST['title'], $_POST['content'], $imagePath);
                 }
+
                 if (isset($_POST['delete']) && $postId) {
-                    if(!empty($selected['Image']) && file_exists($selected['Image'])){
+                    if (!empty($selected['Image']) && file_exists($selected['Image'])) {
                         unlink($selected['Image']);
                     }
                     $obj->deleteNews($postId);
+                    $postId = null;
                 }
 
-                if ($postId) $selected = $obj->getNewsById($postId);
+                $selected = $postId ? $obj->getNewsById($postId) : null;
             }
 
             $rows = $obj->getAllNews();
@@ -240,7 +242,10 @@
 
             <div id="middle-section">
                 <form method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="id" value="<?= $selected['User_ID'] ?? $selected['Staff_ID'] ?? $selected['News_ID'] ?? $selected['Feedback_ID'] ?? '' ?>">
+                    <?php
+                        $hiddenId = $postId ?? ($selected[$pk] ?? '');
+                    ?>
+                    <input type="hidden" name="id" value="<?= htmlspecialchars($hiddenId) ?>">
 
                     <?php if ($type === 'users'): ?>
                         <div>
