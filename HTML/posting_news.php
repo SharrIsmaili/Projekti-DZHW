@@ -24,7 +24,7 @@
 ?>
 
 <main>
-    <article class="news-detail-container" style="max-width: 900px; margin: 50px auto; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <article class="news-detail-container" style="max-width: 900px; margin: 50px auto; padding: 50px; background-color: white;">
 
         <div class="detail-header" style="margin-bottom: 20px;">
            <div class="goBack">

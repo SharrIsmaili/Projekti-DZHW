@@ -37,7 +37,7 @@ $newsItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                         <div class="news-content">
                             <h4><?= htmlspecialchars($row['Title']) ?></h4>
-                            <p><?= htmlspecialchars($row['Content']) ?></p>
+                            <p><?= htmlspecialchars(substr($row['Content'], 0, 100)) ?>...</p>
                         </div>
 
                         <div class="news-img">
