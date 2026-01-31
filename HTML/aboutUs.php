@@ -2,6 +2,15 @@
     $pageTitle = 'About Us';
     require_once 'header.php';
     require_once 'database.php';
+
+    require_once 'staff.php';
+
+    $db = new Database();
+    $conn = $db->getConnection();
+    $staff = new Staff($conn);
+
+    $doctors = $staff->getByProfession('Doctor');
+    $nurses = $staff->getByProfession('Nurse');
 ?>
 
 <main id="aboutMain">
@@ -161,6 +170,14 @@
 
                             <h3>Greta Isufi</h3>
                         </div>
+
+                        <?php foreach($doctors as $d): ?>
+                            <div class="card">
+                                <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
+
+                                <h3><?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?></h3>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 
@@ -295,6 +312,15 @@
 
                             <h3>Besjana Haxhiu</h3>
                         </div>
+
+                        
+                        <?php foreach($nurses as $n): ?>
+                            <div class="card">
+                                <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
+
+                                <h3><?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?></h3>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 

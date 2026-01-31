@@ -46,6 +46,25 @@
             $obj = new Staff($con);
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $imagePath = $selected['Image'] ?? null;
+
+                if(!empty($_FILES['image']['name'])){
+                    $uploadDir = 'uploads/staff/';
+                    if(!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
+
+                    $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+                    $fileName = uniqid('staff_') . '.' . $ext;
+                    $target = $uploadDir . $fileName;
+
+                    if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
+                        $imagePath = $target;
+                
+                        if(!empty($selected['Image']) && file_exists($selected['Image'])){
+                            unlink($selected['Image']);
+                        }
+                    }
+                }
+
                 if (isset($_POST['add'])) {
                     $obj->addStaff(
                         $_POST['name'],
@@ -53,7 +72,8 @@
                         $_POST['email'],
                         $_POST['phone'],
                         $_POST['location'],
-                        $_POST['profession']
+                        $_POST['profession'],
+                        $imagePath
                     );
                 }
                 if (isset($_POST['update'])) {
@@ -64,10 +84,14 @@
                         $_POST['email'],
                         $_POST['phone'],
                         $_POST['location'],
-                        $_POST['profession']
+                        $_POST['profession'],
+                        $imagePath
                     );
                 }
                 if (isset($_POST['delete'])) {
+                    if(!empty($selected['Image']) && file_exists($selected['Image'])){
+                        unlink($selected['Image']);
+                    }
                     $obj->deleteStaff($_POST['id']);
                 }
             }
@@ -87,6 +111,7 @@
                 $title = $_POST['title'] ?? '';
                 $content = $_POST['content'] ?? '';
                 $imagePath = $selected['Image'] ?? null;
+                $author = $_POST['author'] ?? 'Unknown';
 
                 if (!empty($_FILES['image']['name'])) {
                     $uploadDir = 'uploads/news/';
@@ -245,9 +270,11 @@
                             <label for="isAdmin">Admin</label>
                             <input id="isAdmin" type="checkbox" name="isAdmin" <?= !empty($selected['isAdmin']) ? 'checked' : '' ?>>
                         </div>
-                    
-                        <button class="dashbtn" type="submit" name="update">Update</button>
-                        <button class="dashbtn" type="submit" name="delete" onclick="return confirm('Delete this user?')">Delete</button>
+                        
+                        <div class="buttons">
+                            <button class="dashbtn" type="submit" name="update">Update</button>
+                            <button class="dashbtn" type="submit" name="delete" onclick="return confirm('Delete this user?')">Delete</button>
+                        </div>
                     
                     <?php elseif ($type === 'staff'): ?>
                         <div>
@@ -279,10 +306,24 @@
                             <label for="profession">Profession</label>
                             <input id="profession" type="text" name="profession" value="<?= htmlspecialchars($selected['Profession'] ?? '') ?>">
                         </div>
-                    
-                        <button class="dashbtn" type="submit" name="add">Add</button>
-                        <button class="dashbtn" type="submit" name="update">Update</button>
-                        <button class="dashbtn" type="submit" name="delete" onclick="return confirm('Delete this staff?')">Delete</button>
+
+                        <div>
+                            <label for="image">Profile Picture</label>
+                            <input id="image" type="file" name="image" accept="image/*">
+                        </div>
+
+                        <?php if (!empty($selected['Image'])): ?>
+                            <div>
+                                <label>Current Image</label><br>
+                                <img src="<?= htmlspecialchars($selected['Image']) ?>" width="120">
+                            </div>
+                        <?php endif; ?>
+                        
+                        <div class="buttons">
+                            <button class="dashbtn" type="submit" name="add">Add</button>
+                            <button class="dashbtn" type="submit" name="update">Update</button>
+                            <button class="dashbtn" type="submit" name="delete" onclick="return confirm('Delete this staff?')">Delete</button>
+                        </div>
                     
                     <?php elseif ($type === 'news'): ?>
                         <div>
@@ -306,10 +347,12 @@
                                 <img src="<?= htmlspecialchars($selected['Image']) ?>" width="120">
                             </div>
                         <?php endif; ?>
-                        
-                        <button class="dashbtn" type="submit" name="add">Add</button>
-                        <button class="dashbtn" type="submit" name="update">Update</button>
-                        <button class="dashbtn" type="submit" name="delete" onclick="return confirm('Delete this news?')">Delete</button>
+
+                        <div class="buttons">
+                            <button class="dashbtn" type="submit" name="add">Add</button>
+                            <button class="dashbtn" type="submit" name="update">Update</button>
+                            <button class="dashbtn" type="submit" name="delete" onclick="return confirm('Delete this news?')">Delete</button>
+                        </div>
                         
                     <?php elseif ($type === 'feedback'): ?>
                         <div>
@@ -346,7 +389,7 @@
                         <?php foreach ($rows as $r): ?>
                             <tr>
                                 <?php foreach ($columns as $field => $label): ?>
-                                    <td><a href="dashboard.php?type=<?= $type ?>&id=<?= $r[$pk] ?>"><?= htmlspecialchars($r[$field]) ?></a></td>
+                                    <td><a href="dashboard.php?type=<?= $type ?>&id=<?= $r[$pk] ?>" class="cell-link"><?= htmlspecialchars($r[$field]) ?></a></td>
                                 <?php endforeach; ?>
                             </tr>
                         <?php endforeach; ?>

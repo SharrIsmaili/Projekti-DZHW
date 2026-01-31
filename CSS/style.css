@@ -46,6 +46,11 @@ p {
   gap: 40px;
 }
 
+.links .active{
+  border-bottom: 2px solid var(--red);
+  color: black;
+}
+
 .utils {
   flex-wrap: nowrap;
   display: flex;
@@ -799,6 +804,11 @@ iframe {
 
 #staff #doctors{
   background-color: white;
+  scroll-margin-top: 77px;
+}
+
+#staff #nurses{
+  scroll-margin-top: 77px;
 }
 
 .doctors {
@@ -977,6 +987,7 @@ iframe {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 .hospital-img img {
@@ -1580,21 +1591,31 @@ a:hover {
   border: 2px solid var(--red);
 }
 
+#middle-section textarea{
+  resize: none;
+}
+
+#buttons{
+  display: flex;
+}
+
 .dashbtn {
   max-width: 100px;
   flex-grow: 0;
-  background-color: whitesmoke;
+  background-color: transparent;
   border: 2px solid var(--red);
   color: var(--black);
   font-size: 20px;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
+  transition: all 0.2s ease-in-out;
 }
 
 .dashbtn:hover {
   background-color: var(--red);
   color: whitesmoke;
+  cursor: pointer;
 }
 
 #bottom-section table {
@@ -1625,4 +1646,3 @@ a:hover {
   text-decoration: underline;
   color: var(--darkred);
 }
-

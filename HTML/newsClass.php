@@ -17,7 +17,10 @@
         }
 
         public function getNewsById($id){
-            $query = "SELECT * FROM {$this->table_name} WHERE News_ID = :id";
+            $query = "SELECT n.*, CONCAT(u.Name, ' ', u.Lastname) AS Author
+                      FROM {$this->table_name} n INNER JOIN users u
+                      ON n.User_ID = u.User_ID
+                      WHERE n.News_ID = :id";
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();

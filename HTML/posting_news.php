@@ -1,5 +1,6 @@
 <?php
     require_once 'database.php';
+    require_once 'newsClass.php';
 
     if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
         header("Location: news.php");
@@ -11,10 +12,8 @@
     $db = new Database();
     $conn = $db->getConnection();
 
-    $stmt = $conn->prepare("SELECT * FROM news WHERE News_ID = :id");
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    $stmt->execute();
-    $article = $stmt->fetch(PDO::FETCH_ASSOC);
+    $news = new NewsClass($conn);
+    $article = $news->getNewsById($id);
 
     if (!$article) {
         die("Article not found.");
@@ -41,6 +40,10 @@
 
         <div class="detail-content" style="line-height: 1.7; color: var(--black); font-size: 18px;">
             <p><?= nl2br(htmlspecialchars($article['Content'])) ?></p>
+        </div>
+
+        <div class="detail-author">
+            <p class="author" style="color: gray; font-size: 14px;">Author: <?= htmlspecialchars($article['Author']) ?></p>
         </div>
 
     </article>

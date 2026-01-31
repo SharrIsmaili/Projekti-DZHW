@@ -31,13 +31,13 @@
             <a href="home.php"><img src="../images/vital-drop/logo.png" alt="VitalDrop logo" id="logo"></a>
 
             <div class="links">
-                <a href="home.php" class="pages">Home</a>
-                <a href="aboutUs.php" class="pages">About Us</a>
-                <a href="our-locations.php" class="pages">Our Locations</a>
-                <a href="news.php" class="pages">News</a>
+                <a href="home.php" class="pages <?= $pageTitle === 'Home' ? 'active' : ''?>">Home</a>
+                <a href="aboutUs.php" class="pages <?= $pageTitle === 'About Us' ? 'active' : ''?>">About Us</a>
+                <a href="our-locations.php" class="pages <?= $pageTitle === 'Our Locations' ? 'active' : ''?>">Our Locations</a>
+                <a href="news.php" class="pages <?= $pageTitle === 'News' ? 'active' : ''?>">News</a>
 
                 <?php if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']): ?>
-                    <a href="admin/dashboard.php" class="pages">Dashboard</a>
+                    <a href="dashboard.php" class="pages <?= $pageTitle === 'Dashboard' ? 'active' : ''?>">Dashboard</a>
                 <?php endif;?>
             </div>
 

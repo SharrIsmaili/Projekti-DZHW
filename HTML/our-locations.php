@@ -2,6 +2,27 @@
     $pageTitle = 'Our Locations';
     require_once 'header.php';
     require_once 'database.php';
+    require_once 'staff.php';
+
+    $db = new Database();
+    $conn = $db->getConnection();
+    $staff = new Staff($conn);
+
+    $doctors_prishtine = $staff->getByLocationAndProfession('Prishtine', 'Doctor');
+    $doctors_mitrovice = $staff->getByLocationAndProfession('Mitrovice', 'Doctor');
+    $doctors_peje = $staff->getByLocationAndProfession('Peje', 'Doctor');
+    $doctors_prizren = $staff->getByLocationAndProfession('Prizren', 'Doctor');
+    $doctors_ferizaj = $staff->getByLocationAndProfession('Ferizaj', 'Doctor');
+    $doctors_gjilan = $staff->getByLocationAndProfession('Gjilan', 'Doctor');
+    $doctors_gjakove = $staff->getByLocationAndProfession('gjakove', 'Doctor');
+
+    $nurses_prishtine = $staff->getByLocationAndProfession('Prishtine', 'Nurse');
+    $nurses_mitrovice = $staff->getByLocationAndProfession('Mitrovice', 'Nurse');
+    $nurses_peje = $staff->getByLocationAndProfession('Peje', 'Nurse');
+    $nurses_prizren = $staff->getByLocationAndProfession('Prizren', 'Nurse');
+    $nurses_ferizaj = $staff->getByLocationAndProfession('Ferizaj', 'Nurse');
+    $nurses_gjilan = $staff->getByLocationAndProfession('Gjilan', 'Nurse');
+    $nurses_gjakove = $staff->getByLocationAndProfession('gjakove', 'Nurse');
 ?>
 
     <main id="locationsMain">
@@ -41,6 +62,15 @@
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
+
+                <?php foreach($doctors_prishtine as $d): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
             <div class="nurses">
@@ -64,6 +94,15 @@
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
+
+                <?php foreach($nurses_prishtine as $n): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </section>
 
@@ -87,6 +126,15 @@
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
+
+                <?php foreach($doctors_mitrovice as $d): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
             <div class="nurses">
@@ -110,6 +158,15 @@
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
+
+                <?php foreach($nurses_mitrovice as $n): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </section>
 
@@ -133,6 +190,15 @@
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
+
+                <?php foreach($doctors_peje as $d): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
             <div class="nurses">
@@ -156,6 +222,15 @@
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
+
+                <?php foreach($nurses_peje as $n): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </section>
 
@@ -180,6 +255,14 @@
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
 
+                <?php foreach($doctors_prizren as $d): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
             <div class="nurses">
                 <div class="card">
@@ -202,6 +285,15 @@
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
+
+                <?php foreach($nurses_prizren as $n): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </section>
 
@@ -225,6 +317,15 @@
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
+
+                <?php foreach($doctors_ferizaj as $d): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
             <div class="nurses">
@@ -248,6 +349,15 @@
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
+
+                <?php foreach($nurses_ferizaj as $n): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </section>
 
@@ -271,6 +381,15 @@
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
+
+                <?php foreach($doctors_gjilan as $d): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
             <div class="nurses">
@@ -294,6 +413,15 @@
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
+
+                <?php foreach($nurses_gjilan as $n): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </section>
 
@@ -317,6 +445,15 @@
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
+
+                <?php foreach($doctors_gjakove as $d): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
             <div class="nurses">
@@ -340,6 +477,15 @@
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
                 </div>
+
+                <?php foreach($nurses_gjakove as $n): ?>
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
+                        <h3><?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?></h3>
+
+                        <a href="contact.php" class="appointment">Book Appointment</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </section>
     </main>
