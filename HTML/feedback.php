@@ -9,8 +9,7 @@ class Feedback {
 
     public function getAllFeedback() {
         $stmt = $this->conn->prepare(
-            "SELECT f.Feedback_ID, f.Message, 
-                    CONCAT(u.Name, ' ', u.Lastname) AS user_fullname
+            "SELECT f.Feedback_ID, f.Subject, f.Message, CONCAT(u.Name, ' ', u.Lastname) AS User
              FROM {$this->table_name} f
              INNER JOIN users u ON f.User_ID = u.User_ID
              ORDER BY f.Feedback_ID DESC"
@@ -21,8 +20,7 @@ class Feedback {
 
     public function getFeedbackById($id) {
         $stmt = $this->conn->prepare(
-            "SELECT f.Feedback_ID, f.Message, 
-                    CONCAT(u.Name, ' ', u.Lastname) AS user_fullname
+            "SELECT f.Feedback_ID, f.Subject, f.Message, CONCAT(u.Name, ' ', u.Lastname) AS User
              FROM {$this->table_name} f
              INNER JOIN users u ON f.User_ID = u.User_ID
              WHERE f.Feedback_ID = :id"
@@ -32,12 +30,12 @@ class Feedback {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function addFeedback($userId, $message) {
+    public function addFeedback($userId, $subject, $message) {
         try {
             $stmt = $this->conn->prepare(
-                "INSERT INTO {$this->table_name} (User_ID, Message) VALUES (?, ?)"
+                "INSERT INTO {$this->table_name} (User_ID, Subject, Message) VALUES (?, ?, ?)"
             );
-            return $stmt->execute([$userId, trim($message)]);
+            return $stmt->execute([$userId, $subject, trim($message)]);
         } catch (PDOException $e) {
             return false;
         }

@@ -389,7 +389,7 @@
                         <?php foreach ($rows as $r): ?>
                             <tr>
                                 <?php foreach ($columns as $field => $label): ?>
-                                    <td><a href="dashboard.php?type=<?= $type ?>&id=<?= $r[$pk] ?>" class="cell-link"><?= htmlspecialchars($r[$field]) ?></a></td>
+                                    <td><a href="dashboard.php?type=<?= $type ?>&id=<?= $r[$pk] ?>"><?= htmlspecialchars($r[$field]) ?></a></td>
                                 <?php endforeach; ?>
                             </tr>
                         <?php endforeach; ?>
