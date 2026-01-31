@@ -72,7 +72,7 @@
                         $_POST['email'],
                         $_POST['phone'],
                         $_POST['location'],
-                        $_POST['profession'],
+                        $_POST['specialization'],
                         $imagePath
                     );
                 }
@@ -84,7 +84,7 @@
                         $_POST['email'],
                         $_POST['phone'],
                         $_POST['location'],
-                        $_POST['profession'],
+                        $_POST['specialization'],
                         $imagePath
                     );
                 }
@@ -189,7 +189,7 @@
                 'Email' => 'Email',
                 'Phone_Number' => 'Phone',
                 'Location' => 'Location',
-                'Profession' => 'Profession'
+                'Specialization' => 'Specialization'
             ];
             $pk = 'Staff_ID';
             break;
@@ -303,8 +303,8 @@
                         </div>
                     
                         <div>
-                            <label for="profession">Profession</label>
-                            <input id="profession" type="text" name="profession" value="<?= htmlspecialchars($selected['Profession'] ?? '') ?>">
+                            <label for="Specialization">Specialization</label>
+                            <input id="specialization" type="text" name="specialization" value="<?= htmlspecialchars($selected['Specialization'] ?? '') ?>">
                         </div>
 
                         <div>
