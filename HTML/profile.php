@@ -14,6 +14,8 @@
     <h2>Hello <?= htmlspecialchars($name) ?>!</h2>
 <?php endif; ?>
 
+<a href="logout.php">Log out</a>
+
 <?php
     require_once 'footer.php';
 ?>

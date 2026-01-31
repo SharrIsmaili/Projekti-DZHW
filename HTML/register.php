@@ -3,7 +3,7 @@
     require_once 'formHeader.php';
 
     require_once 'database.php';
-    require_once 'admin/users.php';
+    require_once 'users.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $db = new Database();

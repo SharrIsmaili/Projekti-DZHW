@@ -17,7 +17,6 @@
         $connection = $db->getConnection();
         $users = new Users($connection);
 
-        // Get form data
         $email = trim($_POST['email'] ?? '');
         $password = $_POST['password'] ?? '';
 

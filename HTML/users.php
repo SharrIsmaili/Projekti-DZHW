@@ -9,115 +9,85 @@ class Users {
 
     public function register($name, $lastname, $phone, $email, $password) {
         try {
-            $query = "INSERT INTO {$this->table_name} (name, lastname, phone_number, email, password) 
+            $query = "INSERT INTO {$this->table_name} (Name, Lastname, Phone_Number, Email, Password) 
                       VALUES (:name, :lastname, :phone, :email, :password)";
             $stmt = $this->conn->prepare($query);
 
             $hashedPass = password_hash($password, PASSWORD_DEFAULT);
 
-            $stmt->bindValue(':name', $name);
-            $stmt->bindValue(':lastname', $lastname);
-            $stmt->bindValue(':phone', $phone);
-            $stmt->bindValue(':email', $email);
-            $stmt->bindValue(':password', $hashedPass);
+            $stmt->bindParam(':name', $name);
+            $stmt->bindParam(':lastname', $lastname);
+            $stmt->bindParam(':phone', $phone);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':password', $hashedPass);
 
             return $stmt->execute();
         } catch (PDOException $e) {
             return false;
         }
+        return false;
     }
 
     public function login($email, $password) {
         try {
-            $query = "SELECT user_id, name, lastname, phone_number, email, password, is_admin 
-                      FROM {$this->table_name} WHERE email = :email LIMIT 1";
+            $query = "SELECT User_ID, Name, Lastname, Phone_Number, Email, Password, isAdmin 
+                      FROM {$this->table_name} WHERE Email = :email";
             $stmt = $this->conn->prepare($query);
             $stmt->bindValue(':email', $email);
             $stmt->execute();
 
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            if ($row && password_verify($password, $row['password'])) {
+            if ($row && password_verify($password, $row['Password'])) {
                 return [
-                    'id' => $row['user_id'],
-                    'name' => $row['name'],
-                    'lastname' => $row['lastname'],
-                    'email' => $row['email'],
-                    'phone' => $row['phone_number'],
-                    'isAdmin' => !empty($row['is_admin'])
+                    'id' => $row['User_ID'],
+                    'name' => $row['Name'],
+                    'lastname' => $row['Lastname'],
+                    'email' => $row['Email'],
+                    'phone' => $row['Phone_Number'],
+                    'isAdmin' => isset($row['isAdmin']) ? (bool)$row['isAdmin'] : false
                 ];
             }
-            return false;
+            return $stmt->execute();
         } catch (PDOException $e) {
             return false;
         }
+        return false;
     }
 
     public function getAllUsers() {
-        try {
-            $stmt = $this->conn->prepare(
-                "SELECT user_id, name, lastname, phone_number, email, is_admin FROM {$this->table_name}"
-            );
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            return [];
-        }
+        $stmt = $this->conn->prepare("SELECT User_ID, Name, Lastname, Phone_Number, Email, isAdmin FROM {$this->table_name}");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getUserById($id) {
-        try {
-            $stmt = $this->conn->prepare("SELECT * FROM {$this->table_name} WHERE user_id = :id");
-            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-            $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            return false;
-        }
+        $query = "SELECT * FROM {$this->table_name} WHERE User_ID = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function addUser($name, $lastname, $email, $phone, $password, $isAdmin = 0) {
-        try {
-            $stmt = $this->conn->prepare(
-                "INSERT INTO {$this->table_name} (name, lastname, email, phone_number, password, is_admin) 
-                 VALUES (?, ?, ?, ?, ?, ?)"
-            );
-            $hashedPass = password_hash($password, PASSWORD_DEFAULT);
-            return $stmt->execute([$name, $lastname, $email, $phone, $hashedPass, $isAdmin]);
-        } catch (PDOException $e) {
-            return false;
-        }
+        $stmt = $this->conn->prepare("INSERT INTO {$this->table_name} (Name, Lastname, Email, Phone_Number, Password, isAdmin) VALUES (?, ?, ?, ?, ?, ?)");
+        $hashed = password_hash($password, PASSWORD_DEFAULT);
+        return $stmt->execute([$name, $lastname, $email, $phone, $hashed, $isAdmin]);
     }
 
     public function updateUser($id, $name, $lastname, $email, $phone, $password = null, $isAdmin = 0) {
-        try {
-            if ($password) {
-                $hashedPass = password_hash($password, PASSWORD_DEFAULT);
-                $stmt = $this->conn->prepare(
-                    "UPDATE {$this->table_name} 
-                     SET name = ?, lastname = ?, email = ?, phone_number = ?, password = ?, is_admin = ? 
-                     WHERE user_id = ?"
-                );
-                return $stmt->execute([$name, $lastname, $email, $phone, $hashedPass, $isAdmin, $id]);
-            } else {
-                $stmt = $this->conn->prepare(
-                    "UPDATE {$this->table_name} 
-                     SET name = ?, lastname = ?, email = ?, phone_number = ?, is_admin = ? 
-                     WHERE user_id = ?"
-                );
-                return $stmt->execute([$name, $lastname, $email, $phone, $isAdmin, $id]);
-            }
-        } catch (PDOException $e) {
-            return false;
+        if ($password) {
+            $hashed = password_hash($password, PASSWORD_DEFAULT);
+            $stmt = $this->conn->prepare("UPDATE {$this->table_name} SET Name=?, Lastname=?, Email=?, Phone_Number=?, Password=?, isAdmin=? WHERE User_ID=?");
+            return $stmt->execute([$name, $lastname, $phone, $email, $hashed, $isAdmin, $id]);
+        } else {
+            $stmt = $this->conn->prepare("UPDATE {$this->table_name} SET Name=?, Lastname=?, Email=?, Phone_Number=?, isAdmin=? WHERE User_ID=?");
+            return $stmt->execute([$name, $lastname, $email, $phone, $isAdmin, $id]);
         }
     }
 
     public function deleteUser($id) {
-        try {
-            $stmt = $this->conn->prepare("DELETE FROM {$this->table_name} WHERE user_id = ?");
-            return $stmt->execute([$id]);
-        } catch (PDOException $e) {
-            return false;
-        }
+        $stmt = $this->conn->prepare("DELETE FROM {$this->table_name} WHERE User_ID=?");
+        return $stmt->execute([$id]);
     }
 }
 ?>

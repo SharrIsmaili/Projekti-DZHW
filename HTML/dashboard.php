@@ -3,7 +3,7 @@
     require_once 'database.php';
     require_once 'users.php';
     require_once 'staff.php';
-    require_once 'NewsClass.php';
+    require_once 'newsClass.php';
     require_once 'feedback.php';
 
     require_once 'auth.php';
