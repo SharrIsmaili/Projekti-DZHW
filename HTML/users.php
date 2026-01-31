@@ -7,18 +7,18 @@ class Users {
         $this->conn = $db;
     }
 
-    public function register($name, $lastname, $phone, $email, $password) {
+    public function register($name, $lastname, $email, $phone, $password) {
         try {
-            $query = "INSERT INTO {$this->table_name} (Name, Lastname, Phone_Number, Email, Password) 
-                      VALUES (:name, :lastname, :phone, :email, :password)";
+            $query = "INSERT INTO {$this->table_name} (Name, Lastname, Email, Phone_Number, Password) 
+                      VALUES (:name, :lastname,:email, :phone,  :password)";
             $stmt = $this->conn->prepare($query);
 
             $hashedPass = password_hash($password, PASSWORD_DEFAULT);
 
             $stmt->bindParam(':name', $name);
             $stmt->bindParam(':lastname', $lastname);
-            $stmt->bindParam(':phone', $phone);
             $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':phone', $phone);
             $stmt->bindParam(':password', $hashedPass);
 
             return $stmt->execute();
@@ -30,7 +30,7 @@ class Users {
 
     public function login($email, $password) {
         try {
-            $query = "SELECT User_ID, Name, Lastname, Phone_Number, Email, Password, isAdmin 
+            $query = "SELECT User_ID, Name, Lastname, Email, Phone_Number,  Password, isAdmin 
                       FROM {$this->table_name} WHERE Email = :email";
             $stmt = $this->conn->prepare($query);
             $stmt->bindValue(':email', $email);
@@ -47,7 +47,7 @@ class Users {
                     'isAdmin' => isset($row['isAdmin']) ? (bool)$row['isAdmin'] : false
                 ];
             }
-            return $stmt->execute();
+            return false;
         } catch (PDOException $e) {
             return false;
         }
@@ -55,7 +55,7 @@ class Users {
     }
 
     public function getAllUsers() {
-        $stmt = $this->conn->prepare("SELECT User_ID, Name, Lastname, Phone_Number, Email, isAdmin FROM {$this->table_name}");
+        $stmt = $this->conn->prepare("SELECT User_ID, Name, Lastname, Email, Phone_Number, isAdmin FROM {$this->table_name}");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -78,7 +78,7 @@ class Users {
         if ($password) {
             $hashed = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $this->conn->prepare("UPDATE {$this->table_name} SET Name=?, Lastname=?, Email=?, Phone_Number=?, Password=?, isAdmin=? WHERE User_ID=?");
-            return $stmt->execute([$name, $lastname, $phone, $email, $hashed, $isAdmin, $id]);
+            return $stmt->execute([$name, $lastname, $email, $phone, $hashed, $isAdmin, $id]);
         } else {
             $stmt = $this->conn->prepare("UPDATE {$this->table_name} SET Name=?, Lastname=?, Email=?, Phone_Number=?, isAdmin=? WHERE User_ID=?");
             return $stmt->execute([$name, $lastname, $email, $phone, $isAdmin, $id]);

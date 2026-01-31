@@ -30,6 +30,7 @@
                         $_POST['lastname'],
                         $_POST['email'],
                         $_POST['phone'],
+                        null,
                         isset($_POST['isAdmin']) ? 1 : 0
                     );
                 }
