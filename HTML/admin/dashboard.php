@@ -14,6 +14,7 @@
 =======
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -227,6 +228,7 @@
         </aside>
 =======
 =======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     require_once '../header.php';
@@ -249,6 +251,7 @@
             </div>
         </section>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -258,6 +261,7 @@
         <section id="information">
             <div id="top-section">
                 <div id="left-side">
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
                     <?php if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']): ?>
@@ -382,6 +386,7 @@
                 </form>
 =======
 =======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                     <h1>Welcome, (admins username)</h1>
