@@ -709,6 +709,29 @@ iframe {
   color: white;
 }
 
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--red);
+  font-weight: bold;
+
+}
+
+#newsBackArrow {
+  width: 18px;
+  height: auto;
+}
+
+.goBack {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -35px;
+  padding-left: 0;
+}
+
+
 /*========================================About Us==================================================================*/
 
 #aboutMain {

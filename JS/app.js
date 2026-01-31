@@ -281,3 +281,18 @@ if(hamburger && links && rightSide){
         rightSide.classList.toggle("active");
     });
 }
+
+// ===========================News back button=======================================================================================
+document.addEventListener("DOMContentLoaded", function(){
+    const backBtn = document.getElementById("newsBackArrow");
+
+    if(backBtn){
+        backBtn.addEventListener("click", function(){
+            if(window.history.length > 1){
+                window.history.back();
+            }else{
+                window.location.href = "news.php";
+            }
+        });
+    }
+});
