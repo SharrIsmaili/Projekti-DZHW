@@ -50,6 +50,7 @@ class Users {
         }
         return false;
     }
+<<<<<<< Updated upstream
 
     public function getAllUsers() {
         $stmt = $this->conn->prepare("SELECT User_ID, Name, Lastname, Phone_Number, Email, isAdmin FROM {$this->table_name}");
@@ -86,5 +87,7 @@ class Users {
         $stmt = $this->conn->prepare("DELETE FROM {$this->table_name} WHERE User_ID=?");
         return $stmt->execute([$id]);
     }
+=======
+>>>>>>> Stashed changes
 }
 ?>

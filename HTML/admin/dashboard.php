@@ -1,5 +1,6 @@
 <?php
     $pageTitle = 'Dashboard';
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:HTML/dashboard.php
     require_once 'database.php';
     require_once 'users.php';
@@ -8,10 +9,13 @@
     require_once 'feedback.php';
 =======
 >>>>>>> Stashed changes:HTML/admin/dashboard.php
+=======
+>>>>>>> Stashed changes
 
     require_once '../auth.php';
     requireAdmin();
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:HTML/dashboard.php
     $db = new Database();
     $con = $db->getConnection();
@@ -214,10 +218,32 @@
                 </ul>
             </div>
         </aside>
+=======
+    require_once '../header.php';
+    require_once '../database.php';
+?>
+
+    <main>
+        <section id="navbar">
+            <div id="title">
+                <h3>Dashboard</h3>
+            </div>
+            <div id="options">
+                <ul>
+                    <li>Users</li>
+                    <li>News</li>
+                    <li>Staff</li>
+                    <li>News</li>
+                    <li>Users</li>
+                </ul>
+            </div>
+        </section>
+>>>>>>> Stashed changes
 
         <section id="information">
             <div id="top-section">
                 <div id="left-side">
+<<<<<<< Updated upstream
                     <?php if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']): ?>
                         <h1>Welcome, <?= htmlspecialchars($_SESSION['name'] . ' ' . $_SESSION['lastname']) ?>!</h1>
                     <?php endif;?>
@@ -338,11 +364,29 @@
                         <button type="submit" name="delete" onclick="return confirm('Delete this feedback?')">Delete</button>
                     <?php endif; ?>
                 </form>
+=======
+                    <h1>Welcome, (admins username)</h1>
+                </div>
+
+                <div id="middle">
+                    <ul>
+                        <li>Home</li>
+                        <li>News</li>
+                        <li>About Us</li>
+                        <li>Our Locations</li>
+                    </ul>
+                </div>
+
+                <div id="right-side">
+                    <img src="../images/icons/blank-pfp.jpg" alt="Users Profile Picture">
+                </div>
+>>>>>>> Stashed changes
             </div>
 
             <div id="bottom-section">
                 <table>
                     <thead>
+<<<<<<< Updated upstream
                         <tr>
                             <?php foreach ($columns as $label): ?>
                                 <th><?= $label ?></th>
@@ -359,6 +403,50 @@
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
+=======
+                        <th>User</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>isAdmin</th>
+                    </thead>
+
+                    <tbody>
+                        <td>Name1</td>
+                        <td>name1@gmail.com</td>
+                        <td>User</td>
+                        <td>false</td>
+                    </tbody>
+
+                    <tbody>
+                        <td>Name2</td>
+                        <td>name2@gmail.com</td>
+                        <td>User</td>
+                        <td>false</td>
+                    </tbody>
+
+                    <tbody>
+                        <td>Name3</td>
+                        <td>name3@gmail.com</td>
+                        <td>Admin</td>
+                        <td>true</td>
+                    </tbody>
+
+                    <tbody>
+                        <td>Name4</td>
+                        <td>name4@gmail.com</td>
+                        <td>Admin</td>
+                        <td>true</td>
+                    </tbody>
+
+                    <tbody>
+                        <td>Name5</td>
+                        <td>name5@gmail.com</td>
+                        <td>User</td>
+                        <td>false</td>
+                    </tbody>
+
+                    
+>>>>>>> Stashed changes
                 </table>
             </div>
         </section>
