@@ -34,7 +34,7 @@
 
         public function updateNews($id, $title, $content, $image) {
             $stmt = $this->conn->prepare("UPDATE {$this->table_name} SET Title = ?, Content = ?, Image = ? WHERE News_ID = ?");
-            return $stmt->execute([$title, $content, $image, $id]);
+            return $stmt->execute([$title, $content, $image, $userId]);
         }
 
         public function deleteNews($id) {

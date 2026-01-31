@@ -49,7 +49,7 @@
             </div>
 
             <div class="doctors">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/doctors/doc1.jpg" alt="Doctor">
                     <h3>Blerina Cenaj</h3>
 
@@ -61,7 +61,7 @@
                     <h3>Era Sula</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($doctors_prishtine as $d): ?>
                     <div class="card">
@@ -74,7 +74,7 @@
             </div>
 
             <div class="nurses">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/nurses/nurse1.png" alt="Nurse">
                     <h3>Miranda Qosja</h3>
                     
@@ -93,7 +93,7 @@
                     <h3>Roan Dushku</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($nurses_prishtine as $n): ?>
                     <div class="card">
@@ -113,7 +113,7 @@
             </div>
 
             <div class="doctors">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/doctors/doc3.png" alt="Doctor">
                     <h3>Flamur Begu</h3>
                     
@@ -125,7 +125,7 @@
                     <h3>Fatjon Deda</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($doctors_mitrovice as $d): ?>
                     <div class="card">
@@ -138,7 +138,7 @@
             </div>
 
             <div class="nurses">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/nurses/nurse4.png" alt="Nurse">
                     <h3>Albana Tafa</h3>
                     
@@ -157,7 +157,7 @@
                     <h3>Artan Mumajesi</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($nurses_mitrovice as $n): ?>
                     <div class="card">
@@ -177,7 +177,7 @@
             </div>
 
             <div class="doctors">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/doctors/doc5.jpg" alt="Doctor">
                     <h3>Era Beqiri</h3>
                     
@@ -189,7 +189,7 @@
                     <h3>Sokol Shehi</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($doctors_peje as $d): ?>
                     <div class="card">
@@ -202,7 +202,7 @@
             </div>
 
             <div class="nurses">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/nurses/nurse7.jpg" alt="Nurse">
                     <h3>Era Toska</h3>
                     
@@ -221,7 +221,7 @@
                     <h3>Lumnije Azemi</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($nurses_peje as $n): ?>
                     <div class="card">
@@ -241,7 +241,7 @@
             </div>
 
             <div class="doctors">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/doctors/doc7.jpg" alt="Doctor">
                     <h3>Genc Bogdani</h3>
                     
@@ -253,7 +253,7 @@
                     <h3>Rina Balaj</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($doctors_prizren as $d): ?>
                     <div class="card">
@@ -265,7 +265,7 @@
                 <?php endforeach; ?>
             </div>
             <div class="nurses">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/nurses/nurse10.jpg" alt="Nurse">
                     <h3>Bogdan Pjetri</h3>
                     
@@ -284,7 +284,7 @@
                     <h3>Kreshnik Ismaili</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($nurses_prizren as $n): ?>
                     <div class="card">
@@ -304,7 +304,7 @@
             </div>
 
             <div class="doctors">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/doctors/doc9.jpg" alt="Doctor">
                     <h3>Ermira Mamira</h3>
                     
@@ -316,7 +316,7 @@
                     <h3>Arnis Zeka</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($doctors_ferizaj as $d): ?>
                     <div class="card">
@@ -329,7 +329,7 @@
             </div>
 
             <div class="nurses">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/nurses/nurse13.jpeg" alt="Nurse">
                     <h3>Shukrije Ramadani</h3>
                     
@@ -348,7 +348,7 @@
                     <h3>Blerina Vjollca</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($nurses_ferizaj as $n): ?>
                     <div class="card">
@@ -368,7 +368,7 @@
             </div>
 
             <div class="doctors">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/doctors/doc11.webp" alt="Doctor">
                     <h3>Blenda Zekaj</h3>
                     
@@ -380,7 +380,7 @@
                     <h3>Kasap Thaqi</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($doctors_gjilan as $d): ?>
                     <div class="card">
@@ -393,7 +393,7 @@
             </div>
 
             <div class="nurses">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/nurses/nurse16.jpg" alt="Nurse">
                     <h3>Almir Bungu</h3>
                     
@@ -412,7 +412,7 @@
                     <h3>Rron Gashi</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($nurses_gjilan as $n): ?>
                     <div class="card">
@@ -432,7 +432,7 @@
             </div>
 
             <div class="doctors">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/doctors/doc13.jpg" alt="Doctor">
                     <h3>Arbnor Halilaj</h3>
                     
@@ -444,7 +444,7 @@
                     <h3>Greta Isufi</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($doctors_gjakove as $d): ?>
                     <div class="card">
@@ -457,7 +457,7 @@
             </div>
 
             <div class="nurses">
-                <div class="card">
+                <!-- <div class="card">
                     <img src="../images/nurses/nurse19.jpg" alt="Nurse">
                     <h3>Xhevdet Begu</h3>
                     
@@ -476,7 +476,7 @@
                     <h3>Besjana Haxhiu</h3>
                     
                     <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
+                </div> -->
 
                 <?php foreach($nurses_gjakove as $n): ?>
                     <div class="card">

@@ -144,8 +144,8 @@
                 if (isset($_POST['delete']) && $id) {
                     $newsObj->deleteNews($id);
 
-                    if (!empty($selected['Image']) && file_exists($selected['Image'])) {
-                        unlink($selected['Image']);
+                    if (!empty($newsItem['Image']) && file_exists($newsItem['Image'])) {
+                        unlink($newsItem['Image']);
                     }
 
                     header("Location: dashboard.php?type=news");

@@ -87,89 +87,6 @@
                             <h1>Our Doctors</h1>
                         </div>
 
-                        <div class="card">
-                            <img src="../images/doctors/doc1.jpg" alt="Doctor">
-
-                            <h3>Blerina Cenaj</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/doctors/doc2.png" alt="Doctor">
-
-                            <h3>Era Sula</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/doctors/doc3.png" alt="Doctor">
-
-                            <h3>Flamur Begu</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/doctors/doc4.jpg" alt="Doctor">
-
-                            <h3>Fatjon Deda</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/doctors/doc5.jpg" alt="Doctor">
-
-                            <h3>Era Beqiri</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/doctors/doc6.jpg" alt="Doctor">
-
-                            <h3>Sokol Shehi</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/doctors/doc7.jpg" alt="Nurse">
-
-                            <h3>Genc Bogdani</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/doctors/doc8.webp" alt="Nurse">
-
-                            <h3>Rina Balaj</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/doctors/doc9.jpg" alt="Nurse">
-
-                            <h3>Ermira Mamira</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/doctors/doc10.webp" alt="Nurse">
-
-                            <h3>Arnis Zeka</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/doctors/doc11.webp" alt="Nurse">
-
-                            <h3>Blenda Zekaj</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/doctors/doc12.webp" alt="Nurse">
-
-                            <h3>Kasap Thaqi</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/doctors/doc13.jpg" alt="Nurse">
-
-                            <h3>Arbnor Halilaj</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/doctors/doc14.jpg" alt="Nurse">
-
-                            <h3>Greta Isufi</h3>
-                        </div>
 
                         <?php foreach($doctors as $d): ?>
                             <div class="card">
@@ -186,7 +103,7 @@
                         <div class="aboutTitle">
                             <h1>Our Nurses</h1>
                         </div>
-
+<!-- 
                         <div class="card">
                             <img src="../images/nurses/nurse1.png" alt="Nurse">
 
@@ -311,7 +228,7 @@
                             <img src="../images/nurses/nurse21.jpg" alt="Nurse">
 
                             <h3>Besjana Haxhiu</h3>
-                        </div>
+                        </div> -->
 
                         
                         <?php foreach($nurses as $n): ?>
