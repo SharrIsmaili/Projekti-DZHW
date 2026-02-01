@@ -297,6 +297,23 @@ p {
   margin: 25px;
 }
 
+@media (max-width: 820px){
+  #aboutUs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #aboutUs h1{
+    margin-bottom: 10px;
+  }
+
+  #aboutUsBtn{
+    max-width: 100px;
+  }
+}
+
 /*===================================Cards=================================================================*/
 
 .title h1 {
@@ -1366,253 +1383,6 @@ a {
 a:hover {
   color: var(--red);
 }
-
-/*==============================================Responsivity=====================================================================*/
-
-@media screen and (max-width: 1024px) {
-  #dashboard-main {
-    flex-direction: column;
-  }
-
-  #dashboard-sidebar {
-    width: 100%;
-    flex-direction: row;
-    overflow-x: auto;
-    height: auto;
-    position: relative;
-    padding: 15px;
-  }
-
-  #dashboard-sidebar ul {
-    display: flex;
-    gap: 15px;
-  }
-
-  #dashboard-sidebar ul li {
-    margin-bottom: 0;
-  }
-
-  #information {
-    margin-left: 0;
-    margin-top: 20px;
-    padding: 20px;
-  }
-
-  #middle-section input,
-  #middle-section textarea {
-    font-size: 14px;
-  }
-
-  #bottom-section th,
-  #bottom-section td {
-    font-size: 14px;
-  }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1100px) {
-
-  /* Navbar Responsivity */
-  .navbar {
-    flex-wrap: wrap;
-    background-color: white;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .links {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    background: whitesmoke;
-  }
-
-  .links.active {
-    display: flex;
-  }
-
-  .right-side {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-  }
-
-  .right-side.active {
-    display: flex;
-  }
-
-  #searchBar,
-  #contactBtn {
-    width: 100%;
-  }
-
-  .utils {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* News Content */
-  .news-container {
-    flex-wrap: wrap;
-    gap: 0px;
-  }
-
-  .news-content {
-    padding: 5px;
-  }
-
-
-  /* Footer responsivity */
-  footer .top-row {
-    flex-direction: column;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .links,
-  .right-side {
-    display: none;
-  }
-
-  .links.active,
-  .right-side.active {
-    display: flex;
-  }
-}
-
-/* @media screen and (max-width: 768px) {
-
-  .navbar {
-    background-color: white;
-  }
-
-  #hamburger {
-    display: flex;
-  }
-
-  p {
-    font-size: 18px;
-  }
-
-  .container,
-  .sliderImg {
-    height: 60vh !important;
-  }
-
-  .cards,
-  .doctors,
-  .nurses {
-    margin: 10px;
-    padding: 10px 0;
-    gap: 20px;
-  }
-
-  .homeCard,
-  .card,
-  .section,
-  .card {
-    width: 95% !important;
-    max-width: 360px;
-    height: auto !important;
-    min-height: 450px;
-
-  }
-
-  .info {
-    flex-direction: column !important;
-    padding: 20px;
-  }
-
-  .info,
-  .text {
-    margin: 20px 0 !important;
-    width: 100% !important;
-    text-align: center;
-  }
-
-  .process-img {
-    width: 100% !important;
-    height: auto !important;
-    margin: 20px 0 !important;
-  }
-
-  .news-container {
-    margin: 20px !important;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .news-img img {
-    width: 100%;
-  }
-
-  .types-cards {
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-  }
-
-  video {
-    width: 100% !important;
-  }
-
-  .address {
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-  }
-
-  iframe {
-    width: 100% !important;
-  }
-
-
-  #dashboard-main {
-    flex-direction: column;
-  }
-
-  #dashboard-sidebar {
-    width: 100%;
-    flex-direction: row;
-    overflow-x: auto;
-  }
-
-  #dashboard-sidebar #options ul {
-    display: flex;
-    flex-direction: row;
-  }
-
-  #dashboard-sidebar #options ul li {
-    margin: 0 10px;
-  }
-
-  footer .top-row {
-    flex-direction: column;
-    margin-top: 26px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
-  footer {
-    padding: 40px 20px !important;
-  }
-
-  #emergency h1 {
-    font-size: 35px;
-  }
-
-  .footer-columns {
-    flex-direction: row;
-    gap: 30px;
-  }
-} */
 
 /*-----------------------------------------Dashboard------------------------------------------------------------------------*/
 #dashboard-main {
