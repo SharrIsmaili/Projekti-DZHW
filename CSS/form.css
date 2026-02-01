@@ -440,6 +440,11 @@ main {
   text-align: center
 }
 
+@media (max-width: 650px){
+  #container{
+    flex-direction: column;
+  }
+}
 
 /*====================================Contact Us Specials========================================================================*/
 
