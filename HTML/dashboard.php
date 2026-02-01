@@ -217,7 +217,7 @@
 ?>
 
     <main id="dashboard-main">
-        <aside id="dashboard-sidebar">
+        <section id="dashboard-sidebar">
             <div id="title">
                 <h2>Dashboard</h2>
             </div>
@@ -229,7 +229,7 @@
                     <li><a href="dashboard.php?type=feedback" class="<?= $type === 'feedback' ? 'active' : '' ?>">Feedback</a></li>
                 </ul>
             </div>
-        </aside>
+        </section>
 
         <section id="information">
             <div id="top-section">
@@ -267,7 +267,7 @@
                                 <input id="phone" type="text" name="phone" value="<?= htmlspecialchars($selected['Phone_Number'] ?? '') ?>">
                             </div>
                         
-                            <div class="fieldDash">
+                            <div class="fieldDashs">
                                 <label for="isAdmin">Admin:</label>
                                 <input id="isAdmin" type="checkbox" name="isAdmin" <?= !empty($selected['isAdmin']) ? 'checked' : '' ?>>
                             </div>

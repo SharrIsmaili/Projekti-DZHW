@@ -324,7 +324,7 @@
                         be a place where care meets hope, science meets empathy, and every patient feels supported and
                         valued.</p>
                 </div>
-                <img src="../images/about-us/whereWeAre.jpg" alt="Where we are now" style="width: 800px; justify-content:center; display:flex; padding: left 50px;">
+                <img src="../images/about-us/whereWeAre.jpg" alt="Where we are now">
             </div>
         </section>
 

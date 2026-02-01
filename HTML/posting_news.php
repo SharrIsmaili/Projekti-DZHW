@@ -23,8 +23,8 @@
     require_once 'header.php';
 ?>
 
-<main>
-    <article class="news-detail-container" style="max-width: 900px; margin: 50px auto; padding: 50px; background-color: white;">
+<main style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <article class="news-detail-container" style="max-width: 900px; padding: 50px; background-color: white;">
 
         <div class="detail-header" style="margin-bottom: 20px;">
            <div class="goBack">

@@ -38,7 +38,7 @@
     require_once 'header.php';
 ?>
     <main id="dashboard-main">
-        <section id="information">
+        <section id="profile-information">
             <div id="top-section">
                 <div id="left-side">
                     <h1>Welcome, <?= htmlspecialchars(trim(($_SESSION['name'] ?? '') . ' ' . ($_SESSION['lastname'] ?? ''))) ?>!</h1>

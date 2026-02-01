@@ -493,6 +493,29 @@ iframe {
   }
 }
 
+@media (max-width: 650px){
+  #contact-container{
+    padding: 0;
+    margin: 40px 0;
+  }
+
+  .adress-text{
+    padding: 10px;
+  }
+
+  #right{
+    padding: 20px 0;
+  }
+
+  .map{
+    width: 90%;
+  }
+
+  #right iframe{
+    width: 100%;
+  }
+}
+
 /*==================================Footer====================================================================*/
 
 footer {
@@ -644,5 +667,12 @@ footer h2 {
   .footer-columns {
     flex-direction: row;
     gap: 30px;
+  }
+}
+
+@media (max-width: 650px){
+  .footer-columns{
+    gap: 20px;
+    align-items: start;
   }
 }
