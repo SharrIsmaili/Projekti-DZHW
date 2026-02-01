@@ -50,7 +50,7 @@ $newsItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="pagination">
         <?php if ($currentPage > 1): ?>
-            <a href="?page=<?= $currentPage - 1 ?>"><div class="number">Prev</div></a>
+            <a href="?page=<?= $currentPage - 1 ?>"><div class="number"> < </div></a>
         <?php endif; ?>
 
         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
@@ -61,7 +61,7 @@ $newsItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php endfor; ?>
 
         <?php if ($currentPage < $totalPages): ?>
-            <a href="?page=<?= $currentPage + 1 ?>"><div class="number">Next</div></a>
+            <a href="?page=<?= $currentPage + 1 ?>"><div class="number"> > </div></a>
         <?php endif; ?>
     </div>
 </main>
