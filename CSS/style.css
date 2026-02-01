@@ -837,6 +837,7 @@ iframe {
 
   .info{
     align-items: center;
+    gap: 30px;
   }
 
   .types{
@@ -1684,7 +1685,7 @@ a:hover {
 }
 
 #dashboard-sidebar ul li a:hover {
-  background-color: var(--darkred);
+  background-color: var(--red);
   color: white;
 }
 
@@ -1715,24 +1716,6 @@ a:hover {
   font-size: 28px;
   margin-bottom: 20px;
   color: var(--black);
-}
-
-#right-side a{
-  max-width: 100px;
-  flex-grow: 0;
-  background-color: var(--red);
-  border: 2px solid var(--red);
-  color: whitesmoke;
-  font-size: 20px;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  text-decoration: none;
-}
-
-#right-side a:hover {
-  background-color: transparent;
-  color: var(--red);
 }
 
 #middle-section p{
@@ -1790,20 +1773,21 @@ a:hover {
 
 .dashbtn {
   max-width: 100px;
-  flex-grow: 0;
-  background-color: transparent;
+  width: 91px;
+  background-color: var(--red);
   border: 2px solid var(--red);
-  color: var(--black);
+  color: whitesmoke;
   font-size: 20px;
   margin: 10px;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
+  text-decoration: none;
   transition: all 0.2s ease-in-out;
 }
 
 .dashbtn:hover {
-  background-color: var(--red);
-  color: whitesmoke;
+  background-color: transparent;
+  color: var(--red);
   cursor: pointer;
 }
 
@@ -1945,8 +1929,30 @@ a:hover {
 }
 
 #profile-information form{
-    flex-direction: column;
-  }
+  flex-direction: column;
+}
+
+#logoutBtn{
+  max-width: 100px;
+  background-color: var(--red);
+  border: 2px solid var(--red);
+  color: whitesmoke;
+  font-size: 20px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+#logoutBtn:hover {
+  background-color: transparent;
+  color: var(--red);
+}
+
+#profile-information .buttons{
+  flex-direction: row;
+}
 
 @media (max-width: 1140px){
   #profile-information #middle-section{

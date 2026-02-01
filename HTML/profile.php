@@ -1,4 +1,5 @@
 <?php
+    $pageTitle = 'Profile';
     require_once 'auth.php';
     requireLogin();
 
@@ -43,8 +44,6 @@
                 <div id="left-side">
                     <h1>Welcome, <?= htmlspecialchars(trim(($_SESSION['name'] ?? '') . ' ' . ($_SESSION['lastname'] ?? ''))) ?>!</h1>
                 </div>
-
-                <div id="right-side"><a href="logout.php">Log out</a></div>
             </div>
 
             <div id="middle-section">
@@ -62,6 +61,7 @@
                     
                     <div class="buttons">
                         <button class="dashbtn" type="submit" name="update">Update</button>
+                        <a href="logout.php" id="logoutBtn">Log out</a>
                     </div>
                 </form>
 
