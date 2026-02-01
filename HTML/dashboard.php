@@ -248,22 +248,22 @@
                     <?php if ($type === 'users'): ?>
                         <div class="dashboard-inputs">
                             <div class="fieldDash">
-                                <label for="name">Name:</label>
+                                <label for="name">Name:</label><br>
                                 <input id="name" type="text" name="name" value="<?= htmlspecialchars($selected['Name'] ?? '') ?>" required>
                             </div>
                         
                             <div class="fieldDash">
-                                <label for="lastname">Lastname:</label>
+                                <label for="lastname">Lastname:</label><br>
                                 <input id="lastname" type="text" name="lastname" value="<?= htmlspecialchars($selected['Lastname'] ?? '') ?>" required>
                             </div>
                         
                             <div class="fieldDash">
-                                <label for="email">Email:</label>
+                                <label for="email">Email:</label><br>
                                 <input id="email" type="email" name="email" value="<?= htmlspecialchars($selected['Email'] ?? '') ?>" required>
                             </div>
                         
                             <div class="fieldDash">
-                                <label for="phone">Phone Number:</label>
+                                <label for="phone">Phone Number:</label><br>
                                 <input id="phone" type="text" name="phone" value="<?= htmlspecialchars($selected['Phone_Number'] ?? '') ?>">
                             </div>
                         
@@ -281,43 +281,43 @@
                     <?php elseif ($type === 'staff'): ?>
                         <div class="dashboard-inputs">
                             <div class="fieldDash">
-                                <label for="name">Name:</label>
+                                <label for="name">Name:</label><br>
                                 <input id="name" type="text" name="name" value="<?= htmlspecialchars($selected['Name'] ?? '') ?>" required>
                             </div>
                         
                             <div class="fieldDash">
-                                <label for="lastname">Lastname:</label>
+                                <label for="lastname">Lastname:</label><br>
                                 <input id="lastname" type="text" name="lastname" value="<?= htmlspecialchars($selected['Lastname'] ?? '') ?>" required>
                             </div>
                         
                             <div class="fieldDash">
-                                <label for="email">Email:</label>
+                                <label for="email">Email:</label><br>
                                 <input id="email" type="email" name="email" value="<?= htmlspecialchars($selected['Email'] ?? '') ?>" required>
                             </div>
                         
                             <div class="fieldDash">
-                                <label for="phone">Phone Number:</label>
+                                <label for="phone">Phone Number:</label><br>
                                 <input id="phone" type="text" name="phone" value="<?= htmlspecialchars($selected['Phone_Number'] ?? '') ?>">
                             </div>
                         
                             <div class="fieldDash">
-                                <label for="location">Location:</label>
+                                <label for="location">Location:</label><br>
                                 <input id="location" type="text" name="location" value="<?= htmlspecialchars($selected['Location'] ?? '') ?>">
                             </div>
                         
                             <div class="fieldDash">
-                                <label for="Specialization">Specialization:</label>
+                                <label for="Specialization">Specialization:</label><br>
                                 <input id="specialization" type="text" name="specialization" value="<?= htmlspecialchars($selected['Specialization'] ?? '') ?>">
                             </div>
 
                             <div class="fieldDash">
-                                <label for="image">Profile Picture:</label>
+                                <label for="image">Profile Picture:</label><br>
                                 <input id="image" type="file" name="image" accept="image/*">
                             </div>
 
                             <?php if (!empty($selected['Image'])): ?>
                                 <div>
-                                    <label class="fieldDash">Current Image:</label><br>
+                                    <label class="fieldDash">Current Image:</label><br><br>
                                     <img src="<?= htmlspecialchars($selected['Image']) ?>" width="120">
                                 </div>
                             <?php endif; ?>
@@ -332,23 +332,23 @@
                     <?php elseif ($type === 'news'): ?>
                         <div class="dashboard-inputs">
                             <div class="fieldDash">
-                                <label for="title">Title:</label>
+                                <label for="title">Title:</label><br>
                                 <input id="title" type="text" name="title" value="<?= htmlspecialchars($selected['Title'] ?? '') ?>" required>
                             </div>
                         
                             <div class="fieldDash">
-                                <label for="content">Content:</label>
+                                <label for="content">Content:</label><br>
                                 <textarea id="content" name="content" rows="5" required><?= htmlspecialchars($selected['Content'] ?? '') ?></textarea>
                             </div>
                         
                             <div class="fieldDash">
-                                <label for="image">Image:</label>
+                                <label for="image">Image:</label><br>
                                 <input id="image" type="file" name="image" accept="image/*">
                             </div>
                         
                             <?php if (!empty($selected['Image'])): ?>
                                 <div class="fieldDash">
-                                    <label>Current Image:</label><br>
+                                    <label>Current Image:</label><br><br>
                                     <img src="<?= htmlspecialchars($selected['Image']) ?>" width="120">
                                 </div>
                             <?php endif; ?>
@@ -363,17 +363,17 @@
                     <?php elseif ($type === 'feedback'): ?>
                         <div class="dashboard-inputs">
                             <div class="fieldDash">
-                                <label>User:</label>
+                                <label>User:</label><br>
                                 <input type="text" value="<?= htmlspecialchars($selected['User'] ?? '') ?>" readonly>
                             </div>
 
                             <div class="fieldDash">
-                                <label>Subject:</label>
+                                <label>Subject:</label><br>
                                 <input type="text" value="<?= htmlspecialchars($selected['Subject'] ?? '') ?>" readonly>
                             </div>
 
                             <div class="fieldDash">
-                                <label>Message:</label>
+                                <label>Message:</label><br>
                                 <textarea readonly><?= htmlspecialchars($selected['Message'] ?? '') ?></textarea>
                             </div>
                         </div>
