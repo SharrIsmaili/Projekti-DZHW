@@ -1585,10 +1585,35 @@ a:hover {
   margin-left: 20px;
 }
 
+#top-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 50px;
+}
+
 #top-section h1 {
   font-size: 28px;
   margin-bottom: 20px;
   color: var(--black);
+}
+
+#right-side a{
+  max-width: 100px;
+  flex-grow: 0;
+  background-color: var(--red);
+  border: 2px solid var(--red);
+  color: whitesmoke;
+  font-size: 20px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+#right-side a:hover {
+  background-color: transparent;
+  color: var(--red);
 }
 
 #middle-section label {
