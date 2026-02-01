@@ -324,26 +324,6 @@ main {
 
 /*====================================Contact Us Specials========================================================================*/
 
-#selectCity {
-  border-radius: 10px;
-  width: 304px;
-  height: 40px;
-  font-size: 17px;
-}
-
-#selectCity:focus {
-  outline: none;
-  border-radius: 10px 10px 0 0;
-}
-
-#selectCity:hover {
-  cursor: pointer;
-}
-
-.city:hover {
-  cursor: pointer;
-}
-
 #message {
   resize: none;
   border-radius: 10px;

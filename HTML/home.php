@@ -276,12 +276,10 @@
             <div class="address">
                 <div class="adress-text">
                     <h1>Address: </h1>
-
                     <p><strong>Dukagjini Center - UBT College</strong></p>
                     <p>Rruga Xhevded Doda, Prishtina 10000</p>
                     <p>09:00 - 16:00</p>
                     <p>Monday - Saturday</p><br>
-
                     <a href="contact.php" class="link" id="contactBtn">Contact Us</a>
                 </div>
 

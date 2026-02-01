@@ -14,6 +14,8 @@
 ?>
 
 <main id="aboutMain">
+    <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+
         <section id="content">
             <div class="section" id="ourStory">
                 <div class="aboutTitle">
@@ -473,6 +475,21 @@
             </ul>
         </aside>
     </main>
+
+    <script>
+      const toggleBtn = document.getElementById("sidebarToggle");
+      const sidebar = document.getElementById("sidebar");
+
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+      });
+                            
+      sidebar.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          sidebar.classList.remove("active");
+        });
+      });
+    </script>
 
 <?php
     require_once 'footer.php';
