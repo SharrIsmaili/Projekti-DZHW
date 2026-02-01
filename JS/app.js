@@ -272,13 +272,12 @@ if(carousel && arrowBtns.length > 0 && firstCard){
 //-------------------------------Hamburger Menu-------------------------------------------------------------------------------------
 
 const hamburger = document.getElementById("hamburger");
-const links = document.querySelector(".links");
-const rightSide = document.querySelector(".right-side");
+const offMenu = document.querySelector('.off-screen-menu');
 
-if(hamburger && links && rightSide){
+if(hamburger && offMenu){
     hamburger.addEventListener("click", () => {
-        links.classList.toggle("active");
-        rightSide.classList.toggle("active");
+        hamburger.classList.toggle('active');
+        offMenu.classList.toggle('active');
     });
 }
 

@@ -13,9 +13,7 @@
     $nurses = $staff->getByProfession('Nurse');
 ?>
 
-<main id="aboutMain">
-    <button id="sidebarToggle" class="sidebar-toggle">☰</button>
-
+    <main id="aboutMain">
         <section id="content">
             <div class="section" id="ourStory">
                 <div class="aboutTitle">
@@ -105,134 +103,7 @@
                         <div class="aboutTitle">
                             <h1>Our Nurses</h1>
                         </div>
-<!-- 
-                        <div class="card">
-                            <img src="../images/nurses/nurse1.png" alt="Nurse">
 
-                            <h3>Miranda Qosja</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse2.jpg" alt="Nurse">
-
-                            <h3>Gjon Lika</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse3.jpg" alt="Nurse">
-
-                            <h3>Roan Dushku</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse4.png" alt="Nurse">
-
-                            <h3>Albana Tafa</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse5.jpg" alt="Nurse">
-
-                            <h3>Agim Xhafa</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse6.png" alt="Nurse">
-
-                            <h3>Artan Mumajesi</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse7.jpg" alt="Nurse">
-
-                            <h3>Era Toska</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse8.png" alt="Nurse">
-
-                            <h3>Amar Guri</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse9.png" alt="Nurse">
-
-                            <h3>Lumnije Azemi</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse10.jpg" alt="Nurse">
-
-                            <h3>Bogdan Pjetri</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse11.jpg" alt="Nurse">
-
-                            <h3>Arben Beni</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse12.jpg" alt="Nurse">
-
-                            <h3>Kreshnik Ismaili</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse13.jpeg" alt="Nurse">
-
-                            <h3>Shukrije Ramadani</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse14.jpg" alt="Nurse">
-
-                            <h3>Doruntina Shala</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse15.webp" alt="Nurse">
-
-                            <h3>Blerina Vjollca</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse16.jpg" alt="Nurse">
-
-                            <h3>Almir Bungu</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse17.jpg" alt="Nurse">
-
-                            <h3>Erjon Gerguri</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse18.jpg" alt="Nurse">
-
-                            <h3>Rron Gashi</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse19.jpg" alt="Nurse">
-
-                            <h3>Xhevdet Begu</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse20.jpg" alt="Nurse">
-
-                            <h3>Fatmir Beholli</h3>
-                        </div>
-
-                        <div class="card">
-                            <img src="../images/nurses/nurse21.jpg" alt="Nurse">
-
-                            <h3>Besjana Haxhiu</h3>
-                        </div> -->
-
-                        
                         <?php foreach($nurses as $n): ?>
                             <div class="card">
                                 <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
@@ -475,21 +346,6 @@
             </ul>
         </aside>
     </main>
-
-    <script>
-      const toggleBtn = document.getElementById("sidebarToggle");
-      const sidebar = document.getElementById("sidebar");
-
-      toggleBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("active");
-      });
-                            
-      sidebar.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          sidebar.classList.remove("active");
-        });
-      });
-    </script>
 
 <?php
     require_once 'footer.php';

@@ -27,6 +27,32 @@
 
 <body id="top">
     <header id="header">
+        <div class="off-screen-menu">
+            <div class="menu-links">
+                <ul>
+                    <li><a href="home.php" class="pages <?= $pageTitle === 'Home' ? 'active' : ''?>">Home</a></li>
+                    <li><a href="aboutUs.php" class="pages <?= $pageTitle === 'About Us' ? 'active' : ''?>">About Us</a></li>
+                    <li><a href="our-locations.php" class="pages <?= $pageTitle === 'Our Locations' ? 'active' : ''?>">Our Locations</a></li>
+                    <li><a href="news.php" class="pages <?= $pageTitle === 'News' ? 'active' : ''?>">News</a></li>
+
+                    <?php if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']): ?>
+                        <li><a href="dashboard.php" class="pages <?= $pageTitle === 'Dashboard' ? 'active' : ''?>">Dashboard</a></li>
+                    <?php endif;?>
+                </ul>
+            </div>
+
+            <div class="menu-right-side">
+                <div class="menu-utils">
+                    <input type="search" id="menu-searchBar" name="search" placeholder="Search">
+                    <a href="contact.php" class="link" id="contactBtn">Contact Us</a>
+                </div>
+
+                <div id="menu-profile">
+                    <a href="profile.php"><img src="../images/icons/blank-pfp.jpg" alt="Blank Profile Picture"></a>
+                </div>
+            </div>
+        </div>
+
         <nav class="navbar">
             <a href="home.php"><img src="../images/vital-drop/logo.png" alt="VitalDrop logo" id="logo"></a>
 
@@ -48,16 +74,15 @@
                     <a href="contact.php" class="link" id="contactBtn">Contact Us</a>
                 </div>
 
-
                 <div id="profile">
                     <a href="profile.php"><img src="../images/icons/blank-pfp.jpg" alt="Blank Profile Picture"></a>
                 </div>
+
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </nav>
     </header>
