@@ -1656,6 +1656,10 @@ a:hover {
   margin: 10px;
 }
 
+.fieldDash{
+  width: 400px;
+}
+
 .buttons{
   display: flex;
   flex-direction: column;
