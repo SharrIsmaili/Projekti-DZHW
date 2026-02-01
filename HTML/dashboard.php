@@ -241,36 +241,36 @@
             </div>
 
             <div id="middle-section">
-                <form method="post" enctype="multipart/form-data">
-                    <?php
-                        $hiddenId = $postId ?? ($selected[$pk] ?? '');
-                    ?>
+                <form method="post" enctype="multipart/form-data" id="dashboard-form">
+                    <?php $hiddenId = $postId ?? ($selected[$pk] ?? ''); ?>
                     <input type="hidden" name="id" value="<?= htmlspecialchars($hiddenId) ?>">
-
+                    
                     <?php if ($type === 'users'): ?>
-                        <div>
-                            <label for="name">Name</label>
-                            <input id="name" type="text" name="name" value="<?= htmlspecialchars($selected['Name'] ?? '') ?>" required>
-                        </div>
-                    
-                        <div>
-                            <label for="lastname">Lastname</label>
-                            <input id="lastname" type="text" name="lastname" value="<?= htmlspecialchars($selected['Lastname'] ?? '') ?>" required>
-                        </div>
-                    
-                        <div>
-                            <label for="email">Email</label>
-                            <input id="email" type="email" name="email" value="<?= htmlspecialchars($selected['Email'] ?? '') ?>" required>
-                        </div>
-                    
-                        <div>
-                            <label for="phone">Phone</label>
-                            <input id="phone" type="text" name="phone" value="<?= htmlspecialchars($selected['Phone_Number'] ?? '') ?>">
-                        </div>
-                    
-                        <div>
-                            <label for="isAdmin">Admin</label>
-                            <input id="isAdmin" type="checkbox" name="isAdmin" <?= !empty($selected['isAdmin']) ? 'checked' : '' ?>>
+                        <div class="dashboard-inputs">
+                            <div>
+                                <label for="name">Name</label>
+                                <input id="name" type="text" name="name" value="<?= htmlspecialchars($selected['Name'] ?? '') ?>" required>
+                            </div>
+                        
+                            <div>
+                                <label for="lastname">Lastname</label>
+                                <input id="lastname" type="text" name="lastname" value="<?= htmlspecialchars($selected['Lastname'] ?? '') ?>" required>
+                            </div>
+                        
+                            <div>
+                                <label for="email">Email</label>
+                                <input id="email" type="email" name="email" value="<?= htmlspecialchars($selected['Email'] ?? '') ?>" required>
+                            </div>
+                        
+                            <div>
+                                <label for="phone">Phone</label>
+                                <input id="phone" type="text" name="phone" value="<?= htmlspecialchars($selected['Phone_Number'] ?? '') ?>">
+                            </div>
+                        
+                            <div>
+                                <label for="isAdmin">Admin</label>
+                                <input id="isAdmin" type="checkbox" name="isAdmin" <?= !empty($selected['isAdmin']) ? 'checked' : '' ?>>
+                            </div>
                         </div>
                         
                         <div class="buttons">
@@ -279,47 +279,49 @@
                         </div>
                     
                     <?php elseif ($type === 'staff'): ?>
-                        <div>
-                            <label for="name">Name</label>
-                            <input id="name" type="text" name="name" value="<?= htmlspecialchars($selected['Name'] ?? '') ?>" required>
-                        </div>
-                    
-                        <div>
-                            <label for="lastname">Lastname</label>
-                            <input id="lastname" type="text" name="lastname" value="<?= htmlspecialchars($selected['Lastname'] ?? '') ?>" required>
-                        </div>
-                    
-                        <div>
-                            <label for="email">Email</label>
-                            <input id="email" type="email" name="email" value="<?= htmlspecialchars($selected['Email'] ?? '') ?>" required>
-                        </div>
-                    
-                        <div>
-                            <label for="phone">Phone</label>
-                            <input id="phone" type="text" name="phone" value="<?= htmlspecialchars($selected['Phone_Number'] ?? '') ?>">
-                        </div>
-                    
-                        <div>
-                            <label for="location">Location</label>
-                            <input id="location" type="text" name="location" value="<?= htmlspecialchars($selected['Location'] ?? '') ?>">
-                        </div>
-                    
-                        <div>
-                            <label for="Specialization">Specialization</label>
-                            <input id="specialization" type="text" name="specialization" value="<?= htmlspecialchars($selected['Specialization'] ?? '') ?>">
-                        </div>
-
-                        <div>
-                            <label for="image">Profile Picture</label>
-                            <input id="image" type="file" name="image" accept="image/*">
-                        </div>
-
-                        <?php if (!empty($selected['Image'])): ?>
+                        <div class="dashboard-inputs">
                             <div>
-                                <label>Current Image</label><br>
-                                <img src="<?= htmlspecialchars($selected['Image']) ?>" width="120">
+                                <label for="name">Name</label>
+                                <input id="name" type="text" name="name" value="<?= htmlspecialchars($selected['Name'] ?? '') ?>" required>
                             </div>
-                        <?php endif; ?>
+                        
+                            <div>
+                                <label for="lastname">Lastname</label>
+                                <input id="lastname" type="text" name="lastname" value="<?= htmlspecialchars($selected['Lastname'] ?? '') ?>" required>
+                            </div>
+                        
+                            <div>
+                                <label for="email">Email</label>
+                                <input id="email" type="email" name="email" value="<?= htmlspecialchars($selected['Email'] ?? '') ?>" required>
+                            </div>
+                        
+                            <div>
+                                <label for="phone">Phone</label>
+                                <input id="phone" type="text" name="phone" value="<?= htmlspecialchars($selected['Phone_Number'] ?? '') ?>">
+                            </div>
+                        
+                            <div>
+                                <label for="location">Location</label>
+                                <input id="location" type="text" name="location" value="<?= htmlspecialchars($selected['Location'] ?? '') ?>">
+                            </div>
+                        
+                            <div>
+                                <label for="Specialization">Specialization</label>
+                                <input id="specialization" type="text" name="specialization" value="<?= htmlspecialchars($selected['Specialization'] ?? '') ?>">
+                            </div>
+
+                            <div>
+                                <label for="image">Profile Picture</label>
+                                <input id="image" type="file" name="image" accept="image/*">
+                            </div>
+
+                            <?php if (!empty($selected['Image'])): ?>
+                                <div>
+                                    <label>Current Image</label><br>
+                                    <img src="<?= htmlspecialchars($selected['Image']) ?>" width="120">
+                                </div>
+                            <?php endif; ?>
+                        </div>
                         
                         <div class="buttons">
                             <button class="dashbtn" type="submit" name="add">Add</button>
@@ -328,27 +330,29 @@
                         </div>
                     
                     <?php elseif ($type === 'news'): ?>
-                        <div>
-                            <label for="title">Title</label>
-                            <input id="title" type="text" name="title" value="<?= htmlspecialchars($selected['Title'] ?? '') ?>" required>
-                        </div>
-                    
-                        <div>
-                            <label for="content">Content</label>
-                            <textarea id="content" name="content" rows="5" required><?= htmlspecialchars($selected['Content'] ?? '') ?></textarea>
-                        </div>
-                    
-                        <div>
-                            <label for="image">Image</label>
-                            <input id="image" type="file" name="image" accept="image/*">
-                        </div>
-                    
-                        <?php if (!empty($selected['Image'])): ?>
+                        <div class="dashboard-inputs">
                             <div>
-                                <label>Current Image</label><br>
-                                <img src="<?= htmlspecialchars($selected['Image']) ?>" width="120">
+                                <label for="title">Title</label>
+                                <input id="title" type="text" name="title" value="<?= htmlspecialchars($selected['Title'] ?? '') ?>" required>
                             </div>
-                        <?php endif; ?>
+                        
+                            <div>
+                                <label for="content">Content</label>
+                                <textarea id="content" name="content" rows="5" required><?= htmlspecialchars($selected['Content'] ?? '') ?></textarea>
+                            </div>
+                        
+                            <div>
+                                <label for="image">Image</label>
+                                <input id="image" type="file" name="image" accept="image/*">
+                            </div>
+                        
+                            <?php if (!empty($selected['Image'])): ?>
+                                <div>
+                                    <label>Current Image</label><br>
+                                    <img src="<?= htmlspecialchars($selected['Image']) ?>" width="120">
+                                </div>
+                            <?php endif; ?>
+                        </div>
 
                         <div class="buttons">
                             <button class="dashbtn" type="submit" name="add">Add</button>
@@ -357,22 +361,26 @@
                         </div>
                         
                     <?php elseif ($type === 'feedback'): ?>
-                        <div>
-                            <label>User</label>
-                            <input type="text" value="<?= htmlspecialchars($selected['User'] ?? '') ?>" readonly>
+                        <div class="dashboard-inputs">
+                            <div>
+                                <label>User</label>
+                                <input type="text" value="<?= htmlspecialchars($selected['User'] ?? '') ?>" readonly>
+                            </div>
+
+                            <div>
+                                <label>Subject</label>
+                                <input type="text" value="<?= htmlspecialchars($selected['Subject'] ?? '') ?>" readonly>
+                            </div>
+
+                            <div>
+                                <label>Message</label>
+                                <textarea readonly><?= htmlspecialchars($selected['Message'] ?? '') ?></textarea>
+                            </div>
                         </div>
 
-                        <div>
-                            <label>Subject</label>
-                            <input type="text" value="<?= htmlspecialchars($selected['Subject'] ?? '') ?>" readonly>
+                        <div class="buttons">
+                            <button class="dashbtn" type="submit" name="delete" onclick="return confirm('Delete this feedback?')">Delete</button>
                         </div>
-
-                        <div>
-                            <label>Message</label>
-                            <textarea readonly><?= htmlspecialchars($selected['Message'] ?? '') ?></textarea>
-                        </div>
-
-                        <button class="dashbtn" type="submit" name="delete" onclick="return confirm('Delete this feedback?')">Delete</button>
                     <?php endif; ?>
                 </form>
             </div>

@@ -1579,7 +1579,7 @@ a:hover {
 
 #information {
   flex-grow: 1;
-  padding: 40px;
+  padding: 20px 40px 40px 40px;
   background-color: #fff;
   border-radius: 10px;
   margin-left: 20px;
@@ -1589,13 +1589,6 @@ a:hover {
   font-size: 28px;
   margin-bottom: 20px;
   color: var(--black);
-}
-
-#middle-section form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 40px;
 }
 
 #middle-section label {
@@ -1625,8 +1618,22 @@ a:hover {
   resize: none;
 }
 
-#buttons{
+#dashboard-form{
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.dashboard-inputs div{
+  margin: 10px;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
 }
 
 .dashbtn {
