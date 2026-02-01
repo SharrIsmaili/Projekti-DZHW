@@ -49,20 +49,6 @@
             </div>
 
             <div class="doctors">
-                <!-- <div class="card">
-                    <img src="../images/doctors/doc1.jpg" alt="Doctor">
-                    <h3>Blerina Cenaj</h3>
-
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/doctors/doc2.png" alt="Doctor">
-                    <h3>Era Sula</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($doctors_prishtine as $d): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
@@ -74,27 +60,6 @@
             </div>
 
             <div class="nurses">
-                <!-- <div class="card">
-                    <img src="../images/nurses/nurse1.png" alt="Nurse">
-                    <h3>Miranda Qosja</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse2.jpg" alt="Nurse">
-                    <h3>Gjon Lika</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse3.jpg" alt="Nurse">
-                    <h3>Roan Dushku</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($nurses_prishtine as $n): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
@@ -113,20 +78,6 @@
             </div>
 
             <div class="doctors">
-                <!-- <div class="card">
-                    <img src="../images/doctors/doc3.png" alt="Doctor">
-                    <h3>Flamur Begu</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/doctors/doc4.jpg" alt="Doctor">
-                    <h3>Fatjon Deda</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($doctors_mitrovice as $d): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
@@ -138,27 +89,6 @@
             </div>
 
             <div class="nurses">
-                <!-- <div class="card">
-                    <img src="../images/nurses/nurse4.png" alt="Nurse">
-                    <h3>Albana Tafa</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse5.jpg" alt="Nurse">
-                    <h3>Agim Xhafa</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse6.png" alt="Nurse">
-                    <h3>Artan Mumajesi</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($nurses_mitrovice as $n): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
@@ -177,20 +107,6 @@
             </div>
 
             <div class="doctors">
-                <!-- <div class="card">
-                    <img src="../images/doctors/doc5.jpg" alt="Doctor">
-                    <h3>Era Beqiri</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/doctors/doc6.jpg" alt="Doctor">
-                    <h3>Sokol Shehi</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($doctors_peje as $d): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
@@ -202,27 +118,6 @@
             </div>
 
             <div class="nurses">
-                <!-- <div class="card">
-                    <img src="../images/nurses/nurse7.jpg" alt="Nurse">
-                    <h3>Era Toska</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse8.png" alt="Nurse">
-                    <h3>Amar Guri</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse9.png" alt="Nurse">
-                    <h3>Lumnije Azemi</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($nurses_peje as $n): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
@@ -241,20 +136,6 @@
             </div>
 
             <div class="doctors">
-                <!-- <div class="card">
-                    <img src="../images/doctors/doc7.jpg" alt="Doctor">
-                    <h3>Genc Bogdani</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/doctors/doc8.webp" alt="Doctor">
-                    <h3>Rina Balaj</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($doctors_prizren as $d): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
@@ -265,27 +146,6 @@
                 <?php endforeach; ?>
             </div>
             <div class="nurses">
-                <!-- <div class="card">
-                    <img src="../images/nurses/nurse10.jpg" alt="Nurse">
-                    <h3>Bogdan Pjetri</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse11.jpg" alt="Nurse">
-                    <h3>Arben Beni</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse12.jpg" alt="Nurse">
-                    <h3>Kreshnik Ismaili</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($nurses_prizren as $n): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
@@ -304,20 +164,6 @@
             </div>
 
             <div class="doctors">
-                <!-- <div class="card">
-                    <img src="../images/doctors/doc9.jpg" alt="Doctor">
-                    <h3>Ermira Mamira</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/doctors/doc10.webp" alt="Doctor">
-                    <h3>Arnis Zeka</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($doctors_ferizaj as $d): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
@@ -329,27 +175,6 @@
             </div>
 
             <div class="nurses">
-                <!-- <div class="card">
-                    <img src="../images/nurses/nurse13.jpeg" alt="Nurse">
-                    <h3>Shukrije Ramadani</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse14.jpg" alt="Nurse">
-                    <h3>Doruntina Shala</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse15.webp" alt="Nurse">
-                    <h3>Blerina Vjollca</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($nurses_ferizaj as $n): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
@@ -368,20 +193,6 @@
             </div>
 
             <div class="doctors">
-                <!-- <div class="card">
-                    <img src="../images/doctors/doc11.webp" alt="Doctor">
-                    <h3>Blenda Zekaj</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/doctors/doc12.webp" alt="Doctor">
-                    <h3>Kasap Thaqi</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($doctors_gjilan as $d): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
@@ -393,27 +204,6 @@
             </div>
 
             <div class="nurses">
-                <!-- <div class="card">
-                    <img src="../images/nurses/nurse16.jpg" alt="Nurse">
-                    <h3>Almir Bungu</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse17.jpg" alt="Nurse">
-                    <h3>Erjon Gerguri</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse18.jpg" alt="Nurse">
-                    <h3>Rron Gashi</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($nurses_gjilan as $n): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">
@@ -432,20 +222,6 @@
             </div>
 
             <div class="doctors">
-                <!-- <div class="card">
-                    <img src="../images/doctors/doc13.jpg" alt="Doctor">
-                    <h3>Arbnor Halilaj</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/doctors/doc14.jpg" alt="Doctor">
-                    <h3>Greta Isufi</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($doctors_gjakove as $d): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($d['Image']) ?>" alt="<?= htmlspecialchars($d['Name'].' '.$d['Lastname']) ?>">
@@ -457,27 +233,6 @@
             </div>
 
             <div class="nurses">
-                <!-- <div class="card">
-                    <img src="../images/nurses/nurse19.jpg" alt="Nurse">
-                    <h3>Xhevdet Begu</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse20.jpg" alt="Nurse">
-                    <h3>Fatmir Beholli</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div>
-
-                <div class="card">
-                    <img src="../images/nurses/nurse21.jpg" alt="Nurse">
-                    <h3>Besjana Haxhiu</h3>
-                    
-                    <a href="contact.php" class="appointment">Book Appointment</a>
-                </div> -->
-
                 <?php foreach($nurses_gjakove as $n): ?>
                     <div class="card">
                         <img src="<?= htmlspecialchars($n['Image']) ?>" alt="<?= htmlspecialchars($n['Name'].' '.$n['Lastname']) ?>">

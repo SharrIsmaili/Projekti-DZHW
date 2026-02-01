@@ -867,7 +867,6 @@ iframe {
 
 #news a {
   padding-top: 10px;
-  width: 100%;
   padding-bottom: 50px;
   text-decoration: none;
   color: var(--black);
@@ -947,6 +946,36 @@ iframe {
   display: flex;
   align-items: center;
   text-decoration: none;
+}
+
+@media (max-width: 1210px){
+  #news{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #news a{
+    align-items: center;
+  }
+
+  .news-container{
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 500px;
+    gap: 10px;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .news-container .news-img{
+    width: 100%;
+  }
+
+  .news-img img{
+    width: 100%;
+    padding: 0;
+  }
 }
 
 /*========================================About Us==================================================================*/
@@ -1190,10 +1219,11 @@ iframe {
 
 #map-hero {
   margin-bottom: 50px;
+  width: 100%;
 }
 
 .map {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-shrink: 0;
@@ -1212,6 +1242,7 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .cityBtn {
@@ -1719,4 +1750,19 @@ a:hover {
 #bottom-section td a:hover {
   text-decoration: underline;
   color: var(--darkred);
+}
+
+@media (max-width: 950px){
+  #dashboard-sidebar{
+    width: 150px;
+  }
+
+  #dashboard-form{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #dashboard-form .buttons{
+    flex-direction: row;
+  }
 }
