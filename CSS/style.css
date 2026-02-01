@@ -865,6 +865,10 @@ iframe {
   font-size: 20px;
 }
 
+.author{
+  text-align: end;
+}
+
 #news a {
   padding-top: 10px;
   padding-bottom: 50px;
@@ -1328,6 +1332,12 @@ iframe {
   color: white;
 }
 
+@media (max-width: 1866px){
+  .hospital .card{
+    width: 300px;
+  }
+}
+
 /*==============================================Footer=====================================================================*/
 
 footer {
@@ -1625,6 +1635,9 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   margin: 0 50px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  align-items: center;
 }
 
 #top-section h1 {
