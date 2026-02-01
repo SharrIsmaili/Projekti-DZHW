@@ -47,10 +47,6 @@
                 <div id="right-side"><a href="logout.php">Log out</a></div>
             </div>
 
-            <?php if (!empty($message)): ?>
-                <p style="color:green"><?= htmlspecialchars($message) ?></p>
-            <?php endif; ?>
-
             <div id="middle-section">
                 <form method="post" enctype="multipart/form-data" id="dashboard-form">
                     <div class="dashboard-inputs">
@@ -68,6 +64,10 @@
                         <button class="dashbtn" type="submit" name="update">Update</button>
                     </div>
                 </form>
+
+                <?php if (!empty($message)): ?>
+                    <p style="color:green"><?= htmlspecialchars($message) ?></p>
+                <?php endif; ?>
             </div>
         </section>
     </main>

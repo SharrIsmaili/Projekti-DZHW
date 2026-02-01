@@ -258,7 +258,7 @@ const carousel = document.querySelector(".carousel");
 const arrowBtns = document.querySelectorAll(".buttons");
 const firstCard = document.querySelector(".comment");
 
-if(carousel && arrowBtns.length === 0 && firstCard){
+if(carousel && arrowBtns.length > 0 && firstCard){
     const firstCardWidth = firstCard.offsetWidth + 16;
     let commentPerView = Math.round(carousel.offsetWidth / firstCardWidth);
     

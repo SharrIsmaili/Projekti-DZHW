@@ -1616,6 +1616,10 @@ a:hover {
   color: var(--red);
 }
 
+#middle-section p{
+  text-align: center;
+}
+
 #middle-section label {
   font-weight: 500;
   margin-bottom: 5px;
