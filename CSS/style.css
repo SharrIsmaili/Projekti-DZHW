@@ -1935,7 +1935,6 @@ a:hover {
   padding: 20px 40px 40px 40px;
   background-color: #fff;
   border-radius: 10px;
-  margin-left: 20px;
   gap: 50px;
 }
 
@@ -1943,4 +1942,19 @@ a:hover {
   align-items: center;
   justify-content: center;
   gap: 30px;
+}
+
+#profile-information form{
+    flex-direction: column;
+  }
+
+@media (max-width: 1140px){
+  #profile-information #middle-section{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #profile-information input{
+    width: 100%;
+  }
 }

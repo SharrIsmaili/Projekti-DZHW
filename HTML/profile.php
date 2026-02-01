@@ -50,13 +50,13 @@
             <div id="middle-section">
                 <form method="post" enctype="multipart/form-data" id="dashboard-form">
                     <div class="dashboard-inputs">
-                        <label for="name">Name:</label>
+                        <label for="name">Name:</label><br>
                         <input id="name" type="text" name="name" value="<?= htmlspecialchars($selected['Name'] ?? '') ?>" required><br><br>
-                        <label for="lastname">Lastname:</label>
+                        <label for="lastname">Lastname:</label><br>
                         <input id="lastname" type="text" name="lastname" value="<?= htmlspecialchars($selected['Lastname'] ?? '') ?>" required><br><br>
-                        <label for="email">Email:</label>
+                        <label for="email">Email:</label><br>
                         <input id="email" type="email" name="email" value="<?= htmlspecialchars($selected['Email'] ?? '') ?>" required><br><br>
-                        <label for="phone">Phone Number:</label>
+                        <label for="phone">Phone Number:</label><br>
                         <input id="phone" type="text" name="phone" value="<?= htmlspecialchars($selected['Phone_Number'] ?? '') ?>"><br><br>
                     </div>
                     

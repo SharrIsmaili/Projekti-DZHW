@@ -522,12 +522,10 @@ footer {
   bottom: 0;
   background: whitesmoke;
   color: var(--black);
-  padding-top: 40px;
-  padding-left: 170px;
-  padding-right: 170px;
-  padding-bottom: 5px;
+  padding: 40px 170px 5px 170px;
   position: relative;
   border-top: 1px solid var(--red);
+  z-index: 4;
 }
 
 #backToTop {
@@ -546,12 +544,10 @@ footer {
 }
 
 footer .top-row {
-  flex-direction: row;
   margin-top: 26px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
 
 footer h2 {
@@ -560,7 +556,7 @@ footer h2 {
 }
 
 #emergency h1 {
-  font-size: 3.3rem;
+  font-size: 50px;
   margin: 0;
 }
 

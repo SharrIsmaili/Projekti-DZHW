@@ -104,7 +104,7 @@
             <div id="contact-container">
                 <div id="left">
                     <form id="inputs" method="POST">
-                        <input type="text" name="subject" id="contact-subject" class="input" value="<?= htmlspecialchars($_POST['subject'] ?? '') ?>" placeholder="Subject">
+                        <input type="text" name="subject" id="contact-subject" class="input" value="<?= htmlspecialchars($_POST['subject'] ?? '') ?>" placeholder="Subject"><br>
                         <div id="contactSubjectError" class="error" aria-live="polite"></div>
 
                         <textarea name="message" id="message" placeholder="Write your message..."><?= htmlspecialchars($_POST['message'] ?? '') ?></textarea>
