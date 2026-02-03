@@ -10,16 +10,14 @@
         $connection = $db->getConnection();
         $users = new Users($connection);
 
-        // Get form data
         $name = $_POST['name'];
         $lastname = $_POST['lastname'];
         $number = $_POST['number'];
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        // Register the user
-        if ($users->register($name, $lastname, $number, $email, $password)) {
-            header("Location: login.php"); // Redirect to home-login page
+        if ($users->register($name, $lastname, $email, $number, $password)) {
+            header("Location: login.php");
             exit;
         } else {
          echo "Error registering user!";
